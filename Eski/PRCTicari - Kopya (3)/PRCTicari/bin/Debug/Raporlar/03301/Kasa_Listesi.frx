@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="04/26/2017 08:45:17" ReportInfo.Modified="04/26/2017 10:20:41" ReportInfo.CreatorVersion="2016.2.20.0">
+  <Dictionary>
+    <TableDataSource Name="dtKasaListesi" ReferenceName="dtKasaListesi" DataType="System.Int32" Enabled="true">
+      <Column Name="Kasa_Kodu" DataType="System.String"/>
+      <Column Name="Silindi" DataType="System.Byte"/>
+      <Column Name="Kasa_Adi" DataType="System.String"/>
+      <Column Name="Yetkilisi" DataType="System.String"/>
+      <Column Name="Para_Birimi" DataType="System.String"/>
+      <Column Name="Isyeri_Kodu" DataType="System.Int32"/>
+      <Column Name="Insert_User" DataType="System.String"/>
+      <Column Name="Insert_Date" DataType="System.DateTime"/>
+      <Column Name="Update_User" DataType="System.String"/>
+      <Column Name="Update_Date" DataType="System.DateTime"/>
+      <Column Name="Delete_User" DataType="System.String"/>
+      <Column Name="Delete_Date" DataType="System.DateTime"/>
+    </TableDataSource>
+    <Total Name="KasaSayisi" TotalType="Count" Evaluator="Data1"/>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text1" Width="718.2" Height="37.8" Text="KASA LİSTESİ" HorzAlign="Center" VertAlign="Center" Font="Arial, 20pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="18.9">
+      <TextObject Name="Text5" Left="425.25" Width="207.9" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Yetkilisi" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text2" Width="151.2" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Kasa Kodu" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text3" Left="151.2" Width="274.05" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Kasa Adı" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text7" Left="633.15" Width="85.05" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Para Birimi" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="64.7" Width="718.2" Height="18.9">
+      <TextObject Name="Text4" Left="425.25" Width="207.9" Height="18.9" Border.Lines="All" Text="[dtKasaListesi.Yetkilisi]"/>
+      <TextObject Name="Text8" Width="151.2" Height="18.9" Border.Lines="All" Text="[dtKasaListesi.Kasa_Kodu]"/>
+      <TextObject Name="Text9" Left="151.2" Width="274.05" Height="18.9" Border.Lines="All" Text="[dtKasaListesi.Kasa_Adi]"/>
+      <TextObject Name="Text6" Left="633.15" Width="85.05" Height="18.9" Border.Lines="All" Text="[dtKasaListesi.Para_Birimi]"/>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="87.6" Width="718.2" Height="18.9">
+      <TextObject Name="Text14" Width="170.1" Height="18.9" Text="Kasa Sayısı: [KasaSayisi]" Font="Arial, 10pt, style=Bold"/>
+    </ReportSummaryBand>
+  </ReportPage>
+</Report>

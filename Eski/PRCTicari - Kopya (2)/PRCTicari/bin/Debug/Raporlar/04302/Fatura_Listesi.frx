@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="04/26/2017 08:45:17" ReportInfo.Modified="04/26/2017 12:34:50" ReportInfo.CreatorVersion="2016.2.20.0">
+  <Dictionary>
+    <TableDataSource Name="dtFaturaListesi" ReferenceName="dtFaturaListesi" DataType="System.Int32" Enabled="true">
+      <Column Name="Isyeri_Kodu" DataType="System.Int32"/>
+      <Column Name="Fis_No" DataType="System.Int32"/>
+      <Column Name="Fis_Tipi_Aciklama" DataType="System.String"/>
+      <Column Name="Fis_Tarihi" DataType="System.String"/>
+      <Column Name="Cari_Kodu" DataType="System.String"/>
+      <Column Name="Unvani" DataType="System.String"/>
+      <Column Name="Belge_Tipi" DataType="System.String"/>
+      <Column Name="Belge_No" DataType="System.String"/>
+      <Column Name="Belge_Tarihi" DataType="System.String"/>
+      <Column Name="Giris_Tutari" DataType="System.Double"/>
+      <Column Name="Cikis_Tutari" DataType="System.Double"/>
+      <Column Name="Aciklama" DataType="System.String"/>
+    </TableDataSource>
+    <Total Name="FaturaSayisi" TotalType="Count" Evaluator="Data1"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="297" PaperHeight="210" LastPaperWidth="297" LastPaperHeight="210">
+    <ReportTitleBand Name="ReportTitle1" Width="1047.06" Height="37.8">
+      <TextObject Name="Text1" Width="1048.95" Height="37.8" Text="FATURA LİSTESİ" HorzAlign="Center" VertAlign="Center" Font="Arial, 20pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="1047.06" Height="18.9">
+      <TextObject Name="Text2" Left="151.2" Width="47.25" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="İşyeri" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text15" Left="198.45" Width="56.7" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Fiş No" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text17" Width="151.2" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Fiş Tipi" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text19" Left="255.15" Width="66.15" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Fiş Tarihi" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text21" Left="406.35" Width="236.25" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Ünvanı" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text24" Left="321.3" Width="85.05" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Belge No" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text25" Left="642.6" Width="85.05" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Giriş Tutarı" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text26" Left="727.65" Width="85.05" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Çıkış Tutarı" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text27" Left="812.7" Width="236.25" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Açıklama" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="64.7" Width="1047.06" Height="18.9" DataSource="dtFaturaListesi">
+      <TextObject Name="Text8" Left="151.2" Width="47.25" Height="18.9" Border.Lines="All" Text="[dtFaturaListesi.Isyeri_Kodu]" Font="Arial, 8pt"/>
+      <TextObject Name="Text16" Left="198.45" Width="56.7" Height="18.9" Border.Lines="All" Text="[dtFaturaListesi.Fis_No]" Font="Arial, 8pt"/>
+      <TextObject Name="Text18" Width="151.2" Height="18.9" Border.Lines="All" Text="[dtFaturaListesi.Fis_Tipi_Aciklama]" Font="Arial, 8pt"/>
+      <TextObject Name="Text20" Left="255.15" Width="66.15" Height="18.9" Border.Lines="All" Text="[dtFaturaListesi.Fis_Tarihi]" Format="Date" Format.Format="d" Font="Arial, 8pt"/>
+      <TextObject Name="Text22" Left="406.35" Width="236.25" Height="18.9" Border.Lines="All" Text="[dtFaturaListesi.Unvani]" Format="Date" Format.Format="d" Font="Arial, 8pt"/>
+      <TextObject Name="Text23" Left="321.3" Width="85.05" Height="18.9" Border.Lines="All" Text="[dtFaturaListesi.Belge_No]" Format="Date" Format.Format="d" Font="Arial, 8pt"/>
+      <TextObject Name="Text28" Left="642.6" Width="85.05" Height="18.9" Border.Lines="All" Text="[dtFaturaListesi.Giris_Tutari]" Format="Number" Format.UseLocale="true" HorzAlign="Right" Font="Arial, 8pt"/>
+      <TextObject Name="Text29" Left="727.65" Width="85.05" Height="18.9" Border.Lines="All" Text="[dtFaturaListesi.Cikis_Tutari]" Format="Number" Format.UseLocale="true" HorzAlign="Right" Font="Arial, 8pt"/>
+      <TextObject Name="Text30" Left="812.7" Width="236.25" Height="18.9" Border.Lines="All" Text="[dtFaturaListesi.Aciklama]" Format="Date" Format.Format="d" Font="Arial, 8pt"/>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="87.6" Width="1047.06" Height="18.9">
+      <TextObject Name="Text14" Width="236.25" Height="18.9" Text="Fatura Sayısı: [FaturaSayisi]" Font="Arial, 10pt, style=Bold"/>
+    </ReportSummaryBand>
+  </ReportPage>
+</Report>
