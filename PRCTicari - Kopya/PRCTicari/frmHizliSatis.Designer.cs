@@ -843,7 +843,6 @@
             this.btnStok40.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok40.Name = "btnStok40";
             this.btnStok40.Size = new System.Drawing.Size(98, 57);
-            this.btnStok40.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok40.TabIndex = 45;
             this.btnStok40.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok40.UseVisualStyleBackColor = true;
@@ -876,7 +875,6 @@
             this.btnStok39.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok39.Name = "btnStok39";
             this.btnStok39.Size = new System.Drawing.Size(96, 57);
-            this.btnStok39.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok39.TabIndex = 44;
             this.btnStok39.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok39.UseVisualStyleBackColor = true;
@@ -909,7 +907,6 @@
             this.btnStok38.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok38.Name = "btnStok38";
             this.btnStok38.Size = new System.Drawing.Size(96, 57);
-            this.btnStok38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok38.TabIndex = 43;
             this.btnStok38.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok38.UseVisualStyleBackColor = true;
@@ -942,7 +939,6 @@
             this.btnStok37.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok37.Name = "btnStok37";
             this.btnStok37.Size = new System.Drawing.Size(96, 57);
-            this.btnStok37.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok37.TabIndex = 36;
             this.btnStok37.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok37.UseVisualStyleBackColor = true;
@@ -975,7 +971,6 @@
             this.btnStok36.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok36.Name = "btnStok36";
             this.btnStok36.Size = new System.Drawing.Size(96, 57);
-            this.btnStok36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok36.TabIndex = 35;
             this.btnStok36.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok36.UseVisualStyleBackColor = true;
@@ -1008,7 +1003,6 @@
             this.btnStok35.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok35.Name = "btnStok35";
             this.btnStok35.Size = new System.Drawing.Size(98, 57);
-            this.btnStok35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok35.TabIndex = 34;
             this.btnStok35.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok35.UseVisualStyleBackColor = true;
@@ -1041,7 +1035,6 @@
             this.btnStok34.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok34.Name = "btnStok34";
             this.btnStok34.Size = new System.Drawing.Size(96, 57);
-            this.btnStok34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok34.TabIndex = 39;
             this.btnStok34.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok34.UseVisualStyleBackColor = true;
@@ -1074,7 +1067,6 @@
             this.btnStok33.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok33.Name = "btnStok33";
             this.btnStok33.Size = new System.Drawing.Size(96, 57);
-            this.btnStok33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok33.TabIndex = 38;
             this.btnStok33.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok33.UseVisualStyleBackColor = true;
@@ -1107,7 +1099,6 @@
             this.btnStok32.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok32.Name = "btnStok32";
             this.btnStok32.Size = new System.Drawing.Size(96, 57);
-            this.btnStok32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok32.TabIndex = 37;
             this.btnStok32.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok32.UseVisualStyleBackColor = true;
@@ -1140,7 +1131,6 @@
             this.btnStok31.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok31.Name = "btnStok31";
             this.btnStok31.Size = new System.Drawing.Size(96, 57);
-            this.btnStok31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok31.TabIndex = 30;
             this.btnStok31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok31.UseVisualStyleBackColor = true;
@@ -1173,7 +1163,6 @@
             this.btnStok30.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok30.Name = "btnStok30";
             this.btnStok30.Size = new System.Drawing.Size(98, 57);
-            this.btnStok30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok30.TabIndex = 29;
             this.btnStok30.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok30.UseVisualStyleBackColor = true;
@@ -1206,7 +1195,6 @@
             this.btnStok29.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok29.Name = "btnStok29";
             this.btnStok29.Size = new System.Drawing.Size(96, 57);
-            this.btnStok29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok29.TabIndex = 28;
             this.btnStok29.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok29.UseVisualStyleBackColor = true;
@@ -1239,7 +1227,6 @@
             this.btnStok28.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok28.Name = "btnStok28";
             this.btnStok28.Size = new System.Drawing.Size(96, 57);
-            this.btnStok28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok28.TabIndex = 33;
             this.btnStok28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok28.UseVisualStyleBackColor = true;
@@ -1272,7 +1259,6 @@
             this.btnStok27.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok27.Name = "btnStok27";
             this.btnStok27.Size = new System.Drawing.Size(96, 57);
-            this.btnStok27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok27.TabIndex = 32;
             this.btnStok27.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok27.UseVisualStyleBackColor = true;
@@ -1305,7 +1291,6 @@
             this.btnStok26.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok26.Name = "btnStok26";
             this.btnStok26.Size = new System.Drawing.Size(96, 57);
-            this.btnStok26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok26.TabIndex = 31;
             this.btnStok26.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok26.UseVisualStyleBackColor = true;
@@ -1338,7 +1323,6 @@
             this.btnStok25.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok25.Name = "btnStok25";
             this.btnStok25.Size = new System.Drawing.Size(98, 57);
-            this.btnStok25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok25.TabIndex = 27;
             this.btnStok25.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok25.UseVisualStyleBackColor = true;
@@ -1371,7 +1355,6 @@
             this.btnStok24.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok24.Name = "btnStok24";
             this.btnStok24.Size = new System.Drawing.Size(96, 57);
-            this.btnStok24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok24.TabIndex = 23;
             this.btnStok24.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok24.UseVisualStyleBackColor = true;
@@ -1404,7 +1387,6 @@
             this.btnStok23.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok23.Name = "btnStok23";
             this.btnStok23.Size = new System.Drawing.Size(96, 57);
-            this.btnStok23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok23.TabIndex = 22;
             this.btnStok23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok23.UseVisualStyleBackColor = true;
@@ -1437,7 +1419,6 @@
             this.btnStok22.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok22.Name = "btnStok22";
             this.btnStok22.Size = new System.Drawing.Size(96, 57);
-            this.btnStok22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok22.TabIndex = 24;
             this.btnStok22.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok22.UseVisualStyleBackColor = true;
@@ -1470,7 +1451,6 @@
             this.btnStok21.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok21.Name = "btnStok21";
             this.btnStok21.Size = new System.Drawing.Size(96, 57);
-            this.btnStok21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok21.TabIndex = 26;
             this.btnStok21.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok21.UseVisualStyleBackColor = true;
@@ -1503,7 +1483,6 @@
             this.btnStok20.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok20.Name = "btnStok20";
             this.btnStok20.Size = new System.Drawing.Size(98, 57);
-            this.btnStok20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok20.TabIndex = 25;
             this.btnStok20.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok20.UseVisualStyleBackColor = true;
@@ -1536,7 +1515,6 @@
             this.btnStok19.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok19.Name = "btnStok19";
             this.btnStok19.Size = new System.Drawing.Size(96, 57);
-            this.btnStok19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok19.TabIndex = 18;
             this.btnStok19.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok19.UseVisualStyleBackColor = true;
@@ -1569,7 +1547,6 @@
             this.btnStok18.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok18.Name = "btnStok18";
             this.btnStok18.Size = new System.Drawing.Size(96, 57);
-            this.btnStok18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok18.TabIndex = 17;
             this.btnStok18.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok18.UseVisualStyleBackColor = true;
@@ -1602,7 +1579,6 @@
             this.btnStok17.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok17.Name = "btnStok17";
             this.btnStok17.Size = new System.Drawing.Size(96, 57);
-            this.btnStok17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok17.TabIndex = 16;
             this.btnStok17.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok17.UseVisualStyleBackColor = true;
@@ -1635,7 +1611,6 @@
             this.btnStok16.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok16.Name = "btnStok16";
             this.btnStok16.Size = new System.Drawing.Size(96, 57);
-            this.btnStok16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok16.TabIndex = 21;
             this.btnStok16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok16.UseVisualStyleBackColor = true;
@@ -1668,7 +1643,6 @@
             this.btnStok15.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok15.Name = "btnStok15";
             this.btnStok15.Size = new System.Drawing.Size(98, 57);
-            this.btnStok15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok15.TabIndex = 20;
             this.btnStok15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok15.UseVisualStyleBackColor = true;
@@ -1701,7 +1675,6 @@
             this.btnStok14.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok14.Name = "btnStok14";
             this.btnStok14.Size = new System.Drawing.Size(96, 57);
-            this.btnStok14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok14.TabIndex = 19;
             this.btnStok14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok14.UseVisualStyleBackColor = true;
@@ -1734,7 +1707,6 @@
             this.btnStok13.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok13.Name = "btnStok13";
             this.btnStok13.Size = new System.Drawing.Size(96, 57);
-            this.btnStok13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok13.TabIndex = 12;
             this.btnStok13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok13.UseVisualStyleBackColor = true;
@@ -1767,7 +1739,6 @@
             this.btnStok12.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok12.Name = "btnStok12";
             this.btnStok12.Size = new System.Drawing.Size(96, 57);
-            this.btnStok12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok12.TabIndex = 11;
             this.btnStok12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok12.UseVisualStyleBackColor = true;
@@ -1800,7 +1771,6 @@
             this.btnStok11.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok11.Name = "btnStok11";
             this.btnStok11.Size = new System.Drawing.Size(96, 57);
-            this.btnStok11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok11.TabIndex = 10;
             this.btnStok11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok11.UseVisualStyleBackColor = true;
@@ -1833,7 +1803,6 @@
             this.btnStok10.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok10.Name = "btnStok10";
             this.btnStok10.Size = new System.Drawing.Size(98, 57);
-            this.btnStok10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok10.TabIndex = 15;
             this.btnStok10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok10.UseVisualStyleBackColor = true;
@@ -1866,7 +1835,6 @@
             this.btnStok9.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok9.Name = "btnStok9";
             this.btnStok9.Size = new System.Drawing.Size(96, 57);
-            this.btnStok9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok9.TabIndex = 14;
             this.btnStok9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok9.UseVisualStyleBackColor = true;
@@ -1899,7 +1867,6 @@
             this.btnStok8.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok8.Name = "btnStok8";
             this.btnStok8.Size = new System.Drawing.Size(96, 57);
-            this.btnStok8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok8.TabIndex = 13;
             this.btnStok8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok8.UseVisualStyleBackColor = true;
@@ -1932,7 +1899,6 @@
             this.btnStok7.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok7.Name = "btnStok7";
             this.btnStok7.Size = new System.Drawing.Size(96, 57);
-            this.btnStok7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok7.TabIndex = 5;
             this.btnStok7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok7.UseVisualStyleBackColor = true;
@@ -1965,7 +1931,6 @@
             this.btnStok6.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok6.Name = "btnStok6";
             this.btnStok6.Size = new System.Drawing.Size(96, 57);
-            this.btnStok6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok6.TabIndex = 4;
             this.btnStok6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok6.UseVisualStyleBackColor = true;
@@ -1998,7 +1963,6 @@
             this.btnStok5.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok5.Name = "btnStok5";
             this.btnStok5.Size = new System.Drawing.Size(98, 57);
-            this.btnStok5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok5.TabIndex = 3;
             this.btnStok5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok5.UseVisualStyleBackColor = true;
@@ -2031,7 +1995,6 @@
             this.btnStok4.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok4.Name = "btnStok4";
             this.btnStok4.Size = new System.Drawing.Size(96, 57);
-            this.btnStok4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok4.TabIndex = 6;
             this.btnStok4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok4.UseVisualStyleBackColor = true;
@@ -2064,7 +2027,6 @@
             this.btnStok3.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok3.Name = "btnStok3";
             this.btnStok3.Size = new System.Drawing.Size(96, 57);
-            this.btnStok3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok3.TabIndex = 9;
             this.btnStok3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok3.UseVisualStyleBackColor = true;
@@ -2097,7 +2059,6 @@
             this.btnStok2.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok2.Name = "btnStok2";
             this.btnStok2.Size = new System.Drawing.Size(96, 57);
-            this.btnStok2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok2.TabIndex = 8;
             this.btnStok2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok2.UseVisualStyleBackColor = true;
@@ -2130,7 +2091,6 @@
             this.btnStok1.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok1.Name = "btnStok1";
             this.btnStok1.Size = new System.Drawing.Size(96, 57);
-            this.btnStok1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnStok1.TabIndex = 7;
             this.btnStok1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok1.UseVisualStyleBackColor = true;
@@ -2300,7 +2260,6 @@
             this.btnCesni9.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni9.Name = "btnCesni9";
             this.btnCesni9.Size = new System.Drawing.Size(99, 57);
-            this.btnCesni9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnCesni9.TabIndex = 20;
             this.btnCesni9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni9.UseVisualStyleBackColor = true;
@@ -2333,7 +2292,6 @@
             this.btnCesni8.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni8.Name = "btnCesni8";
             this.btnCesni8.Size = new System.Drawing.Size(99, 57);
-            this.btnCesni8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnCesni8.TabIndex = 19;
             this.btnCesni8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni8.UseVisualStyleBackColor = true;
@@ -2366,7 +2324,6 @@
             this.btnCesni12.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni12.Name = "btnCesni12";
             this.btnCesni12.Size = new System.Drawing.Size(104, 57);
-            this.btnCesni12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnCesni12.TabIndex = 18;
             this.btnCesni12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni12.UseVisualStyleBackColor = true;
@@ -2399,7 +2356,6 @@
             this.btnCesni11.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni11.Name = "btnCesni11";
             this.btnCesni11.Size = new System.Drawing.Size(99, 57);
-            this.btnCesni11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnCesni11.TabIndex = 17;
             this.btnCesni11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni11.UseVisualStyleBackColor = true;
@@ -2432,7 +2388,6 @@
             this.btnCesni10.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni10.Name = "btnCesni10";
             this.btnCesni10.Size = new System.Drawing.Size(99, 57);
-            this.btnCesni10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnCesni10.TabIndex = 16;
             this.btnCesni10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni10.UseVisualStyleBackColor = true;
@@ -2465,7 +2420,6 @@
             this.btnCesni7.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni7.Name = "btnCesni7";
             this.btnCesni7.Size = new System.Drawing.Size(99, 57);
-            this.btnCesni7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnCesni7.TabIndex = 15;
             this.btnCesni7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni7.UseVisualStyleBackColor = true;
@@ -2498,7 +2452,6 @@
             this.btnCesni2.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni2.Name = "btnCesni2";
             this.btnCesni2.Size = new System.Drawing.Size(99, 57);
-            this.btnCesni2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnCesni2.TabIndex = 14;
             this.btnCesni2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni2.UseVisualStyleBackColor = true;
@@ -2531,7 +2484,6 @@
             this.btnCesni1.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni1.Name = "btnCesni1";
             this.btnCesni1.Size = new System.Drawing.Size(99, 57);
-            this.btnCesni1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnCesni1.TabIndex = 13;
             this.btnCesni1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni1.UseVisualStyleBackColor = true;
@@ -2564,7 +2516,6 @@
             this.btnCesni3.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni3.Name = "btnCesni3";
             this.btnCesni3.Size = new System.Drawing.Size(99, 57);
-            this.btnCesni3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnCesni3.TabIndex = 12;
             this.btnCesni3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni3.UseVisualStyleBackColor = true;
@@ -2597,7 +2548,6 @@
             this.btnCesni5.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni5.Name = "btnCesni5";
             this.btnCesni5.Size = new System.Drawing.Size(99, 57);
-            this.btnCesni5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnCesni5.TabIndex = 11;
             this.btnCesni5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni5.UseVisualStyleBackColor = true;
@@ -2630,7 +2580,6 @@
             this.btnCesni4.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni4.Name = "btnCesni4";
             this.btnCesni4.Size = new System.Drawing.Size(99, 57);
-            this.btnCesni4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnCesni4.TabIndex = 10;
             this.btnCesni4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni4.UseVisualStyleBackColor = true;
@@ -2663,7 +2612,6 @@
             this.btnCesni6.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni6.Name = "btnCesni6";
             this.btnCesni6.Size = new System.Drawing.Size(104, 57);
-            this.btnCesni6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
             this.btnCesni6.TabIndex = 9;
             this.btnCesni6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni6.UseVisualStyleBackColor = true;

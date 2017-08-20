@@ -67,6 +67,42 @@ namespace PRCTicari
                                  1, 0);
         }
 
+        public static object fncSECStokDepartmanKodu()
+        {
+            return prcdXKodCagir("Stok Departman Kodu Seçme Listesi",
+                                 "SELECT Departman_Kodu, Departman_Adi FROM Stok_Departman_Tanitimi WHERE Kurum_Kodu = @Kurum_Kodu",
+                                 new string[] { "@Kurum_Kodu" },
+                                 new object[] { clsGenel.strKurumKodu },
+                                 new string[] { "Departman_Kodu", "Departman_Adi" },
+                                 new string[] { "Departman Kodu", "Departman Adı" },
+                                 new int[] { 110, 250 },
+                                 1, 0);
+        }
+
+        public static object fncSECStokReyonKodu()
+        {
+            return prcdXKodCagir("Stok Reyon Kodu Seçme Listesi",
+                                 "SELECT Reyon_Kodu, Reyon_Adi FROM Stok_Reyon_Tanitimi WHERE Kurum_Kodu = @Kurum_Kodu",
+                                 new string[] { "@Kurum_Kodu" },
+                                 new object[] { clsGenel.strKurumKodu },
+                                 new string[] { "Reyon_Kodu", "Reyon_Adi" },
+                                 new string[] { "Reyon Kodu", "Reyon Adı" },
+                                 new int[] { 100, 250 },
+                                 1, 0);
+        }
+
+        public static object fncSECStokOzelKodlar(int intOzelKodu)
+        {
+            return prcdXKodCagir("Stok Özel Kodu " + intOzelKodu.ToString() + " Seçme Listesi",
+                                 "SELECT DISTINCT Ozel_Kodu_" + intOzelKodu.ToString() + " FROM Stok_Tanitimi WHERE Kurum_Kodu = @Kurum_Kodu AND RTRIM(LTRIM(ISNULL(Ozel_Kodu_" + intOzelKodu.ToString() + ", CAST('' AS VARCHAR)))) <> ''",
+                                 new string[] { "@Kurum_Kodu" },
+                                 new object[] { clsGenel.strKurumKodu },
+                                 new string[] { "Ozel_Kodu_" + intOzelKodu.ToString() },
+                                 new string[] { "Özel Kodu " + intOzelKodu.ToString() },
+                                 new int[] { 250 },
+                                 0, 0);
+        }
+
         public static object fncSECCari()
         {
             return prcdXKodCagir("Cari Seçme Listesi",

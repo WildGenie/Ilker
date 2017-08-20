@@ -227,6 +227,12 @@
     <Compile Include="frmStokBirimKarti.Designer.cs">
       <DependentUpon>frmStokBirimKarti.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStokDepartmanKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStokDepartmanKarti.Designer.cs">
+      <DependentUpon>frmStokDepartmanKarti.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStokGrupKarti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +256,12 @@
     </Compile>
     <Compile Include="frmStokOzelKarti.Designer.cs">
       <DependentUpon>frmStokOzelKarti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStokReyonKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStokReyonKarti.designer.cs">
+      <DependentUpon>frmStokReyonKarti.cs</DependentUpon>
     </Compile>
     <Compile Include="frmXKod.cs">
       <SubType>Form</SubType>
@@ -364,6 +376,9 @@
     <EmbeddedResource Include="frmStokBirimKarti.resx">
       <DependentUpon>frmStokBirimKarti.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmStokDepartmanKarti.resx">
+      <DependentUpon>frmStokDepartmanKarti.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmStokGrupKarti.resx">
       <DependentUpon>frmStokGrupKarti.cs</DependentUpon>
     </EmbeddedResource>
@@ -375,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmStokOzelKarti.resx">
       <DependentUpon>frmStokOzelKarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStokReyonKarti.resx">
+      <DependentUpon>frmStokReyonKarti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmXKod.resx">
       <DependentUpon>frmXKod.cs</DependentUpon>

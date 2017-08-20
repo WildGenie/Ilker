@@ -309,5 +309,24 @@ namespace PRCTicari
                 }
             }
         }
+
+        public static string fncBarkodKontrol(int intStokNo, string strBarkod)
+        {
+            string strReturn = "";
+
+            SqlConnection cnn = new SqlConnection(strConnectionString);
+            cnn.Open();
+            SqlCommand cmd = cnn.CreateCommand();
+            cmd.CommandText = "SELECT Stok_Kodu + ' - ' + Stok_Adi AS Bilgi FROM Stok_Tanitimi WHERE Kurum_Kodu = @Kurum_Kodu AND Stok_No <> @Stok_No AND (BT1_Barkod = @BT1_Barkod OR BT2_Barkod = @BT2_Barkod)";
+            cmd.Parameters.AddWithValue("@Kurum_Kodu", strKurumKodu);
+            cmd.Parameters.AddWithValue("@Stok_No", intStokNo);
+            cmd.Parameters.AddWithValue("@BT1_Barkod", strBarkod);
+            cmd.Parameters.AddWithValue("@BT2_Barkod", strBarkod);
+            strReturn = cmd.ExecuteScalar().TOSTRING();
+            cmd.Dispose();
+            cnn.Close();
+
+            return strReturn;
+        }
     }
 }

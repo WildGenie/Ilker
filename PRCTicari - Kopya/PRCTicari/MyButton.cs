@@ -94,6 +94,7 @@ namespace PRCTicari
             this.Controls.Add(lblRightTop);
             this.Controls.Add(lblRightBottom);
             this.Controls.Add(pbCenter);
+            this.SizeMode = PictureBoxSizeMode.StretchImage;
 
             pbCenter.BackColor = System.Drawing.Color.Transparent;
             lblLeftTop.BackColor = System.Drawing.Color.Transparent;
@@ -123,8 +124,6 @@ namespace PRCTicari
             pbCenter.Height = this.Height - intMargin - intMargin - (lblLeftTop.Height > lblRightTop.Height ? lblLeftTop.Height : lblRightTop.Height) - (lblLeftBottom.Height > lblRightBottom.Height ? lblLeftBottom.Height : lblRightBottom.Height);
             pbCenter.Top = (lblLeftTop.Height > lblRightTop.Height ? lblLeftTop.Height : lblRightTop.Height) + intMargin;
             
-
-
             lblRightTop.TextAlign = System.Drawing.ContentAlignment.TopRight;
             lblRightBottom.TextAlign = System.Drawing.ContentAlignment.TopRight;
 
@@ -133,6 +132,12 @@ namespace PRCTicari
             lblRightTop.Anchor = (AnchorStyles.Right | AnchorStyles.Top);
             lblRightBottom.Anchor = (AnchorStyles.Right | AnchorStyles.Bottom);
             pbCenter.Anchor = (AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom);
+
+            this.Resize += (sender, args) =>
+            {
+                pbCenter.Height = this.Height - intMargin - intMargin - (lblLeftTop.Height > lblRightTop.Height ? lblLeftTop.Height : lblRightTop.Height) - (lblLeftBottom.Height > lblRightBottom.Height ? lblLeftBottom.Height : lblRightBottom.Height);
+                pbCenter.Top = (lblLeftTop.Height > lblRightTop.Height ? lblLeftTop.Height : lblRightTop.Height) + intMargin;
+            };
 
             lblLeftTop.Resize += (sender, args) =>
             {

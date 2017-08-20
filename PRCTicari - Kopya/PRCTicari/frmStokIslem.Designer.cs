@@ -340,7 +340,9 @@
             this.cbFiyatTipi.FormattingEnabled = true;
             this.cbFiyatTipi.Items.AddRange(new object[] {
             "Alış",
-            "Satış"});
+            "Satış 1",
+            "Satış 2",
+            "Satış 3"});
             this.cbFiyatTipi.Location = new System.Drawing.Point(473, 57);
             this.cbFiyatTipi.Name = "cbFiyatTipi";
             this.cbFiyatTipi.Size = new System.Drawing.Size(127, 21);

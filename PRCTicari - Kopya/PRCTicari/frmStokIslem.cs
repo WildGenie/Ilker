@@ -564,9 +564,9 @@ namespace PRCTicari
                     else
                     {
                         if (cbKdvTipi1.SelectedIndex == 0)
-                            dgvKalemler.CurrentRow.Cells["colFiyati"].Value = reader[strBTNo + "_Satis_Fiyati"].TODOUBLE();
+                            dgvKalemler.CurrentRow.Cells["colFiyati"].Value = reader[strBTNo + "_Satis_Fiyati_" + cbKdvTipi1.SelectedIndex.TOSTRING()].TODOUBLE();
                         else
-                            dgvKalemler.CurrentRow.Cells["colFiyati"].Value = reader[strBTNo + "_Satis_Fiyati"].TODOUBLE() / (1 + (dgvKalemler.CurrentRow.Cells["colKdv"].Value.TODOUBLE() / 100));
+                            dgvKalemler.CurrentRow.Cells["colFiyati"].Value = reader[strBTNo + "_Satis_Fiyati_" + cbKdvTipi1.SelectedIndex.TOSTRING()].TODOUBLE() / (1 + (dgvKalemler.CurrentRow.Cells["colKdv"].Value.TODOUBLE() / 100));
                     }
                 }
 

@@ -231,12 +231,12 @@ namespace PRCTicari
                     if (reader["BT1_Hizli_Satis"].TOINT() == 1)
                     {
                         btnStok.Value2 = reader["BT1_Barkod"].TOSTRING();
-                        btnStok.Value3 = reader["BT1_Satis_Fiyati"].TODOUBLE();
+                        btnStok.Value3 = reader["BT1_Satis_Fiyati_" + clsGenel.fncGetParameter("Hizli_Satis_Fiyat_Tipi", "1")].TODOUBLE();
                     }
                     else if (reader["BT2_Hizli_Satis"].TOINT() == 1)
                     {
                         btnStok.Value2 = reader["BT2_Barkod"].TOSTRING();
-                        btnStok.Value3 = reader["BT2_Satis_Fiyati"].TODOUBLE();
+                        btnStok.Value3 = reader["BT2_Satis_Fiyati_" + clsGenel.fncGetParameter("Hizli_Satis_Fiyat_Tipi", "1")].TODOUBLE();
                     }
 
                     btnStok.LabelLeftBottomText = btnStok.Value1.TODOUBLE().ToString(clsGenel.strDoubleFormatTwo);
@@ -294,12 +294,12 @@ namespace PRCTicari
                     if (reader["BT1_Hizli_Satis"].TOINT() == 1)
                     {
                         btnCesni.Value2 = reader["BT1_Barkod"].TOSTRING();
-                        btnCesni.Value3 = reader["BT1_Satis_Fiyati"].TODOUBLE();
+                        btnCesni.Value3 = reader["BT1_Satis_Fiyati_" + clsGenel.fncGetParameter("Hizli_Satis_Fiyat_Tipi", "1")].TODOUBLE();
                     }
                     else if (reader["BT2_Hizli_Satis"].TOINT() == 1)
                     {
                         btnCesni.Value2 = reader["BT2_Barkod"].TOSTRING();
-                        btnCesni.Value3 = reader["BT2_Satis_Fiyati"].TODOUBLE();
+                        btnCesni.Value3 = reader["BT2_Satis_Fiyati_" + clsGenel.fncGetParameter("Hizli_Satis_Fiyat_Tipi", "1")].TODOUBLE();
                     }
 
                     btnCesni.LabelLeftBottomText = btnCesni.Value1.TODOUBLE().ToString(clsGenel.strDoubleFormatTwo);
@@ -519,13 +519,13 @@ namespace PRCTicari
                     if (reader["BT1_Barkod"].TOSTRING() == strBarkod)
                     {
                         intAgirlikBirimi = reader["BT1_Agirlik_Birimi"].TOINT();
-                        dblFiyati = reader["BT1_Satis_Fiyati"].TODOUBLE();
+                        dblFiyati = reader["BT1_Satis_Fiyati_" + clsGenel.fncGetParameter("Hizli_Satis_Fiyat_Tipi", "1")].TODOUBLE();
                         strBirimKodu = reader["Birim_Kodu_1"].TOSTRING();
                     }
                     else
                     {
                         intAgirlikBirimi = reader["BT2_Agirlik_Birimi"].TOINT();
-                        dblFiyati = reader["BT2_Satis_Fiyati"].TODOUBLE();
+                        dblFiyati = reader["BT2_Satis_Fiyati_" + clsGenel.fncGetParameter("Hizli_Satis_Fiyat_Tipi", "1")].TODOUBLE();
                         strBirimKodu = reader["Birim_Kodu_2"].TOSTRING();
                     }
 

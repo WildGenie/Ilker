@@ -93,6 +93,10 @@ namespace PRCTicari
                 frmForm = new frmStokOzelKarti();
             else if (strTag == tsmiBirimTanitimi.Tag.TOSTRING())
                 frmForm = new frmStokBirimKarti();
+            else if (strTag == tsmiDepartmanTanitimi.Tag.TOSTRING())
+                frmForm = new frmStokDepartmanKarti();
+            else if (strTag == tsmiReyonTanitimi.Tag.TOSTRING())
+                frmForm = new frmStokReyonKarti();
             else if (strTag == tsmiStokZayiIslemi.Tag.TOSTRING())
                 frmForm = new frmStokIslem(clsFisTipleri.FisTipleri.StokZayi);
             else if (strTag == tsmiStokIkramIslemi.Tag.TOSTRING())
