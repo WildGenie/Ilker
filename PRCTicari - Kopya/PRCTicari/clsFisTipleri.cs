@@ -39,7 +39,8 @@ namespace PRCTicari
             FaturaSatis = 412,
             FaturaAlisIade = 413,
             FaturaSatisIade = 414,
-            HizliSatis = 500
+            MasrafGiris = 501,
+            HizliSatis = 600
         }
 
         public static IslemYonu fncIslemYonu(FisTipleri ftFisTipi)
@@ -64,6 +65,7 @@ namespace PRCTicari
                 case FisTipleri.IrsaliyeSatisIade:
                 case FisTipleri.FaturaAlis:
                 case FisTipleri.FaturaSatisIade:
+                case FisTipleri.MasrafGiris:
                     iyReturn = IslemYonu.Giris;
                     break;
                 case FisTipleri.StokTransfer:
@@ -147,6 +149,9 @@ namespace PRCTicari
                 case FisTipleri.FaturaSatisIade:
                     strReturn = "Satış İade Faturası";
                     break;
+                case FisTipleri.MasrafGiris:
+                    strReturn = "Masraf Giriş İşlemi";
+                    break;
                 case FisTipleri.HizliSatis:
                     strReturn = "Hızlı Satış İşlemi";
                     break;
@@ -181,6 +186,7 @@ namespace PRCTicari
                                "WHEN " + ((int)FisTipleri.FaturaSatis).TOSTRING() + " THEN 'Satış Faturası' " +
                                "WHEN " + ((int)FisTipleri.FaturaAlisIade).TOSTRING() + " THEN 'Alış İade Faturası' " +
                                "WHEN " + ((int)FisTipleri.FaturaSatisIade).TOSTRING() + " THEN 'Satış İade Faturası' " +
+                               "WHEN " + ((int)FisTipleri.MasrafGiris).TOSTRING() + " THEN 'Masraf Giriş İşlemi' " +
                                "WHEN " + ((int)FisTipleri.HizliSatis).TOSTRING() + " THEN 'Hızlı Satış' " +
                                "ELSE '' END) AS VARCHAR(255))";
             return strReturn;

@@ -309,9 +309,14 @@ namespace PRCTicari
             }
 
             dgvTedarikciler.CommitEdit(DataGridViewDataErrorContexts.Commit);
-            dgvTedarikciler.CurrentCell = dgvTedarikciler.Rows[dgvTedarikciler.NewRowIndex].Cells[colTedarikciKodu.Name];
+            if (dgvTedarikciler.Rows.Count > 0)
+                dgvTedarikciler.CurrentCell = dgvTedarikciler.Rows[0].Cells[colTedarikciKodu.Name];
+            dtTedarikciler.AcceptChanges();
+
             dgvBagliStoklar.CommitEdit(DataGridViewDataErrorContexts.Commit);
-            dgvBagliStoklar.CurrentCell = dgvBagliStoklar.Rows[dgvBagliStoklar.NewRowIndex].Cells[colStokKodu.Name];
+            if (dgvBagliStoklar.Rows.Count > 0)
+                dgvBagliStoklar.CurrentCell = dgvBagliStoklar.Rows[0].Cells[colStokKodu.Name];
+            dtBagliStoklar.AcceptChanges();
 
             SqlConnection cnn = new SqlConnection(clsGenel.strConnectionString);
             cnn.Open();

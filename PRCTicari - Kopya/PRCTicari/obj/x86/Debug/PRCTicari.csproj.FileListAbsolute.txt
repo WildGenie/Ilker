@@ -168,5 +168,8 @@ F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.exe
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.pdb
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmStokDepartmanKarti.resources
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmStokReyonKarti.resources
-F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.csprojResolveAssemblyReference.cache
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.csproj.CoreCompileInputs.cache
+F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmMasaSatis.resources
+F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmMasrafIslem.resources
+F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.csprojResolveAssemblyReference.cache
+F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmPersonelKarti.resources

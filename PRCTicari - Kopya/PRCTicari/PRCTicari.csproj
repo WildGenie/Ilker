@@ -185,6 +185,18 @@
     <Compile Include="frmKdvKarti.designer.cs">
       <DependentUpon>frmKdvKarti.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMasaSatis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMasaSatis.Designer.cs">
+      <DependentUpon>frmMasaSatis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMasrafIslem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMasrafIslem.designer.cs">
+      <DependentUpon>frmMasrafIslem.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMasrafKarti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +226,12 @@
     </Compile>
     <Compile Include="frmParaBirimiKarti.Designer.cs">
       <DependentUpon>frmParaBirimiKarti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPersonelKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPersonelKarti.designer.cs">
+      <DependentUpon>frmPersonelKarti.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSecIrsaliye.cs">
       <SubType>Form</SubType>
@@ -355,6 +373,12 @@
     <EmbeddedResource Include="frmKdvKarti.resx">
       <DependentUpon>frmKdvKarti.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMasaSatis.resx">
+      <DependentUpon>frmMasaSatis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMasrafIslem.resx">
+      <DependentUpon>frmMasrafIslem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMasrafKarti.resx">
       <DependentUpon>frmMasrafKarti.cs</DependentUpon>
     </EmbeddedResource>
@@ -369,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmParaBirimiKarti.resx">
       <DependentUpon>frmParaBirimiKarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPersonelKarti.resx">
+      <DependentUpon>frmPersonelKarti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSecIrsaliye.resx">
       <DependentUpon>frmSecIrsaliye.cs</DependentUpon>

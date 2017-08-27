@@ -195,8 +195,101 @@ namespace PRCTicari
             {
                 InvokeOnClick(this, args);
             };
+
+
+
+            lblLeftTop.MouseDown += (sender, args) =>
+            {
+                OnMouseDown(args);
+            };
+
+            lblLeftBottom.MouseDown += (sender, args) =>
+            {
+                OnMouseDown(args);
+            };
+
+            lblRightTop.MouseDown += (sender, args) =>
+            {
+                OnMouseDown(args);
+            };
+
+            lblRightBottom.MouseDown += (sender, args) =>
+            {
+                OnMouseDown(args);
+            };
+
+            pbCenter.MouseDown += (sender, args) =>
+            {
+                OnMouseDown(args);
+            };
+
+
+            lblLeftTop.MouseUp += (sender, args) =>
+            {
+                OnMouseUp(args);
+            };
+
+            lblLeftBottom.MouseUp += (sender, args) =>
+            {
+                OnMouseUp(args);
+            };
+
+            lblRightTop.MouseUp += (sender, args) =>
+            {
+                OnMouseUp(args);
+            };
+
+            lblRightBottom.MouseUp += (sender, args) =>
+            {
+                OnMouseUp(args);
+            };
+
+            pbCenter.MouseUp += (sender, args) =>
+            {
+                OnMouseUp(args);
+            };
+
+
+            lblLeftTop.MouseMove += (sender, args) =>
+            {
+                OnMouseMove(args);
+            };
+
+            lblLeftBottom.MouseMove += (sender, args) =>
+            {
+                OnMouseMove(args);
+            };
+
+            lblRightTop.MouseMove += (sender, args) =>
+            {
+                OnMouseMove(args);
+            };
+
+            lblRightBottom.MouseMove += (sender, args) =>
+            {
+                OnMouseMove(args);
+            };
+
+            pbCenter.MouseMove += (sender, args) =>
+            {
+                OnMouseMove(args);
+            };
         }
 
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+            base.OnMouseDown(e);
+        }
+        
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            base.OnMouseUp(e);
+        }
+
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            base.OnMouseMove(e);
+        }
 
     }
 }

@@ -43,7 +43,9 @@ namespace PRCTicari
         private void tsbKaydet_Click(object sender, EventArgs e)
         {
             dgvKdvler.CommitEdit(DataGridViewDataErrorContexts.Commit);
-            dgvKdvler.CurrentCell = dgvKdvler.Rows[dgvKdvler.NewRowIndex].Cells[colKdvOrani.Name];
+            if (dgvKdvler.Rows.Count > 0)
+                dgvKdvler.CurrentCell = dgvKdvler.Rows[0].Cells[colKdvOrani.Name];
+            dtKdvler.AcceptChanges();
 
             SqlConnection cnn = new SqlConnection(clsGenel.strConnectionString);
             cnn.Open();

@@ -201,6 +201,11 @@ namespace PRCTicari
 
         private void tsbKaydet_Click(object sender, EventArgs e)
         {
+            dgvYasakUrunler.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            if (dgvYasakUrunler.Rows.Count > 0)
+                dgvYasakUrunler.CurrentCell = dgvYasakUrunler.Rows[0].Cells[colAdi.Name];
+            dtYasakliUrunler.AcceptChanges();
+
             SqlConnection cnn = new SqlConnection(clsGenel.strConnectionString);
             cnn.Open();
             SqlCommand cmd = cnn.CreateCommand();
@@ -279,9 +284,7 @@ namespace PRCTicari
             cmd.Parameters.AddWithValue("@Cari_No", lblMusteriNo.Text.Trim());
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
-
-            dgvYasakUrunler.CommitEdit(DataGridViewDataErrorContexts.Commit);
-            dgvYasakUrunler.CurrentCell = dgvYasakUrunler.Rows[dgvYasakUrunler.NewRowIndex].Cells[colKodu.Name];
+            
             cmd.CommandText = "INSERT INTO Cari_Yasakli_Urunler (Kurum_Kodu, Cari_No, Sira_No, Tip, Kodu) VALUES (@Kurum_Kodu, @Cari_No, @Sira_No, @Tip, @Kodu)";
             for (int i = 0; i < dtYasakliUrunler.Rows.Count; i++)
             {

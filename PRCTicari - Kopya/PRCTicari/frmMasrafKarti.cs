@@ -42,7 +42,9 @@ namespace PRCTicari
         {
             lblMasrafNo.Text = "0";
             txtMasrafAdi.Clear();
+            rbSabit.Checked = true;
             cbIslem.Checked = false;
+            cbKdvOrani.SelectedItemByCode();
             blnYeniKayit = true;
         }
 
@@ -89,6 +91,9 @@ namespace PRCTicari
                         lblMasrafNo.Text = reader["Masraf_No"].TOSTRING();
                         txtMasrafAdi.Text = reader["Masraf_Adi"].TOSTRING();
                         cbIslem.Checked = reader["Islem"].TOINT() == 1;
+                        rbSabit.Checked = reader["Masraf_Tipi"].TOINT() == 0;
+                        rbDegisken.Checked = reader["Masraf_Tipi"].TOINT() == 1;
+                        cbKdvOrani.SelectedItemByCode(reader["Kdv_Orani"].TOSTRING());
                         blnYeniKayit = false;
                     }
                     reader.Close();
@@ -111,16 +116,18 @@ namespace PRCTicari
             if (blnYeniKayit)
             {
                 lblMasrafNo.Text = fncYeniMasrafNoGetir().TOSTRING();
-                cmd.CommandText = "INSERT INTO Masraf_Tanitimi (Masraf_No, Masraf_Adi, Islem, Insert_User, Insert_Date, Kurum_Kodu, Masraf_Kodu) " +
-                                  "VALUES (@Masraf_No, @Masraf_Adi, @Islem, @Kullanici, @Zaman, @Kurum_Kodu, @Masraf_Kodu)";
+                cmd.CommandText = "INSERT INTO Masraf_Tanitimi (Masraf_No, Masraf_Adi, Islem, Masraf_Tipi, Kdv_Orani, Insert_User, Insert_Date, Kurum_Kodu, Masraf_Kodu) " +
+                                  "VALUES (@Masraf_No, @Masraf_Adi, @Islem, @Masraf_Tipi, @Kdv_Orani, @Kullanici, @Zaman, @Kurum_Kodu, @Masraf_Kodu)";
             }
             else
-                cmd.CommandText = "UPDATE Masraf_Tanitimi SET Masraf_No = @Masraf_No, Masraf_Adi = @Masraf_Adi, Islem = @Islem, Update_User = @Kullanici, Update_Date = @Zaman " +
+                cmd.CommandText = "UPDATE Masraf_Tanitimi SET Masraf_No = @Masraf_No, Masraf_Adi = @Masraf_Adi, Islem = @Islem, Masraf_Tipi = @Masraf_Tipi, Kdv_Orani = @Kdv_Orani, Update_User = @Kullanici, Update_Date = @Zaman " +
                                   "WHERE Silindi = 0 AND Kurum_Kodu = @Kurum_Kodu AND Masraf_Kodu = @Masraf_Kodu";
             
             cmd.Parameters.AddWithValue("@Masraf_No", lblMasrafNo.Text.Trim());
             cmd.Parameters.AddWithValue("@Masraf_Adi", txtMasrafAdi.Text.Trim());
             cmd.Parameters.AddWithValue("@Islem", (cbIslem.Checked ? 1 : 0));
+            cmd.Parameters.AddWithValue("@Masraf_Tipi", (rbSabit.Checked ? 0 : 1));
+            cmd.Parameters.AddWithValue("@Kdv_Orani", cbKdvOrani.SelectedItemForCode().TODOUBLE(0));
             cmd.Parameters.AddWithValue("@Kullanici", clsGenel.strKullaniciKodu);
             cmd.Parameters.AddWithValue("@Zaman", DateTime.Now);
             cmd.Parameters.AddWithValue("@Kurum_Kodu", clsGenel.strKurumKodu);

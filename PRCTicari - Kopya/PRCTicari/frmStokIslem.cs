@@ -279,11 +279,6 @@ namespace PRCTicari
                     intCariNo = reader["Cari_No"].TOINT();
                     lblUnvani.Text = reader["Unvani"].TOSTRING();
                 }
-                else
-                {
-                    intCariNo = 0;
-                    lblUnvani.Text = "";
-                }
                 reader.Close();
                 cmd.Dispose();
                 cnn.Close();
@@ -319,6 +314,7 @@ namespace PRCTicari
                             prcdCariBilgiGetir();
                             cbBelgeTipi.SelectedItemByCode(reader["Belge_Tipi"].TOSTRING());
                             txtBelgeNo.Text = reader["Belge_No"].TOSTRING();
+                            txtKasaKodu.Text = reader["Kasa_Kodu"].TOSTRING();
                             dtpBelgeTarihi.Value = reader["Belge_Tarihi"].TODATE();
                             cbParaBirimi.SelectedItemByCode(reader["Para_Birimi"].TOSTRING());
                             cbFiyatTipi.SelectedIndex = reader["Fiyat_Tipi"].TOINT();
@@ -745,7 +741,9 @@ namespace PRCTicari
             bool blnReturn = false;
 
             dgvKalemler.CommitEdit(DataGridViewDataErrorContexts.Commit);
-            dgvKalemler.CurrentCell = dgvKalemler.Rows[dgvKalemler.NewRowIndex].Cells[colStokKodu.Name];
+            if (dgvKalemler.Rows.Count > 0)
+                dgvKalemler.CurrentCell = dgvKalemler.Rows[0].Cells[colStokKodu.Name];
+            dtKalemler.AcceptChanges();
 
             if (!dgvKalemler.ReadOnly && !string.IsNullOrEmpty(txtFaturaIrsaliyeNo.Text.Trim()))
             {
@@ -768,12 +766,12 @@ namespace PRCTicari
                 if (blnYeniKayit)
                 {
                     cbIsyeriKodu_SelectedIndexChanged(cbIsyeriKodu, new EventArgs());
-                    cmd.CommandText = "INSERT INTO Islem_Baslik (Depo_Kodu_1, Depo_Kodu_2, Fis_Tarihi, Fis_Saati, Cari_No, Belge_Tipi, Belge_No, Belge_Tarihi, Para_Birimi, Fiyat_Tipi, Kdv_Tipi_1, Kdv_Tipi_2, Aciklama, Insert_User, Inser_Date, Silindi, Kurum_Kodu, Fis_Tipi, Isyeri_Kodu, Fis_No) " +
-                                      "VALUES (@Depo_Kodu_1, @Depo_Kodu_2, @Fis_Tarihi, @Fis_Saati, @Cari_No, @Belge_Tipi, @Belge_No, @Belge_Tarihi, @Para_Birimi, @Fiyat_Tipi, @Kdv_Tipi_1, @Kdv_Tipi_2, @Aciklama, @Kullanici, @Zaman, @Silindi, @Kurum_Kodu, @Fis_Tipi, @Isyeri_Kodu, @Fis_No)";
+                    cmd.CommandText = "INSERT INTO Islem_Baslik (Depo_Kodu_1, Depo_Kodu_2, Fis_Tarihi, Fis_Saati, Cari_No, Kasa_Kodu, Belge_Tipi, Belge_No, Belge_Tarihi, Para_Birimi, Fiyat_Tipi, Kdv_Tipi_1, Kdv_Tipi_2, Aciklama, Insert_User, Inser_Date, Silindi, Kurum_Kodu, Fis_Tipi, Isyeri_Kodu, Fis_No) " +
+                                      "VALUES (@Depo_Kodu_1, @Depo_Kodu_2, @Fis_Tarihi, @Fis_Saati, @Cari_No, @Kasa_Kodu, @Belge_Tipi, @Belge_No, @Belge_Tarihi, @Para_Birimi, @Fiyat_Tipi, @Kdv_Tipi_1, @Kdv_Tipi_2, @Aciklama, @Kullanici, @Zaman, @Silindi, @Kurum_Kodu, @Fis_Tipi, @Isyeri_Kodu, @Fis_No)";
                 }
                 else
                 {
-                    cmd.CommandText = "UPDATE Islem_Baslik SET Depo_Kodu_1 = @Depo_Kodu_1, Depo_Kodu_2 = @Depo_Kodu_2, Fis_Tarihi = @Fis_Tarihi, Fis_Saati = @Fis_Saati, Cari_No = @Cari_No, Belge_Tipi = @Belge_Tipi, Belge_No = @Belge_No, Belge_Tarihi = @Belge_Tarihi, Para_Birimi = @Para_Birimi, Fiyat_Tipi = @Fiyat_Tipi, Kdv_Tipi_1 = @Kdv_Tipi_1, Kdv_Tipi_2 = @Kdv_Tipi_2, Aciklama = @Aciklama, Update_User = @Kullanici, Update_Date = @Zaman " +
+                    cmd.CommandText = "UPDATE Islem_Baslik SET Depo_Kodu_1 = @Depo_Kodu_1, Depo_Kodu_2 = @Depo_Kodu_2, Fis_Tarihi = @Fis_Tarihi, Fis_Saati = @Fis_Saati, Cari_No = @Cari_No, Kasa_Kodu = @Kasa_Kodu, Belge_Tipi = @Belge_Tipi, Belge_No = @Belge_No, Belge_Tarihi = @Belge_Tarihi, Para_Birimi = @Para_Birimi, Fiyat_Tipi = @Fiyat_Tipi, Kdv_Tipi_1 = @Kdv_Tipi_1, Kdv_Tipi_2 = @Kdv_Tipi_2, Aciklama = @Aciklama, Update_User = @Kullanici, Update_Date = @Zaman " +
                                       "WHERE Silindi = @Silindi AND Kurum_Kodu = @Kurum_Kodu AND Fis_Tipi = @Fis_Tipi AND Isyeri_Kodu = @Isyeri_Kodu AND Fis_No = @Fis_No";
                 }
                 cmd.Parameters.AddWithValue("@Depo_Kodu_1", cbDepoKodu1.SelectedItemForCode());
@@ -781,6 +779,7 @@ namespace PRCTicari
                 cmd.Parameters.AddWithValue("@Fis_Tarihi", dtpFisTarihi.Value.TODATE());
                 cmd.Parameters.AddWithValue("@Fis_Saati", dtpFisSaati.Value.TOTIME());
                 cmd.Parameters.AddWithValue("@Cari_No", intCariNo);
+                cmd.Parameters.AddWithValue("@Kasa_Kodu", txtKasaKodu.Text.Trim());
                 cmd.Parameters.AddWithValue("@Belge_Tipi", cbBelgeTipi.SelectedItemForCode());
                 cmd.Parameters.AddWithValue("@Belge_No", txtBelgeNo.Text.Trim());
                 cmd.Parameters.AddWithValue("@Belge_Tarihi", dtpBelgeTarihi.Value.TODATE());
@@ -897,7 +896,7 @@ namespace PRCTicari
 
                     cmd.CommandText = "INSERT INTO Islem_Detay_Kasa (Kasa_Kodu, Fis_Tarihi, Fis_Saati, Borc_Tutari, Borc_Tutari_Baslik, Borc_Tutari_Kart, Borc_Tutari_Sistem, Alacak_Tutari, Alacak_Tutari_Baslik, Alacak_Tutari_Kart, Alacak_Tutari_Sistem, Aciklama, Silindi, Kurum_Kodu, Fis_Tipi, Isyeri_Kodu, Fis_No, Fis_Sira, Islem_Yonu) " +
                                       "VALUES (@Kasa_Kodu, @Fis_Tarihi, @Fis_Saati, @Borc_Tutari, @Borc_Tutari_Baslik, @Borc_Tutari_Kart, @Borc_Tutari_Sistem, @Alacak_Tutari, @Alacak_Tutari_Baslik, @Alacak_Tutari_Kart, @Alacak_Tutari_Sistem, @Aciklama, @Silindi, @Kurum_Kodu, @Fis_Tipi, @Isyeri_Kodu, @Fis_No, @Fis_Sira, @Islem_Yonu)";
-                    cmd.Parameters.AddWithValue("@Kasa_Kodu", intCariNo);
+                    cmd.Parameters.AddWithValue("@Kasa_Kodu", txtKasaKodu.Text.Trim());
                     cmd.Parameters.AddWithValue("@Fis_Tarihi", dtpFisTarihi.Value.TODATE());
                     cmd.Parameters.AddWithValue("@Fis_Saati", dtpFisSaati.Value.TOTIME());
                     cmd.Parameters.AddWithValue("@Borc_Tutari", dblBorcTutariKasa);

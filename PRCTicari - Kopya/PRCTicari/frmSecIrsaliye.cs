@@ -98,6 +98,7 @@ namespace PRCTicari
         private void tsbTamam_Click(object sender, EventArgs e)
         {
             dgvIrsaliyeler.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            dtIrsaliyeler.AcceptChanges();
 
             foreach (DataRow DR in dtIrsaliyeler.Rows)
             {

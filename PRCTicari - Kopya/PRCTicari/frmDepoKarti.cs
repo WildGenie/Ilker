@@ -43,7 +43,9 @@ namespace PRCTicari
         private void tsbKaydet_Click(object sender, EventArgs e)
         {
             dgvDepolar.CommitEdit(DataGridViewDataErrorContexts.Commit);
-            dgvDepolar.CurrentCell = dgvDepolar.Rows[dgvDepolar.NewRowIndex].Cells[colDepoKodu.Name];
+            if (dgvDepolar.Rows.Count > 0)
+                dgvDepolar.CurrentCell = dgvDepolar.Rows[0].Cells[colDepoKodu.Name];
+            dtDepolar.AcceptChanges();
 
             SqlConnection cnn = new SqlConnection(clsGenel.strConnectionString);
             cnn.Open();

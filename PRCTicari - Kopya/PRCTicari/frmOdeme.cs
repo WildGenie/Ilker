@@ -143,6 +143,8 @@ namespace PRCTicari
                 if (string.IsNullOrEmpty(dgvStoklar.CurrentRow.Cells[colOdemeAnahtar.Name].Value.TOSTRING().Trim()))
                 {
                     dgvStoklar.CommitEdit(DataGridViewDataErrorContexts.Commit);
+                    dtOdemeStoklar.AcceptChanges();
+
                     if (dblYuvarlamaOrani != 0)
                     {
                         if (MessageBox.Show("Tutar değişeceği için yuvarlama işlemi iptal olacak. Devam etmek istediğinize emin misiniz?", "Yuvarlama", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)

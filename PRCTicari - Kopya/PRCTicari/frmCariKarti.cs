@@ -188,7 +188,9 @@ namespace PRCTicari
         private void tsbKaydet_Click(object sender, EventArgs e)
         {
             dgvYetkililer.CommitEdit(DataGridViewDataErrorContexts.Commit);
-            dgvYetkililer.CurrentCell = dgvYetkililer.Rows[dgvYetkililer.NewRowIndex].Cells[colAdi.Name];
+            if (dgvYetkililer.Rows.Count > 0)
+                dgvYetkililer.CurrentCell = dgvYetkililer.Rows[0].Cells[colAdi.Name];
+            dtYetkililer.AcceptChanges();
 
             SqlConnection cnn = new SqlConnection(clsGenel.strConnectionString);
             cnn.Open();

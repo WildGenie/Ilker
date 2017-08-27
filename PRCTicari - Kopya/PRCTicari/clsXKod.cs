@@ -278,7 +278,7 @@ namespace PRCTicari
             if (ftFisTipi == clsFisTipleri.FisTipleri.CariBorc || ftFisTipi == clsFisTipleri.FisTipleri.CariAlacak)
             {
                 oReturn = prcdXKodCagir(clsFisTipleri.fncIslemText(ftFisTipi) + " Seçme Listesi",
-                                        "SELECT IB.Fis_No, CONVERT(VARCHAR, IB.Fis_Tarihi, 104) AS Fis_Tarihi, IB.Belge_Tipi, IB.Belge_No, CONVERT(VARCHAR, IB.Belge_Tarihi, 104) AS Belge_Tarihi, ISNULL(SUM(ABS(ID.Borc_Tutari_Cari - ID.Alacak_Tutari_Cari)), CAST(0 AS FLOAT)) AS Tutari, IB.Aciklama " +
+                                        "SELECT IB.Fis_No, CONVERT(VARCHAR, IB.Fis_Tarihi, 104) AS Fis_Tarihi, IB.Belge_Tipi, IB.Belge_No, CONVERT(VARCHAR, IB.Belge_Tarihi, 104) AS Belge_Tarihi, ISNULL(SUM(ABS(ID.Borc_Tutari - ID.Alacak_Tutari)), CAST(0 AS FLOAT)) AS Tutari, IB.Aciklama " +
                                         "FROM Islem_Baslik AS IB " +
                                         "INNER JOIN Islem_Detay_Cari AS ID ON IB.Kurum_Kodu = ID.Kurum_Kodu AND IB.Fis_Tipi = ID.Fis_Tipi AND IB.Isyeri_Kodu = ID.Isyeri_Kodu AND IB.Fis_No = ID.Fis_No AND IB.Silindi = ID.Silindi " +
                                         "WHERE IB.Silindi = 0 AND IB.Kurum_Kodu = @Kurum_Kodu AND IB.Fis_Tipi = @Fis_Tipi AND IB.Isyeri_Kodu = @Isyeri_Kodu " +
@@ -293,7 +293,7 @@ namespace PRCTicari
             else if (ftFisTipi == clsFisTipleri.FisTipleri.CariVirman || ftFisTipi == clsFisTipleri.FisTipleri.CariDevir)
             {
                 oReturn = prcdXKodCagir(clsFisTipleri.fncIslemText(ftFisTipi) + " Seçme Listesi",
-                                        "SELECT IB.Fis_No, CONVERT(VARCHAR, IB.Fis_Tarihi, 104) AS Fis_Tarihi, IB.Belge_Tipi, IB.Belge_No, CONVERT(VARCHAR, IB.Belge_Tarihi, 104) AS Belge_Tarihi, ISNULL(SUM(ID.Borc_Tutari_Cari), CAST(0 AS FLOAT)) AS Borc_Tutari, ISNULL(SUM(ID.Alacak_Tutari_Cari), CAST(0 AS FLOAT)) AS Alacak_Tutari, IB.Aciklama " +
+                                        "SELECT IB.Fis_No, CONVERT(VARCHAR, IB.Fis_Tarihi, 104) AS Fis_Tarihi, IB.Belge_Tipi, IB.Belge_No, CONVERT(VARCHAR, IB.Belge_Tarihi, 104) AS Belge_Tarihi, ISNULL(SUM(ID.Borc_Tutari), CAST(0 AS FLOAT)) AS Borc_Tutari, ISNULL(SUM(ID.Alacak_Tutari), CAST(0 AS FLOAT)) AS Alacak_Tutari, IB.Aciklama " +
                                         "FROM Islem_Baslik AS IB " +
                                         "INNER JOIN Islem_Detay_Cari AS ID ON IB.Kurum_Kodu = ID.Kurum_Kodu AND IB.Fis_Tipi = ID.Fis_Tipi AND IB.Isyeri_Kodu = ID.Isyeri_Kodu AND IB.Fis_No = ID.Fis_No AND IB.Silindi = ID.Silindi " +
                                         "WHERE IB.Silindi = 0 AND IB.Kurum_Kodu = @Kurum_Kodu AND IB.Fis_Tipi = @Fis_Tipi AND IB.Isyeri_Kodu = @Isyeri_Kodu " +
@@ -314,7 +314,7 @@ namespace PRCTicari
             if (ftFisTipi == clsFisTipleri.FisTipleri.KasaTahsil || ftFisTipi == clsFisTipleri.FisTipleri.KasaTediye)
             {
                 oReturn = prcdXKodCagir(clsFisTipleri.fncIslemText(ftFisTipi) + " Seçme Listesi",
-                                        "SELECT IB.Fis_No, CONVERT(VARCHAR, IB.Fis_Tarihi, 104) AS Fis_Tarihi, IB.Belge_Tipi, IB.Belge_No, CONVERT(VARCHAR, IB.Belge_Tarihi, 104) AS Belge_Tarihi, ISNULL(SUM(ABS(ID.Borc_Tutari_Kasa - ID.Alacak_Tutari_Kasa)), CAST(0 AS FLOAT)) AS Tutari, IB.Aciklama " +
+                                        "SELECT IB.Fis_No, CONVERT(VARCHAR, IB.Fis_Tarihi, 104) AS Fis_Tarihi, IB.Belge_Tipi, IB.Belge_No, CONVERT(VARCHAR, IB.Belge_Tarihi, 104) AS Belge_Tarihi, ISNULL(SUM(ABS(ID.Borc_Tutari - ID.Alacak_Tutari)), CAST(0 AS FLOAT)) AS Tutari, IB.Aciklama " +
                                         "FROM Islem_Baslik AS IB " +
                                         "INNER JOIN Islem_Detay_Kasa AS ID ON IB.Kurum_Kodu = ID.Kurum_Kodu AND IB.Fis_Tipi = ID.Fis_Tipi AND IB.Isyeri_Kodu = ID.Isyeri_Kodu AND IB.Fis_No = ID.Fis_No AND IB.Silindi = ID.Silindi " +
                                         "WHERE IB.Silindi = 0 AND IB.Kurum_Kodu = @Kurum_Kodu AND IB.Fis_Tipi = @Fis_Tipi AND IB.Isyeri_Kodu = @Isyeri_Kodu " +
@@ -329,7 +329,7 @@ namespace PRCTicari
             else if (ftFisTipi == clsFisTipleri.FisTipleri.KasaVirman || ftFisTipi == clsFisTipleri.FisTipleri.KasaDevir)
             {
                 oReturn = prcdXKodCagir(clsFisTipleri.fncIslemText(ftFisTipi) + " Seçme Listesi",
-                                        "SELECT IB.Fis_No, CONVERT(VARCHAR, IB.Fis_Tarihi, 104) AS Fis_Tarihi, IB.Belge_Tipi, IB.Belge_No, CONVERT(VARCHAR, IB.Belge_Tarihi, 104) AS Belge_Tarihi, ISNULL(SUM(ID.Borc_Tutari_Kasa), CAST(0 AS FLOAT)) AS Borc_Tutari, ISNULL(SUM(ID.Alacak_Tutari_Kasa), CAST(0 AS FLOAT)) AS Alacak_Tutari, IB.Aciklama " +
+                                        "SELECT IB.Fis_No, CONVERT(VARCHAR, IB.Fis_Tarihi, 104) AS Fis_Tarihi, IB.Belge_Tipi, IB.Belge_No, CONVERT(VARCHAR, IB.Belge_Tarihi, 104) AS Belge_Tarihi, ISNULL(SUM(ID.Borc_Tutari), CAST(0 AS FLOAT)) AS Borc_Tutari, ISNULL(SUM(ID.Alacak_Tutari), CAST(0 AS FLOAT)) AS Alacak_Tutari, IB.Aciklama " +
                                         "FROM Islem_Baslik AS IB " +
                                         "INNER JOIN Islem_Detay_Kasa AS ID ON IB.Kurum_Kodu = ID.Kurum_Kodu AND IB.Fis_Tipi = ID.Fis_Tipi AND IB.Isyeri_Kodu = ID.Isyeri_Kodu AND IB.Fis_No = ID.Fis_No AND IB.Silindi = ID.Silindi " +
                                         "WHERE IB.Silindi = 0 AND IB.Kurum_Kodu = @Kurum_Kodu AND IB.Fis_Tipi = @Fis_Tipi AND IB.Isyeri_Kodu = @Isyeri_Kodu " +
@@ -339,6 +339,27 @@ namespace PRCTicari
                                         new string[] { "Fis_No", "Fis_Tarihi", "Belge_Tipi", "Belge_No", "Belge_Tarihi", "Borc_Tutari", "Alacak_Tutari", "Aciklama" },
                                         new string[] { "Fiş No", "Fiş Tarihi", "Belge Tipi", "Belge No", "Belge Tarihi", "Borç Tutarı", "Alacak Tutarı", "Açıklama" },
                                         new int[] { 50, 75, 100, 100, 75, 75, 75, 150 },
+                                        0, 0);
+            }
+            return oReturn;
+        }
+
+        public static object fncSECFisMasraf(clsFisTipleri.FisTipleri ftFisTipi, int intIsyeriKodu)
+        {
+            object oReturn = null;
+            if (ftFisTipi == clsFisTipleri.FisTipleri.MasrafGiris)
+            {
+                oReturn = prcdXKodCagir(clsFisTipleri.fncIslemText(ftFisTipi) + " Seçme Listesi",
+                                        "SELECT IB.Fis_No, CONVERT(VARCHAR, IB.Fis_Tarihi, 104) AS Fis_Tarihi, IB.Belge_Tipi, IB.Belge_No, CONVERT(VARCHAR, IB.Belge_Tarihi, 104) AS Belge_Tarihi, ISNULL(SUM(ABS(ID.Borc_Tutari - ID.Alacak_Tutari)), CAST(0 AS FLOAT)) AS Tutari, IB.Aciklama " +
+                                        "FROM Islem_Baslik AS IB " +
+                                        "INNER JOIN Islem_Detay_Masraf AS ID ON IB.Kurum_Kodu = ID.Kurum_Kodu AND IB.Fis_Tipi = ID.Fis_Tipi AND IB.Isyeri_Kodu = ID.Isyeri_Kodu AND IB.Fis_No = ID.Fis_No AND IB.Silindi = ID.Silindi " +
+                                        "WHERE IB.Silindi = 0 AND IB.Kurum_Kodu = @Kurum_Kodu AND IB.Fis_Tipi = @Fis_Tipi AND IB.Isyeri_Kodu = @Isyeri_Kodu " +
+                                        "GROUP BY IB.Fis_No, IB.Fis_Tarihi, IB.Belge_Tipi, IB.Belge_No, IB.Belge_Tarihi, IB.Aciklama",
+                                        new string[] { "@Kurum_Kodu", "@Fis_Tipi", "@Isyeri_Kodu" },
+                                        new object[] { clsGenel.strKurumKodu, ((int)ftFisTipi), intIsyeriKodu },
+                                        new string[] { "Fis_No", "Fis_Tarihi", "Belge_Tipi", "Belge_No", "Belge_Tarihi", "Tutari", "Aciklama" },
+                                        new string[] { "Fiş No", "Fiş Tarihi", "Belge Tipi", "Belge No", "Belge Tarihi", "Tutarı", "Açıklama" },
+                                        new int[] { 50, 75, 100, 100, 75, 75, 150 },
                                         0, 0);
             }
             return oReturn;

@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMasrafKarti));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.pnlBaslik = new System.Windows.Forms.Panel();
+            this.lblMasrafNo = new System.Windows.Forms.Label();
             this.btnMasrafKodu = new System.Windows.Forms.Button();
             this.txtMasrafKodu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,16 +39,22 @@
             this.cbIslem = new System.Windows.Forms.CheckBox();
             this.txtMasrafAdi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.gbMasrafTipi = new System.Windows.Forms.GroupBox();
+            this.rbSabit = new System.Windows.Forms.RadioButton();
+            this.rbDegisken = new System.Windows.Forms.RadioButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbKaydet = new System.Windows.Forms.ToolStripButton();
             this.tsbSil = new System.Windows.Forms.ToolStripButton();
             this.tsbVazgec = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbKapat = new System.Windows.Forms.ToolStripButton();
-            this.lblMasrafNo = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.cbKdvOrani = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnlBaslik.SuspendLayout();
             this.pnlDetay.SuspendLayout();
+            this.gbMasrafTipi.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,20 +63,10 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.statusStrip1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 146);
+            this.panel1.Location = new System.Drawing.Point(0, 216);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(315, 25);
             this.panel1.TabIndex = 5;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("statusStrip1.BackgroundImage")));
-            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.statusStrip1.Location = new System.Drawing.Point(0, 0);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(313, 23);
-            this.statusStrip1.TabIndex = 4;
-            this.statusStrip1.Text = "statusStrip1";
             // 
             // pnlBaslik
             // 
@@ -84,6 +80,17 @@
             this.pnlBaslik.Name = "pnlBaslik";
             this.pnlBaslik.Size = new System.Drawing.Size(315, 37);
             this.pnlBaslik.TabIndex = 0;
+            // 
+            // lblMasrafNo
+            // 
+            this.lblMasrafNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMasrafNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMasrafNo.Location = new System.Drawing.Point(210, 8);
+            this.lblMasrafNo.Name = "lblMasrafNo";
+            this.lblMasrafNo.Size = new System.Drawing.Size(100, 20);
+            this.lblMasrafNo.TabIndex = 3;
+            this.lblMasrafNo.Text = "0";
+            this.lblMasrafNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnMasrafKodu
             // 
@@ -117,19 +124,22 @@
             // pnlDetay
             // 
             this.pnlDetay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDetay.Controls.Add(this.cbKdvOrani);
+            this.pnlDetay.Controls.Add(this.label5);
             this.pnlDetay.Controls.Add(this.cbIslem);
             this.pnlDetay.Controls.Add(this.txtMasrafAdi);
             this.pnlDetay.Controls.Add(this.label2);
+            this.pnlDetay.Controls.Add(this.gbMasrafTipi);
             this.pnlDetay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDetay.Location = new System.Drawing.Point(0, 91);
             this.pnlDetay.Name = "pnlDetay";
-            this.pnlDetay.Size = new System.Drawing.Size(315, 55);
+            this.pnlDetay.Size = new System.Drawing.Size(315, 125);
             this.pnlDetay.TabIndex = 1;
             // 
             // cbIslem
             // 
             this.cbIslem.AutoSize = true;
-            this.cbIslem.Location = new System.Drawing.Point(73, 31);
+            this.cbIslem.Location = new System.Drawing.Point(73, 100);
             this.cbIslem.Name = "cbIslem";
             this.cbIslem.Size = new System.Drawing.Size(50, 17);
             this.cbIslem.TabIndex = 3;
@@ -151,6 +161,39 @@
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Masraf Adı:";
+            // 
+            // gbMasrafTipi
+            // 
+            this.gbMasrafTipi.Controls.Add(this.rbDegisken);
+            this.gbMasrafTipi.Controls.Add(this.rbSabit);
+            this.gbMasrafTipi.Location = new System.Drawing.Point(73, 58);
+            this.gbMasrafTipi.Name = "gbMasrafTipi";
+            this.gbMasrafTipi.Size = new System.Drawing.Size(237, 36);
+            this.gbMasrafTipi.TabIndex = 4;
+            this.gbMasrafTipi.TabStop = false;
+            this.gbMasrafTipi.Text = "Masraf Tipi";
+            // 
+            // rbSabit
+            // 
+            this.rbSabit.AutoSize = true;
+            this.rbSabit.Location = new System.Drawing.Point(30, 13);
+            this.rbSabit.Name = "rbSabit";
+            this.rbSabit.Size = new System.Drawing.Size(49, 17);
+            this.rbSabit.TabIndex = 5;
+            this.rbSabit.TabStop = true;
+            this.rbSabit.Text = "Sabit";
+            this.rbSabit.UseVisualStyleBackColor = true;
+            // 
+            // rbDegisken
+            // 
+            this.rbDegisken.AutoSize = true;
+            this.rbDegisken.Location = new System.Drawing.Point(137, 13);
+            this.rbDegisken.Name = "rbDegisken";
+            this.rbDegisken.Size = new System.Drawing.Size(70, 17);
+            this.rbDegisken.TabIndex = 6;
+            this.rbDegisken.TabStop = true;
+            this.rbDegisken.Text = "Değişken";
+            this.rbDegisken.UseVisualStyleBackColor = true;
             // 
             // toolStrip1
             // 
@@ -214,23 +257,44 @@
             this.tsbKapat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbKapat.Click += new System.EventHandler(this.tsbKapat_Click);
             // 
-            // lblMasrafNo
+            // statusStrip1
             // 
-            this.lblMasrafNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMasrafNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMasrafNo.Location = new System.Drawing.Point(210, 8);
-            this.lblMasrafNo.Name = "lblMasrafNo";
-            this.lblMasrafNo.Size = new System.Drawing.Size(100, 20);
-            this.lblMasrafNo.TabIndex = 3;
-            this.lblMasrafNo.Text = "0";
-            this.lblMasrafNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.statusStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("statusStrip1.BackgroundImage")));
+            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.statusStrip1.Location = new System.Drawing.Point(0, 0);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(313, 23);
+            this.statusStrip1.TabIndex = 4;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // cbKdvOrani
+            // 
+            this.cbKdvOrani.FormattingEnabled = true;
+            this.cbKdvOrani.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "8",
+            "18"});
+            this.cbKdvOrani.Location = new System.Drawing.Point(73, 31);
+            this.cbKdvOrani.Name = "cbKdvOrani";
+            this.cbKdvOrani.Size = new System.Drawing.Size(132, 21);
+            this.cbKdvOrani.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 35);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(57, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Kdv Oranı:";
             // 
             // frmMasrafKarti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(315, 171);
+            this.ClientSize = new System.Drawing.Size(315, 241);
             this.Controls.Add(this.pnlDetay);
             this.Controls.Add(this.pnlBaslik);
             this.Controls.Add(this.toolStrip1);
@@ -250,6 +314,8 @@
             this.pnlBaslik.PerformLayout();
             this.pnlDetay.ResumeLayout(false);
             this.pnlDetay.PerformLayout();
+            this.gbMasrafTipi.ResumeLayout(false);
+            this.gbMasrafTipi.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -276,5 +342,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox cbIslem;
         private System.Windows.Forms.Label lblMasrafNo;
+        private System.Windows.Forms.GroupBox gbMasrafTipi;
+        private System.Windows.Forms.RadioButton rbDegisken;
+        private System.Windows.Forms.RadioButton rbSabit;
+        private System.Windows.Forms.ComboBox cbKdvOrani;
+        private System.Windows.Forms.Label label5;
     }
 }

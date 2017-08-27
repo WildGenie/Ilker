@@ -75,6 +75,16 @@ namespace PRCTicari
                     this.Refresh();
                     tMenu.Enabled = true;
                 }
+                else if (strTag == tsbMasaSatis.Tag.TOSTRING())
+                {
+                    frmMasaSatis frmForm = new frmMasaSatis();
+                    frmForm.MdiParent = this;
+                    frmForm.Show();
+
+                    pnlMenu.Visible = false;
+                    this.Refresh();
+                    tMenu.Enabled = true;
+                }
             }
         }
 
@@ -120,8 +130,6 @@ namespace PRCTicari
                 frmForm = new frmCariOzelKarti();
             else if (strTag == tsmiGorevTanitimi.Tag.TOSTRING())
                 frmForm = new frmCariGorevKarti();
-            else if (strTag == tsmiMasrafTanitimi.Tag.TOSTRING())
-                frmForm = new frmMasrafKarti();
             else if (strTag == tsmiCariBorcIslemi.Tag.TOSTRING())
                 frmForm = new frmCariIslem(clsFisTipleri.FisTipleri.CariBorc);
             else if (strTag == tsmiCariAlacakIslemi.Tag.TOSTRING())
@@ -172,6 +180,13 @@ namespace PRCTicari
                 frmForm = new rpIrsaliyeListesi(strTag);
             else if (strTag == tsmiFaturaListesi.Tag.TOSTRING())
                 frmForm = new rpFaturaListesi(strTag);
+            #endregion
+
+            #region MasrafModulu
+            else if (strTag == tsmiMasrafTanitimi.Tag.TOSTRING())
+                frmForm = new frmMasrafKarti();
+            else if (strTag == tsmiMasrafGirisIslemi.Tag.TOSTRING())
+                frmForm = new frmMasrafIslem(clsFisTipleri.FisTipleri.MasrafGiris);
             #endregion
 
             #region Ayarlar

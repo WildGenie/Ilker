@@ -469,7 +469,9 @@ namespace PRCTicari
             bool blnReturn = false;
 
             dgvKalemler.CommitEdit(DataGridViewDataErrorContexts.Commit);
-            dgvKalemler.CurrentCell = dgvKalemler.Rows[dgvKalemler.NewRowIndex].Cells[colKasaKodu.Name];
+            if (dgvKalemler.Rows.Count > 0)
+                dgvKalemler.CurrentCell = dgvKalemler.Rows[0].Cells[colKasaKodu.Name];
+            dtKalemler.AcceptChanges();
 
             if (!blnTutarEsit)
             {

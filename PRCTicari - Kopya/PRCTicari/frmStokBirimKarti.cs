@@ -43,7 +43,9 @@ namespace PRCTicari
         private void tsbKaydet_Click(object sender, EventArgs e)
         {
             dgvBirimler.CommitEdit(DataGridViewDataErrorContexts.Commit);
-            dgvBirimler.CurrentCell = dgvBirimler.Rows[dgvBirimler.NewRowIndex].Cells[colBirimKodu.Name];
+            if (dgvBirimler.Rows.Count > 0)
+                dgvBirimler.CurrentCell = dgvBirimler.Rows[0].Cells[colBirimKodu.Name];
+            dtBirimler.AcceptChanges();
 
             SqlConnection cnn = new SqlConnection(clsGenel.strConnectionString);
             cnn.Open();
