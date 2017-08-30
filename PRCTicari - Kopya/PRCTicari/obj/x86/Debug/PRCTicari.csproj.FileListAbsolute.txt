@@ -133,7 +133,6 @@ F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\bin\x86\Debug\FastReport.VSDesign.dll
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\bin\x86\Debug\FastReport.Web.dll
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmAnaMenu.resources
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmBelgeTipiKarti.resources
-F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmCariGorevKarti.resources
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmCariGrupKarti.resources
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmCariIslem.resources
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmCariKarti.resources
@@ -171,5 +170,7 @@ F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmStokReyonKa
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.csproj.CoreCompileInputs.cache
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmMasaSatis.resources
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmMasrafIslem.resources
-F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.csprojResolveAssemblyReference.cache
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmPersonelKarti.resources
+F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmPersonelGorevKarti.resources
+F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.rpStokEnvanter.resources
+F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.rpStokHareket.resources

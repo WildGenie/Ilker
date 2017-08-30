@@ -185,7 +185,7 @@
             this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(595, 23);
+            this.statusStrip1.Size = new System.Drawing.Size(578, 23);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -196,7 +196,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 360);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(597, 25);
+            this.panel1.Size = new System.Drawing.Size(580, 25);
             this.panel1.TabIndex = 5;
             // 
             // toolStrip1
@@ -212,7 +212,7 @@
             this.tsbKapat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(597, 54);
+            this.toolStrip1.Size = new System.Drawing.Size(580, 54);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -271,14 +271,14 @@
             this.pnlBaslik.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBaslik.Location = new System.Drawing.Point(0, 54);
             this.pnlBaslik.Name = "pnlBaslik";
-            this.pnlBaslik.Size = new System.Drawing.Size(597, 37);
+            this.pnlBaslik.Size = new System.Drawing.Size(580, 37);
             this.pnlBaslik.TabIndex = 0;
             // 
             // lblPersonelNo
             // 
             this.lblPersonelNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPersonelNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblPersonelNo.Location = new System.Drawing.Point(492, 8);
+            this.lblPersonelNo.Location = new System.Drawing.Point(475, 8);
             this.lblPersonelNo.Name = "lblPersonelNo";
             this.lblPersonelNo.Size = new System.Drawing.Size(100, 20);
             this.lblPersonelNo.TabIndex = 2;
@@ -321,7 +321,7 @@
             this.pnlDetay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDetay.Location = new System.Drawing.Point(0, 91);
             this.pnlDetay.Name = "pnlDetay";
-            this.pnlDetay.Size = new System.Drawing.Size(597, 269);
+            this.pnlDetay.Size = new System.Drawing.Size(580, 269);
             this.pnlDetay.TabIndex = 1;
             // 
             // tcDetay
@@ -335,7 +335,7 @@
             this.tcDetay.Location = new System.Drawing.Point(0, 0);
             this.tcDetay.Name = "tcDetay";
             this.tcDetay.SelectedIndex = 0;
-            this.tcDetay.Size = new System.Drawing.Size(595, 267);
+            this.tcDetay.Size = new System.Drawing.Size(578, 267);
             this.tcDetay.TabIndex = 0;
             // 
             // tpGenel
@@ -384,7 +384,7 @@
             this.tpGenel.Location = new System.Drawing.Point(4, 22);
             this.tpGenel.Name = "tpGenel";
             this.tpGenel.Padding = new System.Windows.Forms.Padding(3);
-            this.tpGenel.Size = new System.Drawing.Size(587, 241);
+            this.tpGenel.Size = new System.Drawing.Size(570, 241);
             this.tpGenel.TabIndex = 0;
             this.tpGenel.Text = "Genel";
             // 
@@ -494,6 +494,7 @@
             this.btnGorevKodu.TabStop = false;
             this.btnGorevKodu.Text = "...";
             this.btnGorevKodu.UseVisualStyleBackColor = true;
+            this.btnGorevKodu.Click += new System.EventHandler(this.btnGorevKodu_Click);
             // 
             // txtGorevKodu
             // 
@@ -618,7 +619,7 @@
             this.lblResimEkle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblResimEkle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblResimEkle.Image = ((System.Drawing.Image)(resources.GetObject("lblResimEkle.Image")));
-            this.lblResimEkle.Location = new System.Drawing.Point(526, 107);
+            this.lblResimEkle.Location = new System.Drawing.Point(509, 107);
             this.lblResimEkle.Name = "lblResimEkle";
             this.lblResimEkle.Size = new System.Drawing.Size(26, 23);
             this.lblResimEkle.TabIndex = 35;
@@ -630,7 +631,7 @@
             this.lblResimSil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblResimSil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblResimSil.Image = ((System.Drawing.Image)(resources.GetObject("lblResimSil.Image")));
-            this.lblResimSil.Location = new System.Drawing.Point(553, 107);
+            this.lblResimSil.Location = new System.Drawing.Point(536, 107);
             this.lblResimSil.Name = "lblResimSil";
             this.lblResimSil.Size = new System.Drawing.Size(26, 23);
             this.lblResimSil.TabIndex = 34;
@@ -643,7 +644,7 @@
             this.pbResim.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbResim.Location = new System.Drawing.Point(458, 6);
             this.pbResim.Name = "pbResim";
-            this.pbResim.Size = new System.Drawing.Size(123, 126);
+            this.pbResim.Size = new System.Drawing.Size(106, 126);
             this.pbResim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbResim.TabIndex = 33;
             this.pbResim.TabStop = false;
@@ -1119,7 +1120,7 @@
             // mtbIBANNo
             // 
             this.mtbIBANNo.Location = new System.Drawing.Point(99, 84);
-            this.mtbIBANNo.Mask = "0000 0000 0000 0000 0000 0000 00";
+            this.mtbIBANNo.Mask = "AA00 0000 0000 0000 0000 0000 00";
             this.mtbIBANNo.Name = "mtbIBANNo";
             this.mtbIBANNo.Size = new System.Drawing.Size(297, 20);
             this.mtbIBANNo.TabIndex = 3;
@@ -1517,7 +1518,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(597, 385);
+            this.ClientSize = new System.Drawing.Size(580, 385);
             this.Controls.Add(this.pnlDetay);
             this.Controls.Add(this.pnlBaslik);
             this.Controls.Add(this.toolStrip1);

@@ -113,11 +113,11 @@
     <Compile Include="frmBelgeTipiKarti.Designer.cs">
       <DependentUpon>frmBelgeTipiKarti.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCariGorevKarti.cs">
+    <Compile Include="frmPersonelGorevKarti.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCariGorevKarti.designer.cs">
-      <DependentUpon>frmCariGorevKarti.cs</DependentUpon>
+    <Compile Include="frmPersonelGorevKarti.designer.cs">
+      <DependentUpon>frmPersonelGorevKarti.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCariGrupKarti.cs">
       <SubType>Form</SubType>
@@ -325,6 +325,18 @@
     <Compile Include="rpKasaListesi.designer.cs">
       <DependentUpon>rpKasaListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="rpStokEnvanter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rpStokEnvanter.designer.cs">
+      <DependentUpon>rpStokEnvanter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rpStokHareket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rpStokHareket.designer.cs">
+      <DependentUpon>rpStokHareket.cs</DependentUpon>
+    </Compile>
     <Compile Include="rpStokListesi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,8 +349,8 @@
     <EmbeddedResource Include="frmBelgeTipiKarti.resx">
       <DependentUpon>frmBelgeTipiKarti.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCariGorevKarti.resx">
-      <DependentUpon>frmCariGorevKarti.cs</DependentUpon>
+    <EmbeddedResource Include="frmPersonelGorevKarti.resx">
+      <DependentUpon>frmPersonelGorevKarti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCariGrupKarti.resx">
       <DependentUpon>frmCariGrupKarti.cs</DependentUpon>
@@ -445,6 +457,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rpKasaListesi.resx">
       <DependentUpon>rpKasaListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rpStokEnvanter.resx">
+      <DependentUpon>rpStokEnvanter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rpStokHareket.resx">
+      <DependentUpon>rpStokHareket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rpStokListesi.resx">
       <DependentUpon>rpStokListesi.cs</DependentUpon>

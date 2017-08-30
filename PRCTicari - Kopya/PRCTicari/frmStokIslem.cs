@@ -434,7 +434,7 @@ namespace PRCTicari
                         if (!string.IsNullOrEmpty(txtFaturaIrsaliyeNo.Text.Trim())) txtFaturaIrsaliyeNo.Text += ", ";
                         txtFaturaIrsaliyeNo.Text += reader["Irsaliye_No"].TOSTRING();
 
-                        prcdFaturaAktifPasifKontrol(false);
+                        prcdFaturaAktifPasifKontrol(string.IsNullOrWhiteSpace(txtFaturaIrsaliyeNo.Text.Trim()));
                     }
                     else if (ftFisTipi == clsFisTipleri.FisTipleri.IrsaliyeAlis || ftFisTipi == clsFisTipleri.FisTipleri.IrsaliyeSatis || ftFisTipi == clsFisTipleri.FisTipleri.IrsaliyeAlisIade || ftFisTipi == clsFisTipleri.FisTipleri.IrsaliyeSatisIade)
                     {
@@ -560,9 +560,9 @@ namespace PRCTicari
                     else
                     {
                         if (cbKdvTipi1.SelectedIndex == 0)
-                            dgvKalemler.CurrentRow.Cells["colFiyati"].Value = reader[strBTNo + "_Satis_Fiyati_" + cbKdvTipi1.SelectedIndex.TOSTRING()].TODOUBLE();
+                            dgvKalemler.CurrentRow.Cells["colFiyati"].Value = reader[strBTNo + "_Satis_Fiyati_" + cbFiyatTipi.SelectedIndex.TOSTRING()].TODOUBLE();
                         else
-                            dgvKalemler.CurrentRow.Cells["colFiyati"].Value = reader[strBTNo + "_Satis_Fiyati_" + cbKdvTipi1.SelectedIndex.TOSTRING()].TODOUBLE() / (1 + (dgvKalemler.CurrentRow.Cells["colKdv"].Value.TODOUBLE() / 100));
+                            dgvKalemler.CurrentRow.Cells["colFiyati"].Value = reader[strBTNo + "_Satis_Fiyati_" + cbFiyatTipi.SelectedIndex.TOSTRING()].TODOUBLE() / (1 + (dgvKalemler.CurrentRow.Cells["colKdv"].Value.TODOUBLE() / 100));
                     }
                 }
 

@@ -41,18 +41,18 @@ namespace PRCTicari
         {
             Dictionary<string, DataTable> dDataTables = new Dictionary<string, DataTable>();
 
-            DataTable dtStokListesi = new DataTable();
+            DataTable dtRapor = new DataTable();
             SqlConnection cnn = new SqlConnection(clsGenel.strConnectionString);
             cnn.Open();
             SqlCommand cmd = cnn.CreateCommand();
             cmd.CommandText = "SELECT * FROM Stok_Tanitimi WHERE Silindi = 0 AND Kurum_Kodu = @Kurum_Kodu";
             cmd.Parameters.AddWithValue("@Kurum_Kodu", clsGenel.strKurumKodu);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            sda.Fill(dtStokListesi);
+            sda.Fill(dtRapor);
             sda.Dispose();
             cmd.Dispose();
             cnn.Close();
-            dDataTables.Add("dtStokListesi", dtStokListesi);
+            dDataTables.Add("dtRapor", dtRapor);
 
             clsGenel.prcdRaporHazirla(bytTip, this.AccessibleDescription, cbRaporAdi, dDataTables);
         }

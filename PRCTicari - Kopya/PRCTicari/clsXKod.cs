@@ -127,6 +127,18 @@ namespace PRCTicari
                                  1, 0);
         }
 
+        public static object fncSECPersonel()
+        {
+            return prcdXKodCagir("Cari Seçme Listesi",
+                                 "SELECT Cari_Kodu, Unvani FROM Cari_Tanitimi WHERE Kurum_Kodu = @Kurum_Kodu AND Silindi = 0 AND Personel = 1",
+                                 new string[] { "@Kurum_Kodu" },
+                                 new object[] { clsGenel.strKurumKodu },
+                                 new string[] { "Cari_Kodu", "Unvani" },
+                                 new string[] { "Cari Kodu", "Ünvanı" },
+                                 new int[] { 100, 250 },
+                                 1, 0);
+        }
+
         public static object fncSECCariGrupKodu()
         {
             return prcdXKodCagir("Cari Grup Kodu Seçme Listesi",

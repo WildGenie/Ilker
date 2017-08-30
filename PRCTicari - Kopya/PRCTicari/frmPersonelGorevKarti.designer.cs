@@ -1,6 +1,6 @@
 ﻿namespace PRCTicari
 {
-    partial class frmCariGorevKarti
+    partial class frmPersonelGorevKarti
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCariGorevKarti));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPersonelGorevKarti));
             this.dgvGorevler = new PRCTicari.MyDataGridView(this.components);
             this.colGorevKodu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGorevAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();

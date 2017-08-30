@@ -117,6 +117,10 @@ namespace PRCTicari
                 frmForm = new frmStokIslem(clsFisTipleri.FisTipleri.StokDuzeltme);
             else if (strTag == tsmiStokListesi.Tag.TOSTRING())
                 frmForm = new rpStokListesi(strTag);
+            else if (strTag == tsmiStokHareketRaporu.Tag.TOSTRING())
+                frmForm = new rpStokHareket(strTag);
+            else if (strTag == tsmiStokEnvanterRaporu.Tag.TOSTRING())
+                frmForm = new rpStokEnvanter(strTag);
             #endregion
 
             #region CariModulu
@@ -128,8 +132,6 @@ namespace PRCTicari
                 frmForm = new frmCariGrupKarti();
             else if (strTag == tsmiOzelKoduTanitimiCari.Tag.TOSTRING())
                 frmForm = new frmCariOzelKarti();
-            else if (strTag == tsmiGorevTanitimi.Tag.TOSTRING())
-                frmForm = new frmCariGorevKarti();
             else if (strTag == tsmiCariBorcIslemi.Tag.TOSTRING())
                 frmForm = new frmCariIslem(clsFisTipleri.FisTipleri.CariBorc);
             else if (strTag == tsmiCariAlacakIslemi.Tag.TOSTRING())
@@ -187,6 +189,13 @@ namespace PRCTicari
                 frmForm = new frmMasrafKarti();
             else if (strTag == tsmiMasrafGirisIslemi.Tag.TOSTRING())
                 frmForm = new frmMasrafIslem(clsFisTipleri.FisTipleri.MasrafGiris);
+            #endregion
+
+            #region PersonelModulu
+            else if (strTag == tsmiPersonelTanitimi.Tag.TOSTRING())
+                frmForm = new frmPersonelKarti();
+            else if (strTag == tsmiGorevTanitimi.Tag.TOSTRING())
+                frmForm = new frmPersonelGorevKarti();
             #endregion
 
             #region Ayarlar

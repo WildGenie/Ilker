@@ -54,7 +54,6 @@
             this.tsmiMusteriTanitimi = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGrupKoduTanitimiCari = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOzelKoduTanitimiCari = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiGorevTanitimi = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiIslemlerCari = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCariBorcIslemi = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCariAlacakIslemi = new System.Windows.Forms.ToolStripMenuItem();
@@ -95,6 +94,12 @@
             this.tsmiIslemlerMasraf = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMasrafGirisIslemi = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRaporlarMasraf = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbPersonelModulu = new System.Windows.Forms.ToolStripSplitButton();
+            this.tsmiTanitimlarPersonel = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPersonelTanitimi = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiGorevTanitimi = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiIslemlerPersonel = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiRaporlarPersonel = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbHizliSatis = new System.Windows.Forms.ToolStripButton();
             this.tsbMasaSatis = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -116,12 +121,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.tMenu = new System.Windows.Forms.Timer(this.components);
-            this.tsbPersonelModulu = new System.Windows.Forms.ToolStripSplitButton();
-            this.tsmiTanitimlarPersonel = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiIslemlerPersonel = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiRaporlarPersonel = new System.Windows.Forms.ToolStripMenuItem();
-            this.personelTanıtımıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.görevTanıtımıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -149,7 +148,7 @@
             this.tsbKapat});
             this.tsMenu.Location = new System.Drawing.Point(0, 0);
             this.tsMenu.Name = "tsMenu";
-            this.tsMenu.Size = new System.Drawing.Size(146, 458);
+            this.tsMenu.Size = new System.Drawing.Size(146, 434);
             this.tsMenu.TabIndex = 1;
             this.tsMenu.Text = "toolStrip1";
             // 
@@ -181,7 +180,7 @@
             this.tsmiReyonTanitimi});
             this.tsmiTanitimlarStok.ForeColor = System.Drawing.Color.Black;
             this.tsmiTanitimlarStok.Name = "tsmiTanitimlarStok";
-            this.tsmiTanitimlarStok.Size = new System.Drawing.Size(127, 22);
+            this.tsmiTanitimlarStok.Size = new System.Drawing.Size(152, 22);
             this.tsmiTanitimlarStok.Tag = "01100";
             this.tsmiTanitimlarStok.Text = "Tanıtımlar";
             // 
@@ -249,7 +248,7 @@
             this.tsmiStokDuzeltmeIslemi});
             this.tsmiIslemlerStok.ForeColor = System.Drawing.Color.Black;
             this.tsmiIslemlerStok.Name = "tsmiIslemlerStok";
-            this.tsmiIslemlerStok.Size = new System.Drawing.Size(127, 22);
+            this.tsmiIslemlerStok.Size = new System.Drawing.Size(152, 22);
             this.tsmiIslemlerStok.Tag = "01200";
             this.tsmiIslemlerStok.Text = "İşlemler";
             // 
@@ -298,7 +297,7 @@
             this.tsmiStokEnvanterRaporu});
             this.tsmiRaporlarStok.ForeColor = System.Drawing.Color.Black;
             this.tsmiRaporlarStok.Name = "tsmiRaporlarStok";
-            this.tsmiRaporlarStok.Size = new System.Drawing.Size(127, 22);
+            this.tsmiRaporlarStok.Size = new System.Drawing.Size(152, 22);
             this.tsmiRaporlarStok.Tag = "01300";
             this.tsmiRaporlarStok.Text = "Raporlar";
             // 
@@ -352,8 +351,7 @@
             this.tsmiCariTanitimi,
             this.tsmiMusteriTanitimi,
             this.tsmiGrupKoduTanitimiCari,
-            this.tsmiOzelKoduTanitimiCari,
-            this.tsmiGorevTanitimi});
+            this.tsmiOzelKoduTanitimiCari});
             this.tsmiTanitimlarCari.Name = "tsmiTanitimlarCari";
             this.tsmiTanitimlarCari.Size = new System.Drawing.Size(152, 22);
             this.tsmiTanitimlarCari.Tag = "02100";
@@ -394,15 +392,6 @@
             this.tsmiOzelKoduTanitimiCari.Tag = "02104";
             this.tsmiOzelKoduTanitimiCari.Text = "Özel Kodu Tanıtımı";
             this.tsmiOzelKoduTanitimiCari.Click += new System.EventHandler(this.tsmiMenuItem_Click);
-            // 
-            // tsmiGorevTanitimi
-            // 
-            this.tsmiGorevTanitimi.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.tsmiGorevTanitimi.Name = "tsmiGorevTanitimi";
-            this.tsmiGorevTanitimi.Size = new System.Drawing.Size(177, 22);
-            this.tsmiGorevTanitimi.Tag = "02105";
-            this.tsmiGorevTanitimi.Text = "Görev Tanıtımı";
-            this.tsmiGorevTanitimi.Click += new System.EventHandler(this.tsmiMenuItem_Click);
             // 
             // tsmiIslemlerCari
             // 
@@ -504,7 +493,7 @@
             this.tsmiTanitimlarKasa.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiKasaTanitimi});
             this.tsmiTanitimlarKasa.Name = "tsmiTanitimlarKasa";
-            this.tsmiTanitimlarKasa.Size = new System.Drawing.Size(127, 22);
+            this.tsmiTanitimlarKasa.Size = new System.Drawing.Size(152, 22);
             this.tsmiTanitimlarKasa.Tag = "03100";
             this.tsmiTanitimlarKasa.Text = "Tanıtımlar";
             // 
@@ -526,7 +515,7 @@
             this.tsmiKasaVirmanIslemi,
             this.tsmiKasaDevirIslemi});
             this.tsmiIslemlerKasa.Name = "tsmiIslemlerKasa";
-            this.tsmiIslemlerKasa.Size = new System.Drawing.Size(127, 22);
+            this.tsmiIslemlerKasa.Size = new System.Drawing.Size(152, 22);
             this.tsmiIslemlerKasa.Tag = "03200";
             this.tsmiIslemlerKasa.Text = "İşlemler";
             // 
@@ -573,7 +562,7 @@
             this.tsmiKasaListesi,
             this.tsmiKasaHareketRaporu});
             this.tsmiRaporlarKasa.Name = "tsmiRaporlarKasa";
-            this.tsmiRaporlarKasa.Size = new System.Drawing.Size(127, 22);
+            this.tsmiRaporlarKasa.Size = new System.Drawing.Size(152, 22);
             this.tsmiRaporlarKasa.Tag = "03300";
             this.tsmiRaporlarKasa.Text = "Raporlar";
             // 
@@ -621,7 +610,7 @@
             this.tsmiSatisIadeIrsaliyesi,
             this.tsmiSubelerArasiSevkIrsaliyesi});
             this.tsmiIrsaliyeler.Name = "tsmiIrsaliyeler";
-            this.tsmiIrsaliyeler.Size = new System.Drawing.Size(123, 22);
+            this.tsmiIrsaliyeler.Size = new System.Drawing.Size(152, 22);
             this.tsmiIrsaliyeler.Tag = "04100";
             this.tsmiIrsaliyeler.Text = "İrsaliyeler";
             // 
@@ -679,7 +668,7 @@
             this.tsmiAlisIadeFaturasi,
             this.tsmiSatisIadeFaturasi});
             this.tsmiFaturalar.Name = "tsmiFaturalar";
-            this.tsmiFaturalar.Size = new System.Drawing.Size(123, 22);
+            this.tsmiFaturalar.Size = new System.Drawing.Size(152, 22);
             this.tsmiFaturalar.Tag = "04200";
             this.tsmiFaturalar.Text = "Faturalar";
             // 
@@ -726,7 +715,7 @@
             this.tsmiIrsaliyeListesi,
             this.tsmiFaturaListesi});
             this.tsmiRaporlarIrsaliyeFatura.Name = "tsmiRaporlarIrsaliyeFatura";
-            this.tsmiRaporlarIrsaliyeFatura.Size = new System.Drawing.Size(123, 22);
+            this.tsmiRaporlarIrsaliyeFatura.Size = new System.Drawing.Size(152, 22);
             this.tsmiRaporlarIrsaliyeFatura.Tag = "04300";
             this.tsmiRaporlarIrsaliyeFatura.Text = "Raporlar";
             // 
@@ -809,6 +798,67 @@
             this.tsmiRaporlarMasraf.Size = new System.Drawing.Size(152, 22);
             this.tsmiRaporlarMasraf.Tag = "05300";
             this.tsmiRaporlarMasraf.Text = "Raporlar";
+            // 
+            // tsbPersonelModulu
+            // 
+            this.tsbPersonelModulu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiTanitimlarPersonel,
+            this.tsmiIslemlerPersonel,
+            this.tsmiRaporlarPersonel});
+            this.tsbPersonelModulu.ForeColor = System.Drawing.Color.Black;
+            this.tsbPersonelModulu.Image = ((System.Drawing.Image)(resources.GetObject("tsbPersonelModulu.Image")));
+            this.tsbPersonelModulu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsbPersonelModulu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbPersonelModulu.Name = "tsbPersonelModulu";
+            this.tsbPersonelModulu.Size = new System.Drawing.Size(143, 36);
+            this.tsbPersonelModulu.Tag = "06000";
+            this.tsbPersonelModulu.Text = "Personel Modülü";
+            this.tsbPersonelModulu.Click += new System.EventHandler(this.tsbButton_Click);
+            // 
+            // tsmiTanitimlarPersonel
+            // 
+            this.tsmiTanitimlarPersonel.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.tsmiTanitimlarPersonel.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiPersonelTanitimi,
+            this.tsmiGorevTanitimi});
+            this.tsmiTanitimlarPersonel.Name = "tsmiTanitimlarPersonel";
+            this.tsmiTanitimlarPersonel.Size = new System.Drawing.Size(152, 22);
+            this.tsmiTanitimlarPersonel.Tag = "06100";
+            this.tsmiTanitimlarPersonel.Text = "Tanıtımlar";
+            // 
+            // tsmiPersonelTanitimi
+            // 
+            this.tsmiPersonelTanitimi.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.tsmiPersonelTanitimi.Name = "tsmiPersonelTanitimi";
+            this.tsmiPersonelTanitimi.Size = new System.Drawing.Size(165, 22);
+            this.tsmiPersonelTanitimi.Tag = "06101";
+            this.tsmiPersonelTanitimi.Text = "Personel Tanıtımı";
+            this.tsmiPersonelTanitimi.Click += new System.EventHandler(this.tsmiMenuItem_Click);
+            // 
+            // tsmiGorevTanitimi
+            // 
+            this.tsmiGorevTanitimi.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.tsmiGorevTanitimi.Name = "tsmiGorevTanitimi";
+            this.tsmiGorevTanitimi.Size = new System.Drawing.Size(165, 22);
+            this.tsmiGorevTanitimi.Tag = "06102";
+            this.tsmiGorevTanitimi.Text = "Görev Tanıtımı";
+            this.tsmiGorevTanitimi.Click += new System.EventHandler(this.tsmiMenuItem_Click);
+            // 
+            // tsmiIslemlerPersonel
+            // 
+            this.tsmiIslemlerPersonel.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.tsmiIslemlerPersonel.Name = "tsmiIslemlerPersonel";
+            this.tsmiIslemlerPersonel.Size = new System.Drawing.Size(152, 22);
+            this.tsmiIslemlerPersonel.Tag = "06200";
+            this.tsmiIslemlerPersonel.Text = "İşlemler";
+            // 
+            // tsmiRaporlarPersonel
+            // 
+            this.tsmiRaporlarPersonel.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.tsmiRaporlarPersonel.Name = "tsmiRaporlarPersonel";
+            this.tsmiRaporlarPersonel.Size = new System.Drawing.Size(152, 22);
+            this.tsmiRaporlarPersonel.Tag = "06300";
+            this.tsmiRaporlarPersonel.Text = "Raporlar";
             // 
             // tsbHizliSatis
             // 
@@ -955,9 +1005,8 @@
             this.panel1.Controls.Add(this.btnMenu);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(845, 52);
             this.panel1.TabIndex = 5;
@@ -997,13 +1046,11 @@
             // menuStrip1
             // 
             this.menuStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuStrip1.BackgroundImage")));
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 50);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(843, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(845, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.Visible = false;
             // 
             // pnlMenu
             // 
@@ -1011,71 +1058,15 @@
             this.pnlMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMenu.Controls.Add(this.tsMenu);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlMenu.Location = new System.Drawing.Point(0, 52);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 76);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(148, 460);
+            this.pnlMenu.Size = new System.Drawing.Size(148, 436);
             this.pnlMenu.TabIndex = 7;
             // 
             // tMenu
             // 
             this.tMenu.Interval = 1;
             this.tMenu.Tick += new System.EventHandler(this.tMenu_Tick);
-            // 
-            // tsbPersonelModulu
-            // 
-            this.tsbPersonelModulu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiTanitimlarPersonel,
-            this.tsmiIslemlerPersonel,
-            this.tsmiRaporlarPersonel});
-            this.tsbPersonelModulu.ForeColor = System.Drawing.Color.Black;
-            this.tsbPersonelModulu.Image = ((System.Drawing.Image)(resources.GetObject("tsbPersonelModulu.Image")));
-            this.tsbPersonelModulu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsbPersonelModulu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbPersonelModulu.Name = "tsbPersonelModulu";
-            this.tsbPersonelModulu.Size = new System.Drawing.Size(143, 36);
-            this.tsbPersonelModulu.Tag = "06000";
-            this.tsbPersonelModulu.Text = "Personel Modülü";
-            // 
-            // tsmiTanitimlarPersonel
-            // 
-            this.tsmiTanitimlarPersonel.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.tsmiTanitimlarPersonel.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.personelTanıtımıToolStripMenuItem,
-            this.görevTanıtımıToolStripMenuItem});
-            this.tsmiTanitimlarPersonel.Name = "tsmiTanitimlarPersonel";
-            this.tsmiTanitimlarPersonel.Size = new System.Drawing.Size(152, 22);
-            this.tsmiTanitimlarPersonel.Tag = "06100";
-            this.tsmiTanitimlarPersonel.Text = "Tanıtımlar";
-            // 
-            // tsmiIslemlerPersonel
-            // 
-            this.tsmiIslemlerPersonel.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.tsmiIslemlerPersonel.Name = "tsmiIslemlerPersonel";
-            this.tsmiIslemlerPersonel.Size = new System.Drawing.Size(152, 22);
-            this.tsmiIslemlerPersonel.Tag = "06200";
-            this.tsmiIslemlerPersonel.Text = "İşlemler";
-            // 
-            // tsmiRaporlarPersonel
-            // 
-            this.tsmiRaporlarPersonel.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.tsmiRaporlarPersonel.Name = "tsmiRaporlarPersonel";
-            this.tsmiRaporlarPersonel.Size = new System.Drawing.Size(152, 22);
-            this.tsmiRaporlarPersonel.Tag = "06300";
-            this.tsmiRaporlarPersonel.Text = "Raporlar";
-            // 
-            // personelTanıtımıToolStripMenuItem
-            // 
-            this.personelTanıtımıToolStripMenuItem.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.personelTanıtımıToolStripMenuItem.Name = "personelTanıtımıToolStripMenuItem";
-            this.personelTanıtımıToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.personelTanıtımıToolStripMenuItem.Text = "Personel Tanıtımı";
-            // 
-            // görevTanıtımıToolStripMenuItem
-            // 
-            this.görevTanıtımıToolStripMenuItem.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.görevTanıtımıToolStripMenuItem.Name = "görevTanıtımıToolStripMenuItem";
-            this.görevTanıtımıToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.görevTanıtımıToolStripMenuItem.Text = "Görev Tanıtımı";
             // 
             // frmAnaMenu
             // 
@@ -1088,6 +1079,7 @@
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
@@ -1099,7 +1091,6 @@
             this.tsMenu.ResumeLayout(false);
             this.tsMenu.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
@@ -1163,7 +1154,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiKasaDevirIslemi;
         private System.Windows.Forms.ToolStripMenuItem tsmiCariHareketRaporu;
         private System.Windows.Forms.ToolStripMenuItem tsmiKasaHareketRaporu;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGorevTanitimi;
         private System.Windows.Forms.ToolStripSplitButton tsbIrsaliyeFatura;
         private System.Windows.Forms.ToolStripMenuItem tsmiIrsaliyeler;
         private System.Windows.Forms.ToolStripMenuItem tsmiAlisIrsaliyesi;
@@ -1200,8 +1190,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTanitimlarPersonel;
         private System.Windows.Forms.ToolStripMenuItem tsmiIslemlerPersonel;
         private System.Windows.Forms.ToolStripMenuItem tsmiRaporlarPersonel;
-        private System.Windows.Forms.ToolStripMenuItem personelTanıtımıToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem görevTanıtımıToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPersonelTanitimi;
+        private System.Windows.Forms.ToolStripMenuItem tsmiGorevTanitimi;
     }
 }
 

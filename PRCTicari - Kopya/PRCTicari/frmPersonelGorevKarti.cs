@@ -10,10 +10,10 @@ using System.Data.SqlClient;
 
 namespace PRCTicari
 {
-    public partial class frmCariGorevKarti : Form
+    public partial class frmPersonelGorevKarti : Form
     {
         DataTable dtGorevler = new DataTable();
-        public frmCariGorevKarti()
+        public frmPersonelGorevKarti()
         {
             InitializeComponent();
         }

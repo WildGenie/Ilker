@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="08/30/2017 22:36:57" ReportInfo.Modified="08/31/2017 00:32:35" ReportInfo.CreatorVersion="2016.2.20.0">
+  <Dictionary>
+    <TableDataSource Name="dtRapor" ReferenceName="dtRapor" DataType="System.Int32" Enabled="true">
+      <Column Name="Rapor_Baslangic_Tarihi" DataType="System.DateTime"/>
+      <Column Name="Rapor_Bitis_Tarihi" DataType="System.DateTime"/>
+      <Column Name="Fis_Tarihi" DataType="System.DateTime"/>
+      <Column Name="Fis_Saati" DataType="System.DateTime"/>
+      <Column Name="Stok_Kodu" DataType="System.String"/>
+      <Column Name="Stok_Adi" DataType="System.String"/>
+      <Column Name="Birim_Kodu" DataType="System.String"/>
+      <Column Name="Giris_Miktari" DataType="System.Double"/>
+      <Column Name="Cikis_Miktari" DataType="System.Double"/>
+      <Column Name="Giris_Tutari_Net" DataType="System.Double"/>
+      <Column Name="Cikis_Tutari_Net" DataType="System.Double"/>
+    </TableDataSource>
+    <Total Name="Kalan_Miktar" Expression="[dtRapor.Giris_Miktari] - [dtRapor.Cikis_Miktari]" Evaluator="Data1" PrintOn="GroupFooter1"/>
+    <Total Name="Giris_Miktari" Expression="[dtRapor.Giris_Miktari]" Evaluator="Data1" PrintOn="GroupFooter2"/>
+    <Total Name="Cikis_Miktari" Expression="[dtRapor.Cikis_Miktari]" Evaluator="Data1" PrintOn="GroupFooter2"/>
+    <Total Name="Giris_Miktari_Top" Expression="[dtRapor.Giris_Miktari]" Evaluator="Data1" PrintOn="GroupFooter1"/>
+    <Total Name="Cikis_Miktari_Top" Expression="[dtRapor.Cikis_Miktari]" Evaluator="Data1" PrintOn="GroupFooter1"/>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="94.5">
+      <TextObject Name="Text1" Width="718.2" Height="28.35" Text="STOK HAREKET RAPORU" HorzAlign="Center" Font="Arial, 20pt, style=Bold"/>
+      <TextObject Name="Text30" Left="623.7" Top="37.8" Width="94.5" Height="18.9" Text="[dtRapor.Rapor_Baslangic_Tarihi]" Format="Date" Format.Format="d"/>
+      <TextObject Name="Text31" Left="500.85" Top="37.8" Width="122.85" Height="18.9" Text="Başlangıç Tarihi:" HorzAlign="Right"/>
+      <TextObject Name="Text32" Left="623.7" Top="56.7" Width="94.5" Height="18.9" Text="[dtRapor.Rapor_Bitis_Tarihi]" Format="Date" Format.Format="d"/>
+      <TextObject Name="Text33" Left="500.85" Top="56.7" Width="122.85" Height="18.9" Text="Bitiş Tarihi:" HorzAlign="Right"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="98.5" Width="718.2" Height="18.9">
+      <TextObject Name="Text7" Left="236.25" Width="66.15" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Birimi" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text9" Left="302.4" Width="94.5" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Giriş" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text11" Left="396.9" Width="94.5" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Çıkış" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text13" Left="491.4" Width="94.5" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Kalan" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text17" Left="132.3" Width="103.95" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Fiş Tarihi" Font="Arial, 10pt, style=Bold"/>
+    </PageHeaderBand>
+    <GroupHeaderBand Name="GroupHeader1" Top="121.4" Width="718.2" Height="18.9" Condition="[dtRapor.Stok_Kodu]">
+      <TextObject Name="Text2" Left="132.3" Width="453.6" Height="18.9" Border.Lines="Top, Bottom" Fill.Color="Gainsboro" Text="[dtRapor.Stok_Kodu]-[dtRapor.Stok_Adi]"/>
+      <TextObject Name="Text20" Left="122.85" Width="9.45" Height="18.9" Border.Lines="Left, Top" Fill.Color="Gainsboro"/>
+      <TextObject Name="Text21" Left="585.9" Width="9.45" Height="18.9" Border.Lines="Right, Top" Fill.Color="Gainsboro"/>
+      <GroupHeaderBand Name="GroupHeader2" Top="144.3" Width="718.2" Condition="[dtRapor.Fis_Tarihi]">
+        <DataBand Name="Data1" Top="148.3" Width="718.2" DataSource="dtRapor"/>
+        <GroupFooterBand Name="GroupFooter2" Top="152.3" Width="718.2" Height="18.9">
+          <TextObject Name="Text16" Left="132.3" Width="103.95" Height="18.9" Border.Lines="All" Text="[dtRapor.Fis_Tarihi]" Format="Date" Format.Format="d"/>
+          <TextObject Name="Text12" Left="491.4" Width="94.5" Height="18.9" Border.Lines="All" Text="[Kalan_Miktar]" HideZeros="true" Format="Number" Format.UseLocale="true" HorzAlign="Right"/>
+          <TextObject Name="Text6" Left="236.25" Width="66.15" Height="18.9" Border.Lines="All" Text="[dtRapor.Birim_Kodu]"/>
+          <TextObject Name="Text8" Left="302.4" Width="94.5" Height="18.9" Border.Lines="All" Text="[Giris_Miktari]" HideZeros="true" Format="Number" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Trimming="EllipsisCharacter"/>
+          <TextObject Name="Text10" Left="396.9" Width="94.5" Height="18.9" Border.Lines="All" Text="[Cikis_Miktari]" HideZeros="true" Format="Number" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Trimming="EllipsisCharacter"/>
+          <TextObject Name="Text22" Left="122.85" Width="9.45" Height="18.9" Border.Lines="Left, Right" Fill.Color="Gainsboro"/>
+          <TextObject Name="Text24" Left="585.9" Width="9.45" Height="18.9" Border.Lines="Left, Right" Fill.Color="Gainsboro"/>
+        </GroupFooterBand>
+      </GroupHeaderBand>
+      <GroupFooterBand Name="GroupFooter1" Top="175.2" Width="718.2" Height="37.8">
+        <TextObject Name="Text23" Left="122.85" Width="9.45" Height="18.9" Border.Lines="Left, Bottom" Fill.Color="Gainsboro"/>
+        <TextObject Name="Text25" Left="585.9" Width="9.45" Height="18.9" Border.Lines="Right, Bottom" Fill.Color="Gainsboro"/>
+        <TextObject Name="Text26" Left="132.3" Width="170.1" Height="18.9" Border.Lines="Top, Bottom" Fill.Color="Gainsboro"/>
+        <TextObject Name="Text27" Left="302.4" Width="94.5" Height="18.9" Border.Lines="All" Fill.Color="Gainsboro" Text="[Giris_Miktari_Top]" HideZeros="true" Format="Number" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt, style=Bold" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text28" Left="396.9" Width="94.5" Height="18.9" Border.Lines="All" Fill.Color="Gainsboro" Text="[Cikis_Miktari_Top]" HideZeros="true" Format="Number" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt, style=Bold" Trimming="EllipsisCharacter"/>
+        <TextObject Name="Text29" Left="491.4" Width="94.5" Height="18.9" Border.Lines="Left, Top, Bottom" Fill.Color="Gainsboro" Text="[Kalan_Miktar]" HideZeros="true" Format="Number" Format.UseLocale="true" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+      </GroupFooterBand>
+    </GroupHeaderBand>
+    <PageFooterBand Name="PageFooter1" Top="217" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

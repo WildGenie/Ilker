@@ -199,16 +199,16 @@ namespace PRCTicari
             {
                 lblCariNo.Text = fncYeniCariNoGetir().TOSTRING();
                 cmd.CommandText = "INSERT INTO Cari_Tanitimi (Cari_No, Unvani, Grup_Kodu, Ozel_Kodu, Indirim, Para_Birimi, Vergi_Dairesi, " +
-                                  "Vergi_TC_No, Musteri, Satici, Personel, Mahalle_Koy, Cadde_Sokak, Dis_Kapi_No, Site_Adi, Apartman_Blok, Kat, Daire, Ilce, Il, Ulke, " +
-                                  "Telefon_1, Telefon_2, Telefon_3, Fax_1, Fax_2, E_Mail_1, E_Mail_2, Ise_Giris_Tarihi, Isten_Cikis_Tarihi, Gorev_Kodu, Maas, Insert_User, Insert_Date, Kurum_Kodu, Cari_Kodu) " +
+                                  "Vergi_TC_No, Satici, Mahalle_Koy, Cadde_Sokak, Dis_Kapi_No, Site_Adi, Apartman_Blok, Kat, Daire, Ilce, Il, Ulke, " +
+                                  "Telefon_1, Telefon_2, Telefon_3, Fax_1, Fax_2, E_Mail_1, E_Mail_2, Insert_User, Insert_Date, Kurum_Kodu, Cari_Kodu) " +
                                   "VALUES (@Cari_No, @Unvani, @Grup_Kodu, @Ozel_Kodu, @Indirim, @Para_Birimi, @Vergi_Dairesi, " +
-                                  "@Vergi_TC_No, @Musteri, @Satici, @Personel, @Mahalle_Koy, @Cadde_Sokak, @Dis_Kapi_No, @Site_Adi, @Apartman_Blok, @Kat, @Daire, @Ilce, @Il, @Ulke, " +
-                                  "@Telefon_1, @Telefon_2, @Telefon_3, @Fax_1, @Fax_2, @E_Mail_1, @E_Mail_2, @Ise_Giris_Tarihi, @Isten_Cikis_Tarihi, @Gorev_Kodu, @Maas, @Kullanici, @Zaman, @Kurum_Kodu, @Cari_Kodu)";
+                                  "@Vergi_TC_No, @Satici, @Mahalle_Koy, @Cadde_Sokak, @Dis_Kapi_No, @Site_Adi, @Apartman_Blok, @Kat, @Daire, @Ilce, @Il, @Ulke, " +
+                                  "@Telefon_1, @Telefon_2, @Telefon_3, @Fax_1, @Fax_2, @E_Mail_1, @E_Mail_2, @Kullanici, @Zaman, @Kurum_Kodu, @Cari_Kodu)";
             }
             else
                 cmd.CommandText = "UPDATE Cari_Tanitimi SET Cari_No = @Cari_No, Unvani = @Unvani, Grup_Kodu = @Grup_Kodu, Ozel_Kodu = @Ozel_Kodu, Indirim = @Indirim, Para_Birimi = @Para_Birimi, Vergi_Dairesi = @Vergi_Dairesi, " +
-                                  "Vergi_TC_No = @Vergi_TC_No, Musteri = @Musteri, Satici = @Satici, Personel = @Personel, Mahalle_Koy = @Mahalle_Koy, Cadde_Sokak = @Cadde_Sokak, Dis_Kapi_No = @Dis_Kapi_No, Site_Adi = @Site_Adi, Apartman_Blok = @Apartman_Blok, Kat = @Kat, Daire = @Daire, Ilce = @Ilce, Il = @Il, Ulke = @Ulke, " +
-                                  "Telefon_1 = @Telefon_1, Telefon_2 = @Telefon_2, Telefon_3 = @Telefon_3, Fax_1 = @Fax_1, Fax_2 = @Fax_2, E_Mail_1 = @E_Mail_1, E_Mail_2 = @E_Mail_2, Ise_Giris_Tarihi = @Ise_Giris_Tarihi, Isten_Cikis_Tarihi = @Isten_Cikis_Tarihi, Gorev_Kodu = @Gorev_Kodu, Maas = @Maas, Update_User = @Kullanici, Update_Date = @Zaman " +
+                                  "Vergi_TC_No = @Vergi_TC_No, Satici = @Satici, Mahalle_Koy = @Mahalle_Koy, Cadde_Sokak = @Cadde_Sokak, Dis_Kapi_No = @Dis_Kapi_No, Site_Adi = @Site_Adi, Apartman_Blok = @Apartman_Blok, Kat = @Kat, Daire = @Daire, Ilce = @Ilce, Il = @Il, Ulke = @Ulke, " +
+                                  "Telefon_1 = @Telefon_1, Telefon_2 = @Telefon_2, Telefon_3 = @Telefon_3, Fax_1 = @Fax_1, Fax_2 = @Fax_2, E_Mail_1 = @E_Mail_1, E_Mail_2 = @E_Mail_2, Update_User = @Kullanici, Update_Date = @Zaman " +
                                   "WHERE Silindi = 0 AND Kurum_Kodu = @Kurum_Kodu AND Cari_Kodu = @Cari_Kodu";
 
             cmd.Parameters.AddWithValue("@Cari_No", lblCariNo.Text.Trim());
@@ -219,9 +219,7 @@ namespace PRCTicari
             cmd.Parameters.AddWithValue("@Para_Birimi", cbParaBirimi.SelectedItem.TOSTRING());
             cmd.Parameters.AddWithValue("@Vergi_Dairesi", txtVergiDairesi.Text.Trim());
             cmd.Parameters.AddWithValue("@Vergi_TC_No", txtVergiNo.Text.Trim());
-            cmd.Parameters.AddWithValue("@Musteri", cbMusteri.Checked ? 1 : 0);
             cmd.Parameters.AddWithValue("@Satici", cbSatici.Checked ? 1 : 0);
-            cmd.Parameters.AddWithValue("@Personel", cbPersonel.Checked ? 1 : 0);
             cmd.Parameters.AddWithValue("@Mahalle_Koy", txtMahalleKoy.Text.Trim());
             cmd.Parameters.AddWithValue("@Cadde_Sokak", txtCaddeSokak.Text.Trim());
             cmd.Parameters.AddWithValue("@Dis_Kapi_No", txtDisKapiNo.Text.Trim());
@@ -239,20 +237,6 @@ namespace PRCTicari
             cmd.Parameters.AddWithValue("@Fax_2", mtbFax2.Text.Trim());
             cmd.Parameters.AddWithValue("@E_Mail_1", txtEMail1.Text.Trim());
             cmd.Parameters.AddWithValue("@E_Mail_2", txtEMail2.Text.Trim());
-            if (cbPersonel.Checked)
-            {
-                cmd.Parameters.AddWithValue("@Ise_Giris_Tarihi", dtpIseGirisTarihi.Value.TODATE());
-                cmd.Parameters.AddWithValue("@Isten_Cikis_Tarihi", dtpIstenCikisTarihi.Value.TODATE());
-                cmd.Parameters.AddWithValue("@Gorev_Kodu", txtGorevKodu.Text.Trim());
-                cmd.Parameters.AddWithValue("@Maas", nudMaas.Value);
-            }
-            else
-            {
-                cmd.Parameters.AddWithValue("@Ise_Giris_Tarihi", clsGenel.fncMinDateTime());
-                cmd.Parameters.AddWithValue("@Isten_Cikis_Tarihi", clsGenel.fncMinDateTime());
-                cmd.Parameters.AddWithValue("@Gorev_Kodu", "");
-                cmd.Parameters.AddWithValue("@Maas", 0);
-            }
             cmd.Parameters.AddWithValue("@Kullanici", clsGenel.strKullaniciKodu);
             cmd.Parameters.AddWithValue("@Zaman", DateTime.Now);
             cmd.Parameters.AddWithValue("@Kurum_Kodu", clsGenel.strKurumKodu);

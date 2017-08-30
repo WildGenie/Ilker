@@ -135,6 +135,11 @@ namespace PRCTicari
             return dtResult;
         }
 
+        public static DateTime ENDOFTHEDAY(this DateTime o)
+        {
+            return new DateTime(o.Year, o.Month, o.Day, 23, 59, 59, 999);
+        }
+
         public static byte[] TOBYTEARRAY(this object o, byte[] dDefault = null)
         {
             byte[] arrResult = dDefault;
@@ -143,6 +148,11 @@ namespace PRCTicari
                 arrResult = (byte[])o;
 
             return arrResult;
+        }
+
+        public static bool ISNULLOREMPTY(this string strText)
+        {
+            return string.IsNullOrEmpty(strText.Trim());
         }
 
         public static bool LOADIMAGE(this PictureBox pbPicture)
