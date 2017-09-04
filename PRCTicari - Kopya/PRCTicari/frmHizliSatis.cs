@@ -15,16 +15,20 @@ namespace PRCTicari
     {
         DataTable dtStoklar = new DataTable();
         DataTable dtCesniler = new DataTable();
-        DataView dvCesniler;
+        BindingSource bsStoklar = new BindingSource();
+        BindingSource bsCesniler = new BindingSource();
         Dictionary<string, Button> lstGrupButtons = new Dictionary<string, Button>();
         Dictionary<string, MyButton> lstStokButtons = new Dictionary<string, MyButton>();
 
         int intMaxGrupSayisi = 0;
         int intMaxStokSayisi = 0;
         int intMaxCesniSayisi = 0;
-        public frmHizliSatis()
+        public frmHizliSatis(string strFormID)
         {
             InitializeComponent();
+
+            this.AccessibleDescription = strFormID;
+
             intMaxGrupSayisi = tlpGruplar.ColumnCount * tlpGruplar.RowCount;
             intMaxStokSayisi = tlpStoklar.ColumnCount * tlpStoklar.RowCount;
             intMaxCesniSayisi = tlpCesniler.ColumnCount * tlpCesniler.RowCount;
@@ -40,7 +44,8 @@ namespace PRCTicari
             dtStoklar.Columns.Add("Miktari", typeof(double));
             dtStoklar.Columns.Add("Fiyati", typeof(double));
             dtStoklar.Columns.Add("Tutari", typeof(double));
-            dgvStoklar.DataSource = dtStoklar;
+            bsStoklar.DataSource = dtStoklar;
+            dgvStoklar.DataSource = bsStoklar;
 
             dtCesniler.Columns.Add("Anahtar", typeof(string));
             dtCesniler.Columns.Add("Stok_No", typeof(int));
@@ -52,8 +57,9 @@ namespace PRCTicari
             dtCesniler.Columns.Add("Miktari", typeof(double));
             dtCesniler.Columns.Add("Fiyati", typeof(double));
             dtCesniler.Columns.Add("Tutari", typeof(double));
-            dvCesniler = new DataView(dtCesniler);
-            dgvCesniler.DataSource = dvCesniler;
+
+            bsCesniler.DataSource = dtCesniler;
+            dgvCesniler.DataSource = bsCesniler;
 
             lstGrupButtons.Add("btnGrup1", btnGrup1);
             lstGrupButtons.Add("btnGrup2", btnGrup2);
@@ -138,7 +144,7 @@ namespace PRCTicari
             SqlConnection cnn = new SqlConnection(clsGenel.strConnectionString);
             cnn.Open();
             SqlCommand cmd = cnn.CreateCommand();
-            cmd.CommandText = string.Format("SELECT TOP {0} * FROM Stok_Grup_Tanitimi WHERE Kurum_Kodu = @Kurum_Kodu", intMaxGrupSayisi);
+            cmd.CommandText = string.Format("SELECT TOP {0} * FROM Stok_Grup_Tanitimi WHERE Kurum_Kodu = @Kurum_Kodu AND Hizli_Satis = 1", intMaxGrupSayisi);
             cmd.Parameters.AddWithValue("@Kurum_Kodu", clsGenel.strKurumKodu);
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -306,7 +312,7 @@ namespace PRCTicari
         {
             if (e.RowIndex > -1)
             {
-                dvCesniler.RowFilter = string.Format("Anahtar = '{0}'", dgvStoklar.CurrentRow.Cells["colAnahtar"].Value.TOSTRING());
+                bsCesniler.Filter = string.Format("Anahtar = '{0}'", dgvStoklar.CurrentRow.Cells["colAnahtar"].Value.TOSTRING());
                 prcdCesnilerGetir(dgvStoklar.CurrentRow.Cells["colStokNo"].Value.TOINT());
             }
         }
@@ -322,7 +328,8 @@ namespace PRCTicari
             {
                 if (dgvCesniler.CurrentRow != null)
                 {
-                    dvCesniler[dgvCesniler.CurrentRow.Index]["Aciklama"] = Interaction.InputBox("Lütfen '" + dvCesniler[dgvCesniler.CurrentRow.Index]["Stok_Adi"] + "' isimli çeşniye bir açıklama giriniz.", "Açıklama", "");
+                    ((DataRowView)bsCesniler.Current).Row["Aciklama"] = Interaction.InputBox("Lütfen '" + ((DataRowView)bsCesniler.Current).Row["Stok_Adi"] + "' isimli çeşniye bir açıklama giriniz.", "Açıklama", "");
+                    //bsCesniler.Current[dgvCesniler.CurrentRow.Index]["Aciklama"] = Interaction.InputBox("Lütfen '" + dvCesniler[dgvCesniler.CurrentRow.Index]["Stok_Adi"] + "' isimli çeşniye bir açıklama giriniz.", "Açıklama", "");
                 }
             }
             else
@@ -341,7 +348,8 @@ namespace PRCTicari
             {
                 if (dgvCesniler.CurrentRow != null)
                 {
-                    dvCesniler.Delete(dgvCesniler.CurrentRow.Index);
+                    ((DataRowView)bsCesniler.Current).Row.Delete();
+                    //dvCesniler.Delete(dgvCesniler.CurrentRow.Index);
                 }
             }
             else
@@ -407,24 +415,6 @@ namespace PRCTicari
             dgvCesniler.RowsDefaultCellStyle.SelectionBackColor = Color.Yellow;
             dgvCesniler.RowsDefaultCellStyle.SelectionForeColor = Color.Red;
             blnCesniDataGrid = true;
-        }
-
-        private void btnStok1_Click(object sender, EventArgs e)
-        {
-            txtTuslar.Text += ((MyButton)sender).Value2.TOSTRING();
-            txtTuslar_KeyDown(sender, new KeyEventArgs(Keys.Return));
-            txtTuslar.Clear();
-            txtTuslar.Focus();
-        }
-
-        private void btnCesni1_Click(object sender, EventArgs e)
-        {
-            blnCesniButon = true;
-            txtTuslar.Text += ((MyButton)sender).Value2.TOSTRING();
-            txtTuslar_KeyDown(sender, new KeyEventArgs(Keys.Return));
-            txtTuslar.Clear();
-            txtTuslar.Focus();
-            blnCesniButon = false;
         }
 
         private void txtTuslar_KeyDown(object sender, KeyEventArgs e)
@@ -503,32 +493,29 @@ namespace PRCTicari
 
                     if (blnDevam)
                     {
-                        DataRow DR;
-                        strAnahtar = blnCesniButon ? dgvStoklar.CurrentRow.Cells["colAnahtar"].Value.TOSTRING() : DateTime.Now.ToString("yyyyMMddHHmmssfff");
-                        DR = blnCesniButon ? dtCesniler.NewRow() : dtStoklar.NewRow();
-                        DR["Anahtar"] = strAnahtar;
-                        DR["Stok_No"] = intStokNo;
-                        DR["Stok_Kodu"] = strStokKodu;
-                        DR["Birim_Kodu"] = strBirimKodu;
-                        DR["Aciklama"] = "";
-                        DR["Kdv_Orani"] = dblKdvOrani;
-                        DR["Stok_Adi"] = strStokAdi;
-                        DR["Miktari"] = dblMiktar;
-                        DR["Fiyati"] = dblFiyati;
-                        DR["Tutari"] = dblMiktar * dblFiyati;
+                        DataGridView dgvGrid = blnCesniButon ? dgvCesniler : dgvStoklar;
+                        BindingSource bsSource = blnCesniButon ? bsCesniler : bsStoklar;
 
+                        strAnahtar = blnCesniButon ? dgvStoklar.CurrentRow.Cells["colAnahtar"].Value.TOSTRING() : DateTime.Now.ToString("yyyyMMddHHmmssfff");
+                        dgvGrid.AllowUserToAddRows = true;
+                        dgvGrid.CurrentCell = dgvGrid.Rows[dgvGrid.NewRowIndex].Cells[(blnCesniButon ? colStokAdiCesni : colStokAdi).Name];
+                        dgvGrid.CurrentRow.Cells[(blnCesniButon ? colAnahtarCesni : colAnahtar).Name].Value = strAnahtar;
+                        dgvGrid.CurrentRow.Cells[(blnCesniButon ? colStokNoCesni : colStokNo).Name].Value = intStokNo;
+                        dgvGrid.CurrentRow.Cells[(blnCesniButon ? colStokKoduCesni : colStokKodu).Name].Value = strStokKodu;
+                        dgvGrid.CurrentRow.Cells[(blnCesniButon ? colBirimKoduCesni : colBirimKodu).Name].Value = strBirimKodu;
+                        dgvGrid.CurrentRow.Cells[(blnCesniButon ? colAciklamaCesni : colAciklama).Name].Value = "";
+                        dgvGrid.CurrentRow.Cells[(blnCesniButon ? colKdvOraniCesni : colKdvOrani).Name].Value = dblKdvOrani;
+                        dgvGrid.CurrentRow.Cells[(blnCesniButon ? colStokAdiCesni : colStokAdi).Name].Value = strStokAdi;
+                        dgvGrid.CurrentRow.Cells[(blnCesniButon ? colMiktariCesni : colMiktari).Name].Value = dblMiktar;
+                        dgvGrid.CurrentRow.Cells[(blnCesniButon ? colFiyatiCesni : colFiyati).Name].Value = dblFiyati;
+                        dgvGrid.CurrentRow.Cells[(blnCesniButon ? colTutariCesni : colTutari).Name].Value = dblMiktar * dblFiyati;
+                        bsSource.ResetBindings(true);
+                        dgvGrid.AllowUserToAddRows = false;
+                        dgvGrid.CurrentCell = dgvGrid.Rows[dgvGrid.Rows.Count - 1].Cells[(blnCesniButon ? colStokAdiCesni : colStokAdi).Name];
                         if (blnCesniButon)
-                        {
-                            dtCesniler.Rows.Add(DR);
-                            dgvCesniler.CurrentCell = dgvCesniler.Rows[dgvCesniler.Rows.Count - 1].Cells["colStokAdiCesni"];
                             dgvCesniler_Click(dgvCesniler, new EventArgs());
-                        }
                         else
-                        {
-                            dtStoklar.Rows.Add(DR);
-                            dgvStoklar.CurrentCell = dgvStoklar.Rows[dgvStoklar.Rows.Count - 1].Cells["colStokAdi"];
                             dgvStoklar_Click(dgvStoklar, new EventArgs());
-                        }
                     }
                 }
                 reader.Close();
@@ -539,9 +526,65 @@ namespace PRCTicari
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void tsmiTasarim_Click(object sender, EventArgs e)
         {
+            prcdRaporHazirla(((ToolStripMenuItem)sender).Tag.TOBYTE());
+        }
 
+        private void btnHesapFisi_Click(object sender, EventArgs e)
+        {
+            prcdRaporHazirla(((Button)sender).Tag.TOBYTE());
+        }
+
+        private void prcdRaporHazirla(byte bytTip)
+        {
+            Dictionary<string, DataTable> dDataTables = new Dictionary<string, DataTable>();
+
+            DataTable dtRapor = dtStoklar.Clone();
+            dtRapor.Columns.Add("Cesni", typeof(int));
+
+            foreach (DataRow DR in dtStoklar.Rows)
+            {
+                DataRow DRRapor = dtRapor.NewRow();
+                DRRapor["Cesni"] = 0;
+                foreach (DataColumn DC in dtStoklar.Columns)
+                    DRRapor[DC.ColumnName] = DR[DC.ColumnName];
+                dtRapor.Rows.Add(DRRapor);
+            }
+
+            foreach (DataRow DR in dtCesniler.Rows)
+            {
+                DataRow DRRapor = dtRapor.NewRow();
+                DRRapor["Cesni"] = 1;
+                foreach (DataColumn DC in dtStoklar.Columns)
+                    DRRapor[DC.ColumnName] = DR[DC.ColumnName];
+                dtRapor.Rows.Add(DRRapor);
+            }
+
+            DataView dvRapor = new DataView(dtRapor);
+            dvRapor.Sort = "Anahtar, Cesni";
+
+            dDataTables.Add("dtRapor", dvRapor.ToTable());
+
+            clsGenel.prcdRaporHazirla(bytTip, this.AccessibleDescription, null, dDataTables, "HesapFisi.frx");
+        }
+
+        private void btnCesni1_MouseUp(object sender, MouseEventArgs e)
+        {
+            blnCesniButon = true;
+            txtTuslar.Text += ((MyButton)sender).Value2.TOSTRING();
+            txtTuslar_KeyDown(sender, new KeyEventArgs(Keys.Return));
+            txtTuslar.Clear();
+            txtTuslar.Focus();
+            blnCesniButon = false;
+        }
+
+        private void btnStok1_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtTuslar.Text += ((MyButton)sender).Value2.TOSTRING();
+            txtTuslar_KeyDown(sender, new KeyEventArgs(Keys.Return));
+            txtTuslar.Clear();
+            txtTuslar.Focus();
         }
     }
 }

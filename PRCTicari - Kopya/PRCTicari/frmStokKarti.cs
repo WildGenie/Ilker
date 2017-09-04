@@ -708,5 +708,10 @@ namespace PRCTicari
             object o = clsXKod.fncSECStokOzelKodlar(((Button)sender).Tag.TOINT());
             if (o != null) ((TextBox)tpOzelKodlar.Controls["txtOzelKodu" + ((Button)sender).Tag.TOSTRING()]).Text = o.TOSTRING();
         }
+
+        private void nudBT1AlisFiyati_Enter(object sender, EventArgs e)
+        {
+            ((NumericUpDown)sender).Select(0, ((NumericUpDown)sender).Value.ToString(clsGenel.strDoubleFormatFourRequired).Length);
+        }
     }
 }

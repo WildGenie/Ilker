@@ -33,13 +33,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStokGrupKarti));
             this.dgvGruplar = new PRCTicari.MyDataGridView(this.components);
-            this.colGrupKodu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGrupAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbKaydet = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbKapat = new System.Windows.Forms.ToolStripButton();
+            this.colGrupKodu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGrupAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHizliSatis = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGruplar)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +52,8 @@
             this.dgvGruplar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGruplar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colGrupKodu,
-            this.colGrupAdi});
+            this.colGrupAdi,
+            this.colHizliSatis});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSteelBlue;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -64,29 +66,15 @@
             this.dgvGruplar.Location = new System.Drawing.Point(0, 54);
             this.dgvGruplar.Name = "dgvGruplar";
             this.dgvGruplar.RowHeadersWidth = 24;
-            this.dgvGruplar.Size = new System.Drawing.Size(337, 220);
+            this.dgvGruplar.Size = new System.Drawing.Size(448, 220);
             this.dgvGruplar.TabIndex = 12;
-            // 
-            // colGrupKodu
-            // 
-            this.colGrupKodu.DataPropertyName = "Grup_Kodu";
-            this.colGrupKodu.HeaderText = "Grup Kodu";
-            this.colGrupKodu.Name = "colGrupKodu";
-            this.colGrupKodu.Width = 85;
-            // 
-            // colGrupAdi
-            // 
-            this.colGrupAdi.DataPropertyName = "Grup_Adi";
-            this.colGrupAdi.HeaderText = "Grup Adı";
-            this.colGrupAdi.Name = "colGrupAdi";
-            this.colGrupAdi.Width = 200;
             // 
             // statusStrip1
             // 
             this.statusStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("statusStrip1.BackgroundImage")));
             this.statusStrip1.Location = new System.Drawing.Point(0, 274);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(337, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(448, 22);
             this.statusStrip1.TabIndex = 13;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -101,7 +89,7 @@
             this.tsbKapat});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(337, 54);
+            this.toolStrip1.Size = new System.Drawing.Size(448, 54);
             this.toolStrip1.TabIndex = 11;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -130,12 +118,35 @@
             this.tsbKapat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbKapat.Click += new System.EventHandler(this.tsbKapat_Click);
             // 
+            // colGrupKodu
+            // 
+            this.colGrupKodu.DataPropertyName = "Grup_Kodu";
+            this.colGrupKodu.HeaderText = "Grup Kodu";
+            this.colGrupKodu.Name = "colGrupKodu";
+            this.colGrupKodu.Width = 85;
+            // 
+            // colGrupAdi
+            // 
+            this.colGrupAdi.DataPropertyName = "Grup_Adi";
+            this.colGrupAdi.HeaderText = "Grup Adı";
+            this.colGrupAdi.Name = "colGrupAdi";
+            this.colGrupAdi.Width = 200;
+            // 
+            // colHizliSatis
+            // 
+            this.colHizliSatis.DataPropertyName = "Hizli_Satis";
+            this.colHizliSatis.FalseValue = "0";
+            this.colHizliSatis.HeaderText = "Hızlı Satış";
+            this.colHizliSatis.Name = "colHizliSatis";
+            this.colHizliSatis.TrueValue = "1";
+            this.colHizliSatis.Width = 70;
+            // 
             // frmStokGrupKarti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(337, 296);
+            this.ClientSize = new System.Drawing.Size(448, 296);
             this.Controls.Add(this.dgvGruplar);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
@@ -157,12 +168,13 @@
         #endregion
 
         private MyDataGridView dgvGruplar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGrupKodu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGrupAdi;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsbKaydet;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton tsbKapat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGrupKodu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGrupAdi;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colHizliSatis;
     }
 }

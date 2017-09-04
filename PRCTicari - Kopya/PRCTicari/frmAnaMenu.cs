@@ -67,7 +67,7 @@ namespace PRCTicari
                 else if (strTag == tsbHizliSatis.Tag.TOSTRING())
                 {
                     //frmHizliSatisKantin frmForm = new frmHizliSatisKantin();
-                    frmHizliSatis frmForm = new frmHizliSatis();
+                    frmHizliSatis frmForm = new frmHizliSatis(strTag);
                     frmForm.MdiParent = this;
                     frmForm.Show();
 

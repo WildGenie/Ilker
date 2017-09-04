@@ -84,7 +84,7 @@ namespace PRCTicari
         {
             if (e.KeyData == Keys.Enter)
             {
-                if (this.ColumnCount > 0)
+                if (this.ColumnCount > 0 && this.CurrentCell != null)
                 {
                     int col = this.CurrentCell.ColumnIndex;
                     int row = this.CurrentCell.RowIndex;

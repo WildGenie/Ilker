@@ -112,6 +112,10 @@ namespace PRCTicari
                 ftFisTipi == clsFisTipleri.FisTipleri.FaturaSatisIade)
             {
                 label18.Text = "İrsaliye No:";
+                label5.Text = "Fatura Tarihi:";
+                label5.Left = label6.Left + label6.Width - label5.Width;
+                label4.Text = "Fatura No:";
+                label4.Left = label3.Left + label3.Width - label4.Width;
             }
             else if (ftFisTipi == clsFisTipleri.FisTipleri.IrsaliyeAlis ||
                      ftFisTipi == clsFisTipleri.FisTipleri.IrsaliyeAlisIade ||
@@ -119,6 +123,16 @@ namespace PRCTicari
                      ftFisTipi == clsFisTipleri.FisTipleri.IrsaliyeSatisIade)
             {
                 label18.Text = "Fatura No:";
+                label5.Text = "İrsaliye Tarihi:";
+                label5.Left = label6.Left + label6.Width - label5.Width;
+                label4.Text = "İrsaliye No:";
+                label4.Left = label3.Left + label3.Width - label4.Width;
+            }
+            else
+            {
+                label5.Left = label4.Left + label4.Width - label5.Width;
+                dtpBelgeTarihi.Left = txtBelgeNo.Left;
+                dtpBelgeTarihi.Width = txtBelgeNo.Width;
             }
 
             label18.Left = txtFaturaIrsaliyeNo.Left - label18.Width;

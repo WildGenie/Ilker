@@ -23,6 +23,7 @@ namespace PRCTicari
         public static object oXKodSelected = null;
         public static string strDoubleFormatTwo = "#,##0.00;-#,##0.00;#.#";
         public static string strDoubleFormatFour = "#,##0.0000;-#,##0.0000;#.#";
+        public static string strDoubleFormatFourRequired = "#,##0.0000;-#,##0.0000;#,##0.0000";
         public static string strRaporPath = fncGetExePath() + @"\Raporlar";
 
         private static Dictionary<string, string> arrParametreler = new Dictionary<string, string>();
@@ -234,22 +235,30 @@ namespace PRCTicari
             return lstRaporDosya.ToArray();
         }
 
-        public static void prcdRaporHazirla(byte bytTip, string strFormID, ComboBox cbRaporAdi, Dictionary<string, DataTable> dDataTables)
+        public static void prcdRaporHazirla(byte bytTip, string strFormID, ComboBox cbRaporAdi, Dictionary<string, DataTable> dDataTables, string strRaporAdi = "")
         {
             string strPath = strRaporPath + @"\" + strFormID;
             DirectoryControl(strPath);
 
             Report rReport = new Report();
 
-            if (!string.IsNullOrEmpty(cbRaporAdi.Text.Trim()))
-                rReport.Load(strPath + @"\" + cbRaporAdi.Text.Trim());
+            if (cbRaporAdi != null)
+            {
+                if (!string.IsNullOrEmpty(cbRaporAdi.Text.Trim()))
+                    rReport.Load(strPath + @"\" + cbRaporAdi.Text.Trim());
+            }
+            else
+                rReport.Load(strPath + @"\" + strRaporAdi);
 
             rReport.Dictionary.Connections.Clear();
 
             foreach (string strDTKey in dDataTables.Keys)
                 rReport.RegisterData(dDataTables[strDTKey], strDTKey);
 
-            prcdRaporXMLKayit(strFormID, cbRaporAdi.Text.Trim());
+            if (cbRaporAdi != null)
+                prcdRaporXMLKayit(strFormID, cbRaporAdi.Text.Trim());
+            else
+                prcdRaporXMLKayit(strFormID, strRaporAdi);
 
             if (bytTip == 0)
                 rReport.Show();
@@ -259,11 +268,15 @@ namespace PRCTicari
             {
                 rReport.Design(true);
 
-                cbRaporAdi.Items.Clear();
-                cbRaporAdi.Items.AddRange(fncRaporDosyaListesi(strFormID));
+                if (cbRaporAdi != null)
+                {
+                    cbRaporAdi.Items.Clear();
+                    cbRaporAdi.Items.AddRange(fncRaporDosyaListesi(strFormID));
+                }
             }
 
-            prcdRaporXMLGetir(strFormID, cbRaporAdi);
+            if (cbRaporAdi != null)
+                prcdRaporXMLGetir(strFormID, cbRaporAdi);
         }
 
         public static void prcdRaporXMLKayit(string strFormID, string strRaporAdi)

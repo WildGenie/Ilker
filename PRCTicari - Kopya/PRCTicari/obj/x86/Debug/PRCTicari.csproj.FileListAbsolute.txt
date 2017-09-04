@@ -174,3 +174,4 @@ F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmPersonelKar
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmPersonelGorevKarti.resources
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.rpStokEnvanter.resources
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.rpStokHareket.resources
+F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.csprojResolveAssemblyReference.cache

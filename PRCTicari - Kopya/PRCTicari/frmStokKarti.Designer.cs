@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStokKarti));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -742,26 +742,28 @@
             // 
             this.dgvAlislar.AllowUserToAddRows = false;
             this.dgvAlislar.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            this.dgvAlislar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvAlislar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAlislar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlislar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colAy,
             this.colMiktar});
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAlislar.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAlislar.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAlislar.Location = new System.Drawing.Point(455, 140);
             this.dgvAlislar.Name = "dgvAlislar";
             this.dgvAlislar.RowHeadersVisible = false;
             this.dgvAlislar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAlislar.Size = new System.Drawing.Size(160, 261);
-            this.dgvAlislar.TabIndex = 10;
+            this.dgvAlislar.TabIndex = 17;
+            this.dgvAlislar.TabStop = false;
+            this.dgvAlislar.Tag = "";
             // 
             // colAy
             // 
@@ -774,8 +776,8 @@
             // colMiktar
             // 
             this.colMiktar.DataPropertyName = "Miktar";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colMiktar.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colMiktar.DefaultCellStyle = dataGridViewCellStyle2;
             this.colMiktar.HeaderText = "Miktar";
             this.colMiktar.Name = "colMiktar";
             this.colMiktar.ReadOnly = true;
@@ -851,7 +853,7 @@
             this.tcBirimler.SelectedIndex = 0;
             this.tcBirimler.Size = new System.Drawing.Size(359, 160);
             this.tcBirimler.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tcBirimler.TabIndex = 14;
+            this.tcBirimler.TabIndex = 16;
             this.tcBirimler.TabStop = false;
             // 
             // tpBirim1
@@ -892,8 +894,9 @@
             0});
             this.nudBT1SatisFiyati3.Name = "nudBT1SatisFiyati3";
             this.nudBT1SatisFiyati3.Size = new System.Drawing.Size(93, 20);
-            this.nudBT1SatisFiyati3.TabIndex = 8;
+            this.nudBT1SatisFiyati3.TabIndex = 7;
             this.nudBT1SatisFiyati3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudBT1SatisFiyati3.Enter += new System.EventHandler(this.nudBT1AlisFiyati_Enter);
             // 
             // label37
             // 
@@ -918,8 +921,9 @@
             0});
             this.nudBT1SatisFiyati2.Name = "nudBT1SatisFiyati2";
             this.nudBT1SatisFiyati2.Size = new System.Drawing.Size(93, 20);
-            this.nudBT1SatisFiyati2.TabIndex = 7;
+            this.nudBT1SatisFiyati2.TabIndex = 6;
             this.nudBT1SatisFiyati2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudBT1SatisFiyati2.Enter += new System.EventHandler(this.nudBT1AlisFiyati_Enter);
             // 
             // label11
             // 
@@ -939,7 +943,7 @@
             this.cbBT1HizliSatis.Location = new System.Drawing.Point(216, 33);
             this.cbBT1HizliSatis.Name = "cbBT1HizliSatis";
             this.cbBT1HizliSatis.Size = new System.Drawing.Size(71, 17);
-            this.cbBT1HizliSatis.TabIndex = 3;
+            this.cbBT1HizliSatis.TabIndex = 8;
             this.cbBT1HizliSatis.TabStop = false;
             this.cbBT1HizliSatis.Text = "Hızlı Satış";
             this.cbBT1HizliSatis.UseVisualStyleBackColor = true;
@@ -984,8 +988,9 @@
             0});
             this.nudBT1SatisFiyati1.Name = "nudBT1SatisFiyati1";
             this.nudBT1SatisFiyati1.Size = new System.Drawing.Size(93, 20);
-            this.nudBT1SatisFiyati1.TabIndex = 6;
+            this.nudBT1SatisFiyati1.TabIndex = 5;
             this.nudBT1SatisFiyati1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudBT1SatisFiyati1.Enter += new System.EventHandler(this.nudBT1AlisFiyati_Enter);
             // 
             // nudBT1AlisFiyatiKdvli
             // 
@@ -998,8 +1003,9 @@
             0});
             this.nudBT1AlisFiyatiKdvli.Name = "nudBT1AlisFiyatiKdvli";
             this.nudBT1AlisFiyatiKdvli.Size = new System.Drawing.Size(93, 20);
-            this.nudBT1AlisFiyatiKdvli.TabIndex = 5;
+            this.nudBT1AlisFiyatiKdvli.TabIndex = 4;
             this.nudBT1AlisFiyatiKdvli.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudBT1AlisFiyatiKdvli.Enter += new System.EventHandler(this.nudBT1AlisFiyati_Enter);
             // 
             // nudBT1AlisFiyati
             // 
@@ -1012,8 +1018,9 @@
             0});
             this.nudBT1AlisFiyati.Name = "nudBT1AlisFiyati";
             this.nudBT1AlisFiyati.Size = new System.Drawing.Size(93, 20);
-            this.nudBT1AlisFiyati.TabIndex = 4;
+            this.nudBT1AlisFiyati.TabIndex = 3;
             this.nudBT1AlisFiyati.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudBT1AlisFiyati.Enter += new System.EventHandler(this.nudBT1AlisFiyati_Enter);
             // 
             // label10
             // 
@@ -1035,7 +1042,7 @@
             this.label9.Location = new System.Drawing.Point(157, 55);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 15);
-            this.label9.TabIndex = 15;
+            this.label9.TabIndex = 3;
             this.label9.Text = "Alış Fiyatı (Kdv\'li)";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1122,7 +1129,7 @@
             0});
             this.nudBT2SatisFiyati3.Name = "nudBT2SatisFiyati3";
             this.nudBT2SatisFiyati3.Size = new System.Drawing.Size(93, 20);
-            this.nudBT2SatisFiyati3.TabIndex = 8;
+            this.nudBT2SatisFiyati3.TabIndex = 7;
             this.nudBT2SatisFiyati3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label39
@@ -1148,7 +1155,7 @@
             0});
             this.nudBT2SatisFiyati2.Name = "nudBT2SatisFiyati2";
             this.nudBT2SatisFiyati2.Size = new System.Drawing.Size(93, 20);
-            this.nudBT2SatisFiyati2.TabIndex = 7;
+            this.nudBT2SatisFiyati2.TabIndex = 6;
             this.nudBT2SatisFiyati2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label38
@@ -1214,7 +1221,7 @@
             0});
             this.nudBT2SatisFiyati1.Name = "nudBT2SatisFiyati1";
             this.nudBT2SatisFiyati1.Size = new System.Drawing.Size(93, 20);
-            this.nudBT2SatisFiyati1.TabIndex = 6;
+            this.nudBT2SatisFiyati1.TabIndex = 5;
             this.nudBT2SatisFiyati1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // nudBT2AlisFiyatiKdvli
@@ -1228,7 +1235,7 @@
             0});
             this.nudBT2AlisFiyatiKdvli.Name = "nudBT2AlisFiyatiKdvli";
             this.nudBT2AlisFiyatiKdvli.Size = new System.Drawing.Size(93, 20);
-            this.nudBT2AlisFiyatiKdvli.TabIndex = 5;
+            this.nudBT2AlisFiyatiKdvli.TabIndex = 4;
             this.nudBT2AlisFiyatiKdvli.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // nudBT2AlisFiyati
@@ -1242,7 +1249,7 @@
             0});
             this.nudBT2AlisFiyati.Name = "nudBT2AlisFiyati";
             this.nudBT2AlisFiyati.Size = new System.Drawing.Size(93, 20);
-            this.nudBT2AlisFiyati.TabIndex = 4;
+            this.nudBT2AlisFiyati.TabIndex = 3;
             this.nudBT2AlisFiyati.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtBT2Barkod
@@ -2365,9 +2372,9 @@
             // colSecStokKodu
             // 
             this.colSecStokKodu.DataPropertyName = "Sec_Stok_Kodu";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.NullValue = "...";
-            this.colSecStokKodu.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.NullValue = "...";
+            this.colSecStokKodu.DefaultCellStyle = dataGridViewCellStyle4;
             this.colSecStokKodu.HeaderText = "";
             this.colSecStokKodu.Name = "colSecStokKodu";
             this.colSecStokKodu.ReadOnly = true;
@@ -2394,22 +2401,22 @@
             // 
             // dgvTedarikciler
             // 
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
-            this.dgvTedarikciler.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dgvTedarikciler.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvTedarikciler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTedarikciler.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colTedarikciNo,
             this.colTedarikciKodu,
             this.colTedarikciSec,
             this.colTedarikciAdi});
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTedarikciler.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTedarikciler.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvTedarikciler.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTedarikciler.Location = new System.Drawing.Point(3, 3);
             this.dgvTedarikciler.Name = "dgvTedarikciler";
@@ -2435,9 +2442,9 @@
             // colTedarikciSec
             // 
             this.colTedarikciSec.DataPropertyName = "Tedarikci_Sec";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.NullValue = "...";
-            this.colTedarikciSec.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.NullValue = "...";
+            this.colTedarikciSec.DefaultCellStyle = dataGridViewCellStyle6;
             this.colTedarikciSec.HeaderText = "";
             this.colTedarikciSec.Name = "colTedarikciSec";
             this.colTedarikciSec.ReadOnly = true;

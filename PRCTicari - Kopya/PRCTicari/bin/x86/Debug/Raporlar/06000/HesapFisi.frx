@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="08/30/2017 22:36:57" ReportInfo.Modified="09/04/2017 23:38:26" ReportInfo.CreatorVersion="2016.2.20.0">
+  <Dictionary>
+    <TableDataSource Name="dtRapor" ReferenceName="dtRapor" DataType="System.Int32" Enabled="true">
+      <Column Name="Anahtar" DataType="System.String"/>
+      <Column Name="Stok_No" DataType="System.Int32"/>
+      <Column Name="Stok_Kodu" DataType="System.String"/>
+      <Column Name="Birim_Kodu" DataType="System.String"/>
+      <Column Name="Aciklama" DataType="System.String"/>
+      <Column Name="Kdv_Orani" DataType="System.Double"/>
+      <Column Name="Stok_Adi" DataType="System.String"/>
+      <Column Name="Miktari" DataType="System.Double"/>
+      <Column Name="Fiyati" DataType="System.Double"/>
+      <Column Name="Tutari" DataType="System.Double"/>
+      <Column Name="Cesni" DataType="System.Int32"/>
+    </TableDataSource>
+    <Total Name="Toplam_Tutari" Expression="[dtRapor.Tutari]" Evaluator="Data1"/>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="75.6">
+      <TextObject Name="Text1" Width="718.2" Height="28.35" Text="HESAP FİŞİ" HorzAlign="Center" Font="Arial, 20pt, style=Bold"/>
+      <TextObject Name="Text14" Left="623.7" Top="37.8" Width="94.5" Height="18.9" Text="[Date]" Format="Date" Format.Format="d"/>
+      <TextObject Name="Text15" Left="529.2" Top="37.8" Width="94.5" Height="18.9" Text="Tarih:" HorzAlign="Right"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="79.6" Width="718.2" Height="18.9">
+      <TextObject Name="Text5" Width="245.7" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Stok Adı" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text9" Left="340.2" Width="56.7" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Miktarı" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text11" Left="396.9" Width="56.7" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Fiyatı" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text13" Left="453.6" Width="56.7" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Tutarı" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text7" Left="245.7" Width="94.5" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Birimi" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text16" Left="510.3" Width="207.9" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Açıklama" Font="Arial, 10pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="102.5" Width="718.2" Height="18.9" DataSource="dtRapor">
+      <TextObject Name="Text4" Width="245.7" Height="18.9" Border.Lines="All" Text="[Trim(PadLeft(&quot;&quot;, [dtRapor.Cesni], '-') + &quot; &quot; + PadLeft(&quot;&quot;, [dtRapor.Cesni], '-') + &quot; &quot; + PadLeft(&quot;&quot;, [dtRapor.Cesni], '-') + &quot; &quot; + [dtRapor.Stok_Adi])]"/>
+      <TextObject Name="Text6" Left="245.7" Width="94.5" Height="18.9" Border.Lines="All" Text="[dtRapor.Birim_Kodu]"/>
+      <TextObject Name="Text8" Left="340.2" Width="56.7" Height="18.9" Border.Lines="All" Text="[dtRapor.Miktari]" HideZeros="true" Format="Number" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text10" Left="396.9" Width="56.7" Height="18.9" Border.Lines="All" Text="[dtRapor.Fiyati]" HideZeros="true" Format="Number" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text12" Left="453.6" Width="56.7" Height="18.9" Border.Lines="All" Text="[dtRapor.Tutari]" HideZeros="true" Format="Number" Format.UseLocale="true" HorzAlign="Right"/>
+      <TextObject Name="Text17" Left="510.3" Width="207.9" Height="18.9" Border.Lines="All" Text="[dtRapor.Aciklama]"/>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="125.4" Width="718.2" Height="37.8">
+      <TextObject Name="Text2" Left="453.6" Width="56.7" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="[Toplam_Tutari]" Format="Number" Format.UseLocale="true" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text18" Width="453.6" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Toplam Tutar:" Format="Number" Format.UseLocale="true" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text19" Left="510.3" Width="207.9" Height="18.9" Border.Lines="All" Fill.Color="Silver" Format="Number" Format.UseLocale="true" HorzAlign="Right"/>
+    </ReportSummaryBand>
+  </ReportPage>
+</Report>

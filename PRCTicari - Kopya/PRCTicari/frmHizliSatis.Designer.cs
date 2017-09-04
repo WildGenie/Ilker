@@ -64,6 +64,10 @@
             this.gbIslemler = new System.Windows.Forms.GroupBox();
             this.btnKapat = new System.Windows.Forms.Button();
             this.btnOdemeAl = new System.Windows.Forms.Button();
+            this.btnHesapFisi = new System.Windows.Forms.Button();
+            this.cmsHesapFisi = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiTasarim = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlSil = new System.Windows.Forms.Panel();
             this.btnTumunuSil = new System.Windows.Forms.Button();
             this.btnSatiriSil = new System.Windows.Forms.Button();
             this.btnAciklamaGir = new System.Windows.Forms.Button();
@@ -168,6 +172,8 @@
             this.tlpStoklar.SuspendLayout();
             this.panel6.SuspendLayout();
             this.gbIslemler.SuspendLayout();
+            this.cmsHesapFisi.SuspendLayout();
+            this.pnlSil.SuspendLayout();
             this.gbTuslar.SuspendLayout();
             this.gbTerazi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStoklar)).BeginInit();
@@ -183,7 +189,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(117, 456);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // tlpGruplar
             // 
@@ -522,8 +527,8 @@
             // 
             this.gbIslemler.Controls.Add(this.btnKapat);
             this.gbIslemler.Controls.Add(this.btnOdemeAl);
-            this.gbIslemler.Controls.Add(this.btnTumunuSil);
-            this.gbIslemler.Controls.Add(this.btnSatiriSil);
+            this.gbIslemler.Controls.Add(this.btnHesapFisi);
+            this.gbIslemler.Controls.Add(this.pnlSil);
             this.gbIslemler.Controls.Add(this.btnAciklamaGir);
             this.gbIslemler.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbIslemler.Location = new System.Drawing.Point(0, 351);
@@ -559,14 +564,54 @@
             this.btnOdemeAl.UseVisualStyleBackColor = true;
             this.btnOdemeAl.Click += new System.EventHandler(this.btnOdemeAl_Click);
             // 
+            // btnHesapFisi
+            // 
+            this.btnHesapFisi.ContextMenuStrip = this.cmsHesapFisi;
+            this.btnHesapFisi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHesapFisi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHesapFisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnHesapFisi.Location = new System.Drawing.Point(3, 96);
+            this.btnHesapFisi.Name = "btnHesapFisi";
+            this.btnHesapFisi.Size = new System.Drawing.Size(234, 40);
+            this.btnHesapFisi.TabIndex = 21;
+            this.btnHesapFisi.Tag = "0";
+            this.btnHesapFisi.Text = "Hesap Fişi";
+            this.btnHesapFisi.UseVisualStyleBackColor = true;
+            this.btnHesapFisi.Click += new System.EventHandler(this.btnHesapFisi_Click);
+            // 
+            // cmsHesapFisi
+            // 
+            this.cmsHesapFisi.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiTasarim});
+            this.cmsHesapFisi.Name = "cmsHesapFisi";
+            this.cmsHesapFisi.Size = new System.Drawing.Size(116, 26);
+            // 
+            // tsmiTasarim
+            // 
+            this.tsmiTasarim.Name = "tsmiTasarim";
+            this.tsmiTasarim.Size = new System.Drawing.Size(115, 22);
+            this.tsmiTasarim.Tag = "2";
+            this.tsmiTasarim.Text = "Tasarım";
+            this.tsmiTasarim.Click += new System.EventHandler(this.tsmiTasarim_Click);
+            // 
+            // pnlSil
+            // 
+            this.pnlSil.Controls.Add(this.btnTumunuSil);
+            this.pnlSil.Controls.Add(this.btnSatiriSil);
+            this.pnlSil.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSil.Location = new System.Drawing.Point(3, 56);
+            this.pnlSil.Name = "pnlSil";
+            this.pnlSil.Size = new System.Drawing.Size(234, 40);
+            this.pnlSil.TabIndex = 20;
+            // 
             // btnTumunuSil
             // 
             this.btnTumunuSil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTumunuSil.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTumunuSil.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTumunuSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnTumunuSil.Location = new System.Drawing.Point(3, 96);
+            this.btnTumunuSil.Location = new System.Drawing.Point(110, 0);
             this.btnTumunuSil.Name = "btnTumunuSil";
-            this.btnTumunuSil.Size = new System.Drawing.Size(234, 40);
+            this.btnTumunuSil.Size = new System.Drawing.Size(124, 40);
             this.btnTumunuSil.TabIndex = 17;
             this.btnTumunuSil.Text = "Tümünü Sil";
             this.btnTumunuSil.UseVisualStyleBackColor = true;
@@ -575,11 +620,11 @@
             // btnSatiriSil
             // 
             this.btnSatiriSil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSatiriSil.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSatiriSil.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSatiriSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSatiriSil.Location = new System.Drawing.Point(3, 56);
+            this.btnSatiriSil.Location = new System.Drawing.Point(0, 0);
             this.btnSatiriSil.Name = "btnSatiriSil";
-            this.btnSatiriSil.Size = new System.Drawing.Size(234, 40);
+            this.btnSatiriSil.Size = new System.Drawing.Size(110, 40);
             this.btnSatiriSil.TabIndex = 16;
             this.btnSatiriSil.Text = "Satırı Sil";
             this.btnSatiriSil.UseVisualStyleBackColor = true;
@@ -843,6 +888,7 @@
             this.btnStok40.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok40.Name = "btnStok40";
             this.btnStok40.Size = new System.Drawing.Size(98, 57);
+            this.btnStok40.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok40.TabIndex = 45;
             this.btnStok40.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok40.UseVisualStyleBackColor = true;
@@ -851,7 +897,7 @@
             this.btnStok40.Value3 = null;
             this.btnStok40.Value4 = null;
             this.btnStok40.Value5 = null;
-            this.btnStok40.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok40.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok39
             // 
@@ -875,6 +921,7 @@
             this.btnStok39.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok39.Name = "btnStok39";
             this.btnStok39.Size = new System.Drawing.Size(96, 57);
+            this.btnStok39.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok39.TabIndex = 44;
             this.btnStok39.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok39.UseVisualStyleBackColor = true;
@@ -883,7 +930,7 @@
             this.btnStok39.Value3 = null;
             this.btnStok39.Value4 = null;
             this.btnStok39.Value5 = null;
-            this.btnStok39.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok39.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok38
             // 
@@ -907,6 +954,7 @@
             this.btnStok38.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok38.Name = "btnStok38";
             this.btnStok38.Size = new System.Drawing.Size(96, 57);
+            this.btnStok38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok38.TabIndex = 43;
             this.btnStok38.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok38.UseVisualStyleBackColor = true;
@@ -915,7 +963,7 @@
             this.btnStok38.Value3 = null;
             this.btnStok38.Value4 = null;
             this.btnStok38.Value5 = null;
-            this.btnStok38.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok38.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok37
             // 
@@ -939,6 +987,7 @@
             this.btnStok37.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok37.Name = "btnStok37";
             this.btnStok37.Size = new System.Drawing.Size(96, 57);
+            this.btnStok37.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok37.TabIndex = 36;
             this.btnStok37.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok37.UseVisualStyleBackColor = true;
@@ -947,7 +996,7 @@
             this.btnStok37.Value3 = null;
             this.btnStok37.Value4 = null;
             this.btnStok37.Value5 = null;
-            this.btnStok37.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok37.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok36
             // 
@@ -971,6 +1020,7 @@
             this.btnStok36.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok36.Name = "btnStok36";
             this.btnStok36.Size = new System.Drawing.Size(96, 57);
+            this.btnStok36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok36.TabIndex = 35;
             this.btnStok36.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok36.UseVisualStyleBackColor = true;
@@ -979,7 +1029,7 @@
             this.btnStok36.Value3 = null;
             this.btnStok36.Value4 = null;
             this.btnStok36.Value5 = null;
-            this.btnStok36.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok36.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok35
             // 
@@ -1003,6 +1053,7 @@
             this.btnStok35.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok35.Name = "btnStok35";
             this.btnStok35.Size = new System.Drawing.Size(98, 57);
+            this.btnStok35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok35.TabIndex = 34;
             this.btnStok35.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok35.UseVisualStyleBackColor = true;
@@ -1011,7 +1062,7 @@
             this.btnStok35.Value3 = null;
             this.btnStok35.Value4 = null;
             this.btnStok35.Value5 = null;
-            this.btnStok35.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok35.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok34
             // 
@@ -1035,6 +1086,7 @@
             this.btnStok34.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok34.Name = "btnStok34";
             this.btnStok34.Size = new System.Drawing.Size(96, 57);
+            this.btnStok34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok34.TabIndex = 39;
             this.btnStok34.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok34.UseVisualStyleBackColor = true;
@@ -1043,7 +1095,7 @@
             this.btnStok34.Value3 = null;
             this.btnStok34.Value4 = null;
             this.btnStok34.Value5 = null;
-            this.btnStok34.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok34.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok33
             // 
@@ -1067,6 +1119,7 @@
             this.btnStok33.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok33.Name = "btnStok33";
             this.btnStok33.Size = new System.Drawing.Size(96, 57);
+            this.btnStok33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok33.TabIndex = 38;
             this.btnStok33.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok33.UseVisualStyleBackColor = true;
@@ -1075,7 +1128,7 @@
             this.btnStok33.Value3 = null;
             this.btnStok33.Value4 = null;
             this.btnStok33.Value5 = null;
-            this.btnStok33.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok33.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok32
             // 
@@ -1099,6 +1152,7 @@
             this.btnStok32.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok32.Name = "btnStok32";
             this.btnStok32.Size = new System.Drawing.Size(96, 57);
+            this.btnStok32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok32.TabIndex = 37;
             this.btnStok32.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok32.UseVisualStyleBackColor = true;
@@ -1107,7 +1161,7 @@
             this.btnStok32.Value3 = null;
             this.btnStok32.Value4 = null;
             this.btnStok32.Value5 = null;
-            this.btnStok32.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok32.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok31
             // 
@@ -1131,6 +1185,7 @@
             this.btnStok31.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok31.Name = "btnStok31";
             this.btnStok31.Size = new System.Drawing.Size(96, 57);
+            this.btnStok31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok31.TabIndex = 30;
             this.btnStok31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok31.UseVisualStyleBackColor = true;
@@ -1139,7 +1194,7 @@
             this.btnStok31.Value3 = null;
             this.btnStok31.Value4 = null;
             this.btnStok31.Value5 = null;
-            this.btnStok31.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok31.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok30
             // 
@@ -1163,6 +1218,7 @@
             this.btnStok30.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok30.Name = "btnStok30";
             this.btnStok30.Size = new System.Drawing.Size(98, 57);
+            this.btnStok30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok30.TabIndex = 29;
             this.btnStok30.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok30.UseVisualStyleBackColor = true;
@@ -1171,7 +1227,7 @@
             this.btnStok30.Value3 = null;
             this.btnStok30.Value4 = null;
             this.btnStok30.Value5 = null;
-            this.btnStok30.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok30.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok29
             // 
@@ -1195,6 +1251,7 @@
             this.btnStok29.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok29.Name = "btnStok29";
             this.btnStok29.Size = new System.Drawing.Size(96, 57);
+            this.btnStok29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok29.TabIndex = 28;
             this.btnStok29.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok29.UseVisualStyleBackColor = true;
@@ -1203,7 +1260,7 @@
             this.btnStok29.Value3 = null;
             this.btnStok29.Value4 = null;
             this.btnStok29.Value5 = null;
-            this.btnStok29.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok29.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok28
             // 
@@ -1227,6 +1284,7 @@
             this.btnStok28.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok28.Name = "btnStok28";
             this.btnStok28.Size = new System.Drawing.Size(96, 57);
+            this.btnStok28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok28.TabIndex = 33;
             this.btnStok28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok28.UseVisualStyleBackColor = true;
@@ -1235,7 +1293,7 @@
             this.btnStok28.Value3 = null;
             this.btnStok28.Value4 = null;
             this.btnStok28.Value5 = null;
-            this.btnStok28.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok28.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok27
             // 
@@ -1259,6 +1317,7 @@
             this.btnStok27.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok27.Name = "btnStok27";
             this.btnStok27.Size = new System.Drawing.Size(96, 57);
+            this.btnStok27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok27.TabIndex = 32;
             this.btnStok27.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok27.UseVisualStyleBackColor = true;
@@ -1267,7 +1326,7 @@
             this.btnStok27.Value3 = null;
             this.btnStok27.Value4 = null;
             this.btnStok27.Value5 = null;
-            this.btnStok27.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok27.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok26
             // 
@@ -1291,6 +1350,7 @@
             this.btnStok26.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok26.Name = "btnStok26";
             this.btnStok26.Size = new System.Drawing.Size(96, 57);
+            this.btnStok26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok26.TabIndex = 31;
             this.btnStok26.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok26.UseVisualStyleBackColor = true;
@@ -1299,7 +1359,7 @@
             this.btnStok26.Value3 = null;
             this.btnStok26.Value4 = null;
             this.btnStok26.Value5 = null;
-            this.btnStok26.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok26.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok25
             // 
@@ -1323,6 +1383,7 @@
             this.btnStok25.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok25.Name = "btnStok25";
             this.btnStok25.Size = new System.Drawing.Size(98, 57);
+            this.btnStok25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok25.TabIndex = 27;
             this.btnStok25.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok25.UseVisualStyleBackColor = true;
@@ -1331,7 +1392,7 @@
             this.btnStok25.Value3 = null;
             this.btnStok25.Value4 = null;
             this.btnStok25.Value5 = null;
-            this.btnStok25.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok25.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok24
             // 
@@ -1355,6 +1416,7 @@
             this.btnStok24.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok24.Name = "btnStok24";
             this.btnStok24.Size = new System.Drawing.Size(96, 57);
+            this.btnStok24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok24.TabIndex = 23;
             this.btnStok24.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok24.UseVisualStyleBackColor = true;
@@ -1363,7 +1425,7 @@
             this.btnStok24.Value3 = null;
             this.btnStok24.Value4 = null;
             this.btnStok24.Value5 = null;
-            this.btnStok24.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok24.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok23
             // 
@@ -1387,6 +1449,7 @@
             this.btnStok23.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok23.Name = "btnStok23";
             this.btnStok23.Size = new System.Drawing.Size(96, 57);
+            this.btnStok23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok23.TabIndex = 22;
             this.btnStok23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok23.UseVisualStyleBackColor = true;
@@ -1395,7 +1458,7 @@
             this.btnStok23.Value3 = null;
             this.btnStok23.Value4 = null;
             this.btnStok23.Value5 = null;
-            this.btnStok23.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok23.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok22
             // 
@@ -1419,6 +1482,7 @@
             this.btnStok22.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok22.Name = "btnStok22";
             this.btnStok22.Size = new System.Drawing.Size(96, 57);
+            this.btnStok22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok22.TabIndex = 24;
             this.btnStok22.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok22.UseVisualStyleBackColor = true;
@@ -1427,7 +1491,7 @@
             this.btnStok22.Value3 = null;
             this.btnStok22.Value4 = null;
             this.btnStok22.Value5 = null;
-            this.btnStok22.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok22.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok21
             // 
@@ -1451,6 +1515,7 @@
             this.btnStok21.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok21.Name = "btnStok21";
             this.btnStok21.Size = new System.Drawing.Size(96, 57);
+            this.btnStok21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok21.TabIndex = 26;
             this.btnStok21.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok21.UseVisualStyleBackColor = true;
@@ -1459,7 +1524,7 @@
             this.btnStok21.Value3 = null;
             this.btnStok21.Value4 = null;
             this.btnStok21.Value5 = null;
-            this.btnStok21.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok21.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok20
             // 
@@ -1483,6 +1548,7 @@
             this.btnStok20.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok20.Name = "btnStok20";
             this.btnStok20.Size = new System.Drawing.Size(98, 57);
+            this.btnStok20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok20.TabIndex = 25;
             this.btnStok20.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok20.UseVisualStyleBackColor = true;
@@ -1491,7 +1557,7 @@
             this.btnStok20.Value3 = null;
             this.btnStok20.Value4 = null;
             this.btnStok20.Value5 = null;
-            this.btnStok20.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok20.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok19
             // 
@@ -1515,6 +1581,7 @@
             this.btnStok19.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok19.Name = "btnStok19";
             this.btnStok19.Size = new System.Drawing.Size(96, 57);
+            this.btnStok19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok19.TabIndex = 18;
             this.btnStok19.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok19.UseVisualStyleBackColor = true;
@@ -1523,7 +1590,7 @@
             this.btnStok19.Value3 = null;
             this.btnStok19.Value4 = null;
             this.btnStok19.Value5 = null;
-            this.btnStok19.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok19.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok18
             // 
@@ -1547,6 +1614,7 @@
             this.btnStok18.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok18.Name = "btnStok18";
             this.btnStok18.Size = new System.Drawing.Size(96, 57);
+            this.btnStok18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok18.TabIndex = 17;
             this.btnStok18.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok18.UseVisualStyleBackColor = true;
@@ -1555,7 +1623,7 @@
             this.btnStok18.Value3 = null;
             this.btnStok18.Value4 = null;
             this.btnStok18.Value5 = null;
-            this.btnStok18.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok18.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok17
             // 
@@ -1579,6 +1647,7 @@
             this.btnStok17.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok17.Name = "btnStok17";
             this.btnStok17.Size = new System.Drawing.Size(96, 57);
+            this.btnStok17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok17.TabIndex = 16;
             this.btnStok17.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok17.UseVisualStyleBackColor = true;
@@ -1587,7 +1656,7 @@
             this.btnStok17.Value3 = null;
             this.btnStok17.Value4 = null;
             this.btnStok17.Value5 = null;
-            this.btnStok17.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok17.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok16
             // 
@@ -1611,6 +1680,7 @@
             this.btnStok16.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok16.Name = "btnStok16";
             this.btnStok16.Size = new System.Drawing.Size(96, 57);
+            this.btnStok16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok16.TabIndex = 21;
             this.btnStok16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok16.UseVisualStyleBackColor = true;
@@ -1619,7 +1689,7 @@
             this.btnStok16.Value3 = null;
             this.btnStok16.Value4 = null;
             this.btnStok16.Value5 = null;
-            this.btnStok16.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok16.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok15
             // 
@@ -1643,6 +1713,7 @@
             this.btnStok15.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok15.Name = "btnStok15";
             this.btnStok15.Size = new System.Drawing.Size(98, 57);
+            this.btnStok15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok15.TabIndex = 20;
             this.btnStok15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok15.UseVisualStyleBackColor = true;
@@ -1651,7 +1722,7 @@
             this.btnStok15.Value3 = null;
             this.btnStok15.Value4 = null;
             this.btnStok15.Value5 = null;
-            this.btnStok15.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok15.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok14
             // 
@@ -1675,6 +1746,7 @@
             this.btnStok14.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok14.Name = "btnStok14";
             this.btnStok14.Size = new System.Drawing.Size(96, 57);
+            this.btnStok14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok14.TabIndex = 19;
             this.btnStok14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok14.UseVisualStyleBackColor = true;
@@ -1683,7 +1755,7 @@
             this.btnStok14.Value3 = null;
             this.btnStok14.Value4 = null;
             this.btnStok14.Value5 = null;
-            this.btnStok14.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok14.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok13
             // 
@@ -1707,6 +1779,7 @@
             this.btnStok13.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok13.Name = "btnStok13";
             this.btnStok13.Size = new System.Drawing.Size(96, 57);
+            this.btnStok13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok13.TabIndex = 12;
             this.btnStok13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok13.UseVisualStyleBackColor = true;
@@ -1715,7 +1788,7 @@
             this.btnStok13.Value3 = null;
             this.btnStok13.Value4 = null;
             this.btnStok13.Value5 = null;
-            this.btnStok13.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok13.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok12
             // 
@@ -1739,6 +1812,7 @@
             this.btnStok12.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok12.Name = "btnStok12";
             this.btnStok12.Size = new System.Drawing.Size(96, 57);
+            this.btnStok12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok12.TabIndex = 11;
             this.btnStok12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok12.UseVisualStyleBackColor = true;
@@ -1747,7 +1821,7 @@
             this.btnStok12.Value3 = null;
             this.btnStok12.Value4 = null;
             this.btnStok12.Value5 = null;
-            this.btnStok12.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok12.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok11
             // 
@@ -1771,6 +1845,7 @@
             this.btnStok11.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok11.Name = "btnStok11";
             this.btnStok11.Size = new System.Drawing.Size(96, 57);
+            this.btnStok11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok11.TabIndex = 10;
             this.btnStok11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok11.UseVisualStyleBackColor = true;
@@ -1779,7 +1854,7 @@
             this.btnStok11.Value3 = null;
             this.btnStok11.Value4 = null;
             this.btnStok11.Value5 = null;
-            this.btnStok11.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok11.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok10
             // 
@@ -1803,6 +1878,7 @@
             this.btnStok10.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok10.Name = "btnStok10";
             this.btnStok10.Size = new System.Drawing.Size(98, 57);
+            this.btnStok10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok10.TabIndex = 15;
             this.btnStok10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok10.UseVisualStyleBackColor = true;
@@ -1811,7 +1887,7 @@
             this.btnStok10.Value3 = null;
             this.btnStok10.Value4 = null;
             this.btnStok10.Value5 = null;
-            this.btnStok10.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok9
             // 
@@ -1835,6 +1911,7 @@
             this.btnStok9.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok9.Name = "btnStok9";
             this.btnStok9.Size = new System.Drawing.Size(96, 57);
+            this.btnStok9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok9.TabIndex = 14;
             this.btnStok9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok9.UseVisualStyleBackColor = true;
@@ -1843,7 +1920,7 @@
             this.btnStok9.Value3 = null;
             this.btnStok9.Value4 = null;
             this.btnStok9.Value5 = null;
-            this.btnStok9.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok8
             // 
@@ -1867,6 +1944,7 @@
             this.btnStok8.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok8.Name = "btnStok8";
             this.btnStok8.Size = new System.Drawing.Size(96, 57);
+            this.btnStok8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok8.TabIndex = 13;
             this.btnStok8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok8.UseVisualStyleBackColor = true;
@@ -1875,7 +1953,7 @@
             this.btnStok8.Value3 = null;
             this.btnStok8.Value4 = null;
             this.btnStok8.Value5 = null;
-            this.btnStok8.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok7
             // 
@@ -1899,6 +1977,7 @@
             this.btnStok7.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok7.Name = "btnStok7";
             this.btnStok7.Size = new System.Drawing.Size(96, 57);
+            this.btnStok7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok7.TabIndex = 5;
             this.btnStok7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok7.UseVisualStyleBackColor = true;
@@ -1907,7 +1986,7 @@
             this.btnStok7.Value3 = null;
             this.btnStok7.Value4 = null;
             this.btnStok7.Value5 = null;
-            this.btnStok7.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok6
             // 
@@ -1931,6 +2010,7 @@
             this.btnStok6.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok6.Name = "btnStok6";
             this.btnStok6.Size = new System.Drawing.Size(96, 57);
+            this.btnStok6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok6.TabIndex = 4;
             this.btnStok6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok6.UseVisualStyleBackColor = true;
@@ -1939,7 +2019,7 @@
             this.btnStok6.Value3 = null;
             this.btnStok6.Value4 = null;
             this.btnStok6.Value5 = null;
-            this.btnStok6.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok5
             // 
@@ -1963,6 +2043,7 @@
             this.btnStok5.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok5.Name = "btnStok5";
             this.btnStok5.Size = new System.Drawing.Size(98, 57);
+            this.btnStok5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok5.TabIndex = 3;
             this.btnStok5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok5.UseVisualStyleBackColor = true;
@@ -1971,7 +2052,7 @@
             this.btnStok5.Value3 = null;
             this.btnStok5.Value4 = null;
             this.btnStok5.Value5 = null;
-            this.btnStok5.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok4
             // 
@@ -1995,6 +2076,7 @@
             this.btnStok4.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok4.Name = "btnStok4";
             this.btnStok4.Size = new System.Drawing.Size(96, 57);
+            this.btnStok4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok4.TabIndex = 6;
             this.btnStok4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok4.UseVisualStyleBackColor = true;
@@ -2003,7 +2085,7 @@
             this.btnStok4.Value3 = null;
             this.btnStok4.Value4 = null;
             this.btnStok4.Value5 = null;
-            this.btnStok4.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok3
             // 
@@ -2027,6 +2109,7 @@
             this.btnStok3.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok3.Name = "btnStok3";
             this.btnStok3.Size = new System.Drawing.Size(96, 57);
+            this.btnStok3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok3.TabIndex = 9;
             this.btnStok3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok3.UseVisualStyleBackColor = true;
@@ -2035,7 +2118,7 @@
             this.btnStok3.Value3 = null;
             this.btnStok3.Value4 = null;
             this.btnStok3.Value5 = null;
-            this.btnStok3.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok2
             // 
@@ -2059,6 +2142,7 @@
             this.btnStok2.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok2.Name = "btnStok2";
             this.btnStok2.Size = new System.Drawing.Size(96, 57);
+            this.btnStok2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok2.TabIndex = 8;
             this.btnStok2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok2.UseVisualStyleBackColor = true;
@@ -2067,7 +2151,7 @@
             this.btnStok2.Value3 = null;
             this.btnStok2.Value4 = null;
             this.btnStok2.Value5 = null;
-            this.btnStok2.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // btnStok1
             // 
@@ -2091,6 +2175,7 @@
             this.btnStok1.Margin = new System.Windows.Forms.Padding(0);
             this.btnStok1.Name = "btnStok1";
             this.btnStok1.Size = new System.Drawing.Size(96, 57);
+            this.btnStok1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnStok1.TabIndex = 7;
             this.btnStok1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnStok1.UseVisualStyleBackColor = true;
@@ -2099,7 +2184,7 @@
             this.btnStok1.Value3 = null;
             this.btnStok1.Value4 = null;
             this.btnStok1.Value5 = null;
-            this.btnStok1.Click += new System.EventHandler(this.btnStok1_Click);
+            this.btnStok1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStok1_MouseUp);
             // 
             // dgvStoklar
             // 
@@ -2260,6 +2345,7 @@
             this.btnCesni9.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni9.Name = "btnCesni9";
             this.btnCesni9.Size = new System.Drawing.Size(99, 57);
+            this.btnCesni9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCesni9.TabIndex = 20;
             this.btnCesni9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni9.UseVisualStyleBackColor = true;
@@ -2268,7 +2354,7 @@
             this.btnCesni9.Value3 = null;
             this.btnCesni9.Value4 = null;
             this.btnCesni9.Value5 = null;
-            this.btnCesni9.Click += new System.EventHandler(this.btnCesni1_Click);
+            this.btnCesni9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnCesni1_MouseUp);
             // 
             // btnCesni8
             // 
@@ -2292,6 +2378,7 @@
             this.btnCesni8.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni8.Name = "btnCesni8";
             this.btnCesni8.Size = new System.Drawing.Size(99, 57);
+            this.btnCesni8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCesni8.TabIndex = 19;
             this.btnCesni8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni8.UseVisualStyleBackColor = true;
@@ -2300,7 +2387,7 @@
             this.btnCesni8.Value3 = null;
             this.btnCesni8.Value4 = null;
             this.btnCesni8.Value5 = null;
-            this.btnCesni8.Click += new System.EventHandler(this.btnCesni1_Click);
+            this.btnCesni8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnCesni1_MouseUp);
             // 
             // btnCesni12
             // 
@@ -2324,6 +2411,7 @@
             this.btnCesni12.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni12.Name = "btnCesni12";
             this.btnCesni12.Size = new System.Drawing.Size(104, 57);
+            this.btnCesni12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCesni12.TabIndex = 18;
             this.btnCesni12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni12.UseVisualStyleBackColor = true;
@@ -2332,7 +2420,7 @@
             this.btnCesni12.Value3 = null;
             this.btnCesni12.Value4 = null;
             this.btnCesni12.Value5 = null;
-            this.btnCesni12.Click += new System.EventHandler(this.btnCesni1_Click);
+            this.btnCesni12.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnCesni1_MouseUp);
             // 
             // btnCesni11
             // 
@@ -2356,6 +2444,7 @@
             this.btnCesni11.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni11.Name = "btnCesni11";
             this.btnCesni11.Size = new System.Drawing.Size(99, 57);
+            this.btnCesni11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCesni11.TabIndex = 17;
             this.btnCesni11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni11.UseVisualStyleBackColor = true;
@@ -2364,7 +2453,7 @@
             this.btnCesni11.Value3 = null;
             this.btnCesni11.Value4 = null;
             this.btnCesni11.Value5 = null;
-            this.btnCesni11.Click += new System.EventHandler(this.btnCesni1_Click);
+            this.btnCesni11.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnCesni1_MouseUp);
             // 
             // btnCesni10
             // 
@@ -2388,6 +2477,7 @@
             this.btnCesni10.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni10.Name = "btnCesni10";
             this.btnCesni10.Size = new System.Drawing.Size(99, 57);
+            this.btnCesni10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCesni10.TabIndex = 16;
             this.btnCesni10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni10.UseVisualStyleBackColor = true;
@@ -2396,7 +2486,7 @@
             this.btnCesni10.Value3 = null;
             this.btnCesni10.Value4 = null;
             this.btnCesni10.Value5 = null;
-            this.btnCesni10.Click += new System.EventHandler(this.btnCesni1_Click);
+            this.btnCesni10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnCesni1_MouseUp);
             // 
             // btnCesni7
             // 
@@ -2420,6 +2510,7 @@
             this.btnCesni7.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni7.Name = "btnCesni7";
             this.btnCesni7.Size = new System.Drawing.Size(99, 57);
+            this.btnCesni7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCesni7.TabIndex = 15;
             this.btnCesni7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni7.UseVisualStyleBackColor = true;
@@ -2428,7 +2519,7 @@
             this.btnCesni7.Value3 = null;
             this.btnCesni7.Value4 = null;
             this.btnCesni7.Value5 = null;
-            this.btnCesni7.Click += new System.EventHandler(this.btnCesni1_Click);
+            this.btnCesni7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnCesni1_MouseUp);
             // 
             // btnCesni2
             // 
@@ -2452,6 +2543,7 @@
             this.btnCesni2.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni2.Name = "btnCesni2";
             this.btnCesni2.Size = new System.Drawing.Size(99, 57);
+            this.btnCesni2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCesni2.TabIndex = 14;
             this.btnCesni2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni2.UseVisualStyleBackColor = true;
@@ -2460,7 +2552,7 @@
             this.btnCesni2.Value3 = null;
             this.btnCesni2.Value4 = null;
             this.btnCesni2.Value5 = null;
-            this.btnCesni2.Click += new System.EventHandler(this.btnCesni1_Click);
+            this.btnCesni2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnCesni1_MouseUp);
             // 
             // btnCesni1
             // 
@@ -2484,6 +2576,7 @@
             this.btnCesni1.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni1.Name = "btnCesni1";
             this.btnCesni1.Size = new System.Drawing.Size(99, 57);
+            this.btnCesni1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCesni1.TabIndex = 13;
             this.btnCesni1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni1.UseVisualStyleBackColor = true;
@@ -2492,7 +2585,7 @@
             this.btnCesni1.Value3 = null;
             this.btnCesni1.Value4 = null;
             this.btnCesni1.Value5 = null;
-            this.btnCesni1.Click += new System.EventHandler(this.btnCesni1_Click);
+            this.btnCesni1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnCesni1_MouseUp);
             // 
             // btnCesni3
             // 
@@ -2516,6 +2609,7 @@
             this.btnCesni3.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni3.Name = "btnCesni3";
             this.btnCesni3.Size = new System.Drawing.Size(99, 57);
+            this.btnCesni3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCesni3.TabIndex = 12;
             this.btnCesni3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni3.UseVisualStyleBackColor = true;
@@ -2524,7 +2618,7 @@
             this.btnCesni3.Value3 = null;
             this.btnCesni3.Value4 = null;
             this.btnCesni3.Value5 = null;
-            this.btnCesni3.Click += new System.EventHandler(this.btnCesni1_Click);
+            this.btnCesni3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnCesni1_MouseUp);
             // 
             // btnCesni5
             // 
@@ -2548,6 +2642,7 @@
             this.btnCesni5.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni5.Name = "btnCesni5";
             this.btnCesni5.Size = new System.Drawing.Size(99, 57);
+            this.btnCesni5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCesni5.TabIndex = 11;
             this.btnCesni5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni5.UseVisualStyleBackColor = true;
@@ -2556,7 +2651,7 @@
             this.btnCesni5.Value3 = null;
             this.btnCesni5.Value4 = null;
             this.btnCesni5.Value5 = null;
-            this.btnCesni5.Click += new System.EventHandler(this.btnCesni1_Click);
+            this.btnCesni5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnCesni1_MouseUp);
             // 
             // btnCesni4
             // 
@@ -2580,6 +2675,7 @@
             this.btnCesni4.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni4.Name = "btnCesni4";
             this.btnCesni4.Size = new System.Drawing.Size(99, 57);
+            this.btnCesni4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCesni4.TabIndex = 10;
             this.btnCesni4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni4.UseVisualStyleBackColor = true;
@@ -2588,7 +2684,7 @@
             this.btnCesni4.Value3 = null;
             this.btnCesni4.Value4 = null;
             this.btnCesni4.Value5 = null;
-            this.btnCesni4.Click += new System.EventHandler(this.btnCesni1_Click);
+            this.btnCesni4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnCesni1_MouseUp);
             // 
             // btnCesni6
             // 
@@ -2612,6 +2708,7 @@
             this.btnCesni6.Margin = new System.Windows.Forms.Padding(0);
             this.btnCesni6.Name = "btnCesni6";
             this.btnCesni6.Size = new System.Drawing.Size(104, 57);
+            this.btnCesni6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCesni6.TabIndex = 9;
             this.btnCesni6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCesni6.UseVisualStyleBackColor = true;
@@ -2620,7 +2717,7 @@
             this.btnCesni6.Value3 = null;
             this.btnCesni6.Value4 = null;
             this.btnCesni6.Value5 = null;
-            this.btnCesni6.Click += new System.EventHandler(this.btnCesni1_Click);
+            this.btnCesni6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnCesni1_MouseUp);
             // 
             // dgvCesniler
             // 
@@ -2777,6 +2874,8 @@
             this.tlpStoklar.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.gbIslemler.ResumeLayout(false);
+            this.cmsHesapFisi.ResumeLayout(false);
+            this.pnlSil.ResumeLayout(false);
             this.gbTuslar.ResumeLayout(false);
             this.gbTuslar.PerformLayout();
             this.gbTerazi.ResumeLayout(false);
@@ -2906,5 +3005,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMiktari;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFiyati;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTutari;
+        private System.Windows.Forms.Button btnHesapFisi;
+        private System.Windows.Forms.ContextMenuStrip cmsHesapFisi;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTasarim;
+        private System.Windows.Forms.Panel pnlSil;
     }
 }
