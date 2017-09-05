@@ -419,110 +419,113 @@ namespace PRCTicari
 
         private void txtTuslar_KeyDown(object sender, KeyEventArgs e)
         {
-            string strText = txtTuslar.Text.Trim();
-            if (!string.IsNullOrEmpty(strText))
+            if (e.KeyCode == Keys.Return)
             {
-                string strBarkod = "";
-                double dblBarkodMiktar = 0;
-
-                string[] arrText = strText.Split('X');
-                if (arrText.Length > 1)
+                string strText = txtTuslar.Text.Trim();
+                if (!string.IsNullOrEmpty(strText))
                 {
-                    dblBarkodMiktar = arrText[0].TODOUBLE();
-                    strBarkod = arrText[1];
-                }
-                else
-                {
-                    dblBarkodMiktar = 1;
-                    strBarkod = arrText[0];
-                }
+                    string strBarkod = "";
+                    double dblBarkodMiktar = 0;
 
-                SqlConnection cnn = new SqlConnection(clsGenel.strConnectionString);
-                cnn.Open();
-                SqlCommand cmd = cnn.CreateCommand();
-                cmd.CommandText = "SELECT ST.*, " +
-                                  "ISNULL(SBT1.Agirlik_Birimi, CAST(0 AS TINYINT)) AS BT1_Agirlik_Birimi, " +
-                                  "ISNULL(SBT2.Agirlik_Birimi, CAST(0 AS TINYINT)) AS BT2_Agirlik_Birimi " +
-                                  "FROM Stok_Tanitimi AS ST " +
-                                  "LEFT OUTER JOIN Stok_Birim_Tanitimi AS SBT1 ON SBT1.Birim_Kodu = ST.Birim_Kodu_1 " +
-                                  "LEFT OUTER JOIN Stok_Birim_Tanitimi AS SBT2 ON SBT2.Birim_Kodu = ST.Birim_Kodu_2 " +
-                                  "WHERE ST.Silindi = 0 AND ST.Kurum_Kodu = @Kurum_Kodu AND (ST.BT1_Barkod = @BT1_Barkod OR ST.BT2_Barkod = @BT2_Barkod)";
-
-                cmd.Parameters.AddWithValue("@Kurum_Kodu", clsGenel.strKurumKodu);
-                cmd.Parameters.AddWithValue("@BT1_Barkod", strBarkod);
-                cmd.Parameters.AddWithValue("@BT2_Barkod", strBarkod);
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
-                {
-                    bool blnDevam = true;
-                    string strAnahtar = "";
-                    int intStokNo = reader["Stok_No"].TOINT();
-                    string strStokKodu = reader["Stok_Kodu"].TOSTRING();
-                    string strStokAdi = reader["Kisa_Adi"].TOSTRING();
-                    string strBirimKodu = "";
-                    double dblMiktar = 0;
-                    int intAgirlikBirimi = 0;
-                    double dblFiyati = 0;
-                    double dblKdvOrani = reader["Kdv_Perakende"].TODOUBLE();
-
-                    if (reader["BT1_Barkod"].TOSTRING() == strBarkod)
+                    string[] arrText = strText.Split('X');
+                    if (arrText.Length > 1)
                     {
-                        intAgirlikBirimi = reader["BT1_Agirlik_Birimi"].TOINT();
-                        dblFiyati = reader["BT1_Satis_Fiyati_" + clsGenel.fncGetParameter("Hizli_Satis_Fiyat_Tipi", "1")].TODOUBLE();
-                        strBirimKodu = reader["Birim_Kodu_1"].TOSTRING();
+                        dblBarkodMiktar = arrText[0].TODOUBLE();
+                        strBarkod = arrText[1];
                     }
                     else
                     {
-                        intAgirlikBirimi = reader["BT2_Agirlik_Birimi"].TOINT();
-                        dblFiyati = reader["BT2_Satis_Fiyati_" + clsGenel.fncGetParameter("Hizli_Satis_Fiyat_Tipi", "1")].TODOUBLE();
-                        strBirimKodu = reader["Birim_Kodu_2"].TOSTRING();
+                        dblBarkodMiktar = 1;
+                        strBarkod = arrText[0];
                     }
 
-                    if (intAgirlikBirimi == 0)
-                        dblMiktar = 1;
-                    else
+                    SqlConnection cnn = new SqlConnection(clsGenel.strConnectionString);
+                    cnn.Open();
+                    SqlCommand cmd = cnn.CreateCommand();
+                    cmd.CommandText = "SELECT ST.*, " +
+                                      "ISNULL(SBT1.Agirlik_Birimi, CAST(0 AS TINYINT)) AS BT1_Agirlik_Birimi, " +
+                                      "ISNULL(SBT2.Agirlik_Birimi, CAST(0 AS TINYINT)) AS BT2_Agirlik_Birimi " +
+                                      "FROM Stok_Tanitimi AS ST " +
+                                      "LEFT OUTER JOIN Stok_Birim_Tanitimi AS SBT1 ON SBT1.Birim_Kodu = ST.Birim_Kodu_1 " +
+                                      "LEFT OUTER JOIN Stok_Birim_Tanitimi AS SBT2 ON SBT2.Birim_Kodu = ST.Birim_Kodu_2 " +
+                                      "WHERE ST.Silindi = 0 AND ST.Kurum_Kodu = @Kurum_Kodu AND (ST.BT1_Barkod = @BT1_Barkod OR ST.BT2_Barkod = @BT2_Barkod)";
+
+                    cmd.Parameters.AddWithValue("@Kurum_Kodu", clsGenel.strKurumKodu);
+                    cmd.Parameters.AddWithValue("@BT1_Barkod", strBarkod);
+                    cmd.Parameters.AddWithValue("@BT2_Barkod", strBarkod);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
                     {
-                        dblMiktar = txtTerazi.Text.Trim().TODOUBLE();
-                        if (dblMiktar == 0)
+                        bool blnDevam = true;
+                        string strAnahtar = "";
+                        int intStokNo = reader["Stok_No"].TOINT();
+                        string strStokKodu = reader["Stok_Kodu"].TOSTRING();
+                        string strStokAdi = reader["Kisa_Adi"].TOSTRING();
+                        string strBirimKodu = "";
+                        double dblMiktar = 0;
+                        int intAgirlikBirimi = 0;
+                        double dblFiyati = 0;
+                        double dblKdvOrani = reader["Kdv_Perakende"].TODOUBLE();
+
+                        if (reader["BT1_Barkod"].TOSTRING() == strBarkod)
                         {
-                            MessageBox.Show("Bu ürün ağırlık birimli olduğundan tartım yapmanız gerekmektedir.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                            blnDevam = false;
+                            intAgirlikBirimi = reader["BT1_Agirlik_Birimi"].TOINT();
+                            dblFiyati = reader["BT1_Satis_Fiyati_" + clsGenel.fncGetParameter("Hizli_Satis_Fiyat_Tipi", "1")].TODOUBLE();
+                            strBirimKodu = reader["Birim_Kodu_1"].TOSTRING();
+                        }
+                        else
+                        {
+                            intAgirlikBirimi = reader["BT2_Agirlik_Birimi"].TOINT();
+                            dblFiyati = reader["BT2_Satis_Fiyati_" + clsGenel.fncGetParameter("Hizli_Satis_Fiyat_Tipi", "1")].TODOUBLE();
+                            strBirimKodu = reader["Birim_Kodu_2"].TOSTRING();
+                        }
+
+                        if (intAgirlikBirimi == 0)
+                            dblMiktar = 1;
+                        else
+                        {
+                            dblMiktar = txtTerazi.Text.Trim().TODOUBLE();
+                            if (dblMiktar == 0)
+                            {
+                                MessageBox.Show("Bu ürün ağırlık birimli olduğundan tartım yapmanız gerekmektedir.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                blnDevam = false;
+                            }
+                        }
+                        dblMiktar *= dblBarkodMiktar;
+
+                        if (blnDevam)
+                        {
+                            DataGridView dgvGrid = blnCesniButon ? dgvCesniler : dgvStoklar;
+                            BindingSource bsSource = blnCesniButon ? bsCesniler : bsStoklar;
+
+                            strAnahtar = blnCesniButon ? dgvStoklar.CurrentRow.Cells["colAnahtar"].Value.TOSTRING() : DateTime.Now.ToString("yyyyMMddHHmmssfff");
+                            dgvGrid.AllowUserToAddRows = true;
+                            dgvGrid.CurrentCell = dgvGrid.Rows[dgvGrid.NewRowIndex].Cells[(blnCesniButon ? colStokAdiCesni : colStokAdi).Name];
+                            dgvGrid.CurrentRow.Cells[(blnCesniButon ? colAnahtarCesni : colAnahtar).Name].Value = strAnahtar;
+                            dgvGrid.CurrentRow.Cells[(blnCesniButon ? colStokNoCesni : colStokNo).Name].Value = intStokNo;
+                            dgvGrid.CurrentRow.Cells[(blnCesniButon ? colStokKoduCesni : colStokKodu).Name].Value = strStokKodu;
+                            dgvGrid.CurrentRow.Cells[(blnCesniButon ? colBirimKoduCesni : colBirimKodu).Name].Value = strBirimKodu;
+                            dgvGrid.CurrentRow.Cells[(blnCesniButon ? colAciklamaCesni : colAciklama).Name].Value = "";
+                            dgvGrid.CurrentRow.Cells[(blnCesniButon ? colKdvOraniCesni : colKdvOrani).Name].Value = dblKdvOrani;
+                            dgvGrid.CurrentRow.Cells[(blnCesniButon ? colStokAdiCesni : colStokAdi).Name].Value = strStokAdi;
+                            dgvGrid.CurrentRow.Cells[(blnCesniButon ? colMiktariCesni : colMiktari).Name].Value = dblMiktar;
+                            dgvGrid.CurrentRow.Cells[(blnCesniButon ? colFiyatiCesni : colFiyati).Name].Value = dblFiyati;
+                            dgvGrid.CurrentRow.Cells[(blnCesniButon ? colTutariCesni : colTutari).Name].Value = dblMiktar * dblFiyati;
+                            bsSource.ResetBindings(true);
+                            dgvGrid.AllowUserToAddRows = false;
+                            dgvGrid.CurrentCell = dgvGrid.Rows[dgvGrid.Rows.Count - 1].Cells[(blnCesniButon ? colStokAdiCesni : colStokAdi).Name];
+                            if (blnCesniButon)
+                                dgvCesniler_Click(dgvCesniler, new EventArgs());
+                            else
+                                dgvStoklar_Click(dgvStoklar, new EventArgs());
                         }
                     }
-                    dblMiktar *= dblBarkodMiktar;
+                    reader.Close();
+                    cmd.Dispose();
+                    cnn.Close();
 
-                    if (blnDevam)
-                    {
-                        DataGridView dgvGrid = blnCesniButon ? dgvCesniler : dgvStoklar;
-                        BindingSource bsSource = blnCesniButon ? bsCesniler : bsStoklar;
-
-                        strAnahtar = blnCesniButon ? dgvStoklar.CurrentRow.Cells["colAnahtar"].Value.TOSTRING() : DateTime.Now.ToString("yyyyMMddHHmmssfff");
-                        dgvGrid.AllowUserToAddRows = true;
-                        dgvGrid.CurrentCell = dgvGrid.Rows[dgvGrid.NewRowIndex].Cells[(blnCesniButon ? colStokAdiCesni : colStokAdi).Name];
-                        dgvGrid.CurrentRow.Cells[(blnCesniButon ? colAnahtarCesni : colAnahtar).Name].Value = strAnahtar;
-                        dgvGrid.CurrentRow.Cells[(blnCesniButon ? colStokNoCesni : colStokNo).Name].Value = intStokNo;
-                        dgvGrid.CurrentRow.Cells[(blnCesniButon ? colStokKoduCesni : colStokKodu).Name].Value = strStokKodu;
-                        dgvGrid.CurrentRow.Cells[(blnCesniButon ? colBirimKoduCesni : colBirimKodu).Name].Value = strBirimKodu;
-                        dgvGrid.CurrentRow.Cells[(blnCesniButon ? colAciklamaCesni : colAciklama).Name].Value = "";
-                        dgvGrid.CurrentRow.Cells[(blnCesniButon ? colKdvOraniCesni : colKdvOrani).Name].Value = dblKdvOrani;
-                        dgvGrid.CurrentRow.Cells[(blnCesniButon ? colStokAdiCesni : colStokAdi).Name].Value = strStokAdi;
-                        dgvGrid.CurrentRow.Cells[(blnCesniButon ? colMiktariCesni : colMiktari).Name].Value = dblMiktar;
-                        dgvGrid.CurrentRow.Cells[(blnCesniButon ? colFiyatiCesni : colFiyati).Name].Value = dblFiyati;
-                        dgvGrid.CurrentRow.Cells[(blnCesniButon ? colTutariCesni : colTutari).Name].Value = dblMiktar * dblFiyati;
-                        bsSource.ResetBindings(true);
-                        dgvGrid.AllowUserToAddRows = false;
-                        dgvGrid.CurrentCell = dgvGrid.Rows[dgvGrid.Rows.Count - 1].Cells[(blnCesniButon ? colStokAdiCesni : colStokAdi).Name];
-                        if (blnCesniButon)
-                            dgvCesniler_Click(dgvCesniler, new EventArgs());
-                        else
-                            dgvStoklar_Click(dgvStoklar, new EventArgs());
-                    }
+                    txtTuslar.Clear();
                 }
-                reader.Close();
-                cmd.Dispose();
-                cnn.Close();
-
-                txtTuslar.Clear();
             }
         }
 

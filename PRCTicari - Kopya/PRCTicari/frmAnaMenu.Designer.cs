@@ -180,7 +180,7 @@
             this.tsmiReyonTanitimi});
             this.tsmiTanitimlarStok.ForeColor = System.Drawing.Color.Black;
             this.tsmiTanitimlarStok.Name = "tsmiTanitimlarStok";
-            this.tsmiTanitimlarStok.Size = new System.Drawing.Size(152, 22);
+            this.tsmiTanitimlarStok.Size = new System.Drawing.Size(127, 22);
             this.tsmiTanitimlarStok.Tag = "01100";
             this.tsmiTanitimlarStok.Text = "Tanıtımlar";
             // 
@@ -248,7 +248,7 @@
             this.tsmiStokDuzeltmeIslemi});
             this.tsmiIslemlerStok.ForeColor = System.Drawing.Color.Black;
             this.tsmiIslemlerStok.Name = "tsmiIslemlerStok";
-            this.tsmiIslemlerStok.Size = new System.Drawing.Size(152, 22);
+            this.tsmiIslemlerStok.Size = new System.Drawing.Size(127, 22);
             this.tsmiIslemlerStok.Tag = "01200";
             this.tsmiIslemlerStok.Text = "İşlemler";
             // 
@@ -297,7 +297,7 @@
             this.tsmiStokEnvanterRaporu});
             this.tsmiRaporlarStok.ForeColor = System.Drawing.Color.Black;
             this.tsmiRaporlarStok.Name = "tsmiRaporlarStok";
-            this.tsmiRaporlarStok.Size = new System.Drawing.Size(152, 22);
+            this.tsmiRaporlarStok.Size = new System.Drawing.Size(127, 22);
             this.tsmiRaporlarStok.Tag = "01300";
             this.tsmiRaporlarStok.Text = "Raporlar";
             // 
@@ -882,6 +882,7 @@
             this.tsbMasaSatis.Size = new System.Drawing.Size(143, 36);
             this.tsbMasaSatis.Tag = "07000";
             this.tsbMasaSatis.Text = "Masa Satış";
+            this.tsbMasaSatis.Visible = false;
             this.tsbMasaSatis.Click += new System.EventHandler(this.tsbButton_Click);
             // 
             // toolStripSeparator2
