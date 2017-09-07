@@ -113,6 +113,12 @@
     <Compile Include="frmBelgeTipiKarti.Designer.cs">
       <DependentUpon>frmBelgeTipiKarti.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmKullaniciGirisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKullaniciGirisi.Designer.cs">
+      <DependentUpon>frmKullaniciGirisi.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPersonelGorevKarti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -348,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBelgeTipiKarti.resx">
       <DependentUpon>frmBelgeTipiKarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKullaniciGirisi.resx">
+      <DependentUpon>frmKullaniciGirisi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPersonelGorevKarti.resx">
       <DependentUpon>frmPersonelGorevKarti.cs</DependentUpon>

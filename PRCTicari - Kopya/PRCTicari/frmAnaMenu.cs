@@ -25,6 +25,17 @@ namespace PRCTicari
                 MessageBox.Show(fncKoduReflectorIleKiraninAllahBinTurluBelasiniVersinHakkimiHelalEtmiyorum(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 Application.ExitThread();
             }
+            else
+            {
+                frmKullaniciGirisi fkgGiris = new frmKullaniciGirisi();
+                if (fkgGiris.ShowDialog() == DialogResult.Cancel)
+                {
+                    fkgGiris.Dispose();
+                    Application.ExitThread();
+                }
+                else
+                    fkgGiris.Dispose();
+            }
         }
 
         private string fncKoduReflectorIleKiraninAllahBinTurluBelasiniVersinHakkimiHelalEtmiyorum()

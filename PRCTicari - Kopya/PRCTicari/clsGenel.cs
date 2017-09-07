@@ -10,6 +10,7 @@ using FastReport;
 using System.Data;
 using System.Xml;
 using System.Xml.Linq;
+using System.Security.Cryptography;
 
 namespace PRCTicari
 {
@@ -19,7 +20,9 @@ namespace PRCTicari
         public static int intGenelIsyeriKodu = ConfigurationManager.AppSettings["IsyeriKodu"].TOINT();
         public static int intGenelDepoKodu = ConfigurationManager.AppSettings["DepoKodu"].TOINT();
         public static string strKurumKodu = "ADANA01";
-        public static string strKullaniciKodu = "SEFA";
+        public static string strKullaniciKodu = "";
+        public static string strKullaniciAdi = "";
+        public static string strKullaniciSoyadi = "";
         public static object oXKodSelected = null;
         public static string strDoubleFormatTwo = "#,##0.00;-#,##0.00;#.#";
         public static string strDoubleFormatFour = "#,##0.0000;-#,##0.0000;#.#";

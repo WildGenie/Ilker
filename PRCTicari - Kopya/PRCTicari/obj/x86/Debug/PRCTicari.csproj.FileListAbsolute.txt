@@ -231,3 +231,4 @@ D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTic
 D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.rpStokHareket.resources
 D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.rpStokListesi.resources
 D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.csproj.GenerateResource.Cache
+F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmKullaniciGirisi.resources
