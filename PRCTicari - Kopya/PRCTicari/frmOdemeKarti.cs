@@ -234,7 +234,7 @@ namespace PRCTicari
 
         private void btnKasaKodu_Click(object sender, EventArgs e)
         {
-            object o = clsXKod.fncSECKasa();
+            object o = clsXKod.fncSECOdeme();
             if (o != null)
             {
                 txtOdemeKodu.Text = o.TOSTRING();

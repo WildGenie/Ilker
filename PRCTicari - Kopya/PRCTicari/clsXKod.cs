@@ -199,6 +199,18 @@ namespace PRCTicari
                                  1, 0);
         }
 
+        public static object fncSECOdeme()
+        {
+            return prcdXKodCagir("Ödeme Listesi",
+                                 "SELECT Odeme_Kodu, Odeme_Adi FROM Odeme_Tanitimi WHERE Kurum_Kodu = @Kurum_Kodu",
+                                 new string[] { "@Kurum_Kodu" },
+                                 new object[] { clsGenel.strKurumKodu },
+                                 new string[] { "Odeme_Kodu", "Odeme_Adi" },
+                                 new string[] { "Ödeme Kodu", "Ödeme Adı" },
+                                 new int[] { 100, 250 },
+                                 1, 0);
+        }
+
         public static object fncSECKdv()
         {
             return prcdXKodCagir("Kdv Seçme Listesi",
