@@ -27,6 +27,7 @@ namespace PRCTicari
             }
             else
             {
+                pnlMenu.Visible = false;
                 frmKullaniciGirisi fkgGiris = new frmKullaniciGirisi();
                 if (fkgGiris.ShowDialog() == DialogResult.Cancel)
                 {
@@ -34,7 +35,10 @@ namespace PRCTicari
                     Application.ExitThread();
                 }
                 else
+                { 
                     fkgGiris.Dispose();
+                    btnMenu.PerformClick();
+                }
             }
         }
 
@@ -210,6 +214,8 @@ namespace PRCTicari
             #endregion
 
             #region Ayarlar
+            else if (strTag == tsmiKurumTanitimi.Tag.TOSTRING())
+                frmForm = new frmKurumKarti();
             else if (strTag == tsmiIsyeriTanitimi.Tag.TOSTRING())
                 frmForm = new frmIsyeriKarti();
             else if (strTag == tsmiDepoTanitimi.Tag.TOSTRING())

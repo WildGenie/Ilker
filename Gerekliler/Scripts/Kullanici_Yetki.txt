@@ -1,0 +1,47 @@
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Kullanici_Yetki](
+	[Kurum_Kodu] [varchar](20) NOT NULL,
+	[Kullanici_Kodu] [varchar](20) NOT NULL,
+	[Form_Id] [varchar](10) NOT NULL,
+	[Gor] [tinyint] NULL,
+	[Oku] [tinyint] NULL,
+	[Ekle] [tinyint] NULL,
+	[Duzelt] [tinyint] NULL,
+	[Sil] [tinyint] NULL,
+ CONSTRAINT [PK_Kullanici_Yetki] PRIMARY KEY CLUSTERED 
+(
+	[Kurum_Kodu] ASC,
+	[Kullanici_Kodu] ASC,
+	[Form_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Kullanici_Yetki] ADD  CONSTRAINT [DF_Kullanici_Yetki_Kurum_Kodu]  DEFAULT ('') FOR [Kurum_Kodu]
+GO
+
+ALTER TABLE [dbo].[Kullanici_Yetki] ADD  CONSTRAINT [DF_Kullanici_Yetki_Kullanici_Kodu]  DEFAULT ('') FOR [Kullanici_Kodu]
+GO
+
+ALTER TABLE [dbo].[Kullanici_Yetki] ADD  CONSTRAINT [DF_Kullanici_Yetki_Form_Id]  DEFAULT ('') FOR [Form_Id]
+GO
+
+ALTER TABLE [dbo].[Kullanici_Yetki] ADD  CONSTRAINT [DF_Kullanici_Yetki_Gor]  DEFAULT ((0)) FOR [Gor]
+GO
+
+ALTER TABLE [dbo].[Kullanici_Yetki] ADD  CONSTRAINT [DF_Kullanici_Yetki_Oku]  DEFAULT ((0)) FOR [Oku]
+GO
+
+ALTER TABLE [dbo].[Kullanici_Yetki] ADD  CONSTRAINT [DF_Kullanici_Yetki_Ekle]  DEFAULT ((0)) FOR [Ekle]
+GO
+
+ALTER TABLE [dbo].[Kullanici_Yetki] ADD  CONSTRAINT [DF_Kullanici_Yetki_Duzelt]  DEFAULT ((0)) FOR [Duzelt]
+GO
+
+ALTER TABLE [dbo].[Kullanici_Yetki] ADD  CONSTRAINT [DF_Kullanici_Yetki_Sil]  DEFAULT ((0)) FOR [Sil]
+GO

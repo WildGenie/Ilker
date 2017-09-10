@@ -28,6 +28,9 @@ namespace PRCTicari
         public static string strDoubleFormatFour = "#,##0.0000;-#,##0.0000;#.#";
         public static string strDoubleFormatFourRequired = "#,##0.0000;-#,##0.0000;#,##0.0000";
         public static string strRaporPath = fncGetExePath() + @"\Raporlar";
+        public static string strYoneticiKullaniciKodu = "PRC";
+        public static string strYoneticiKullaniciAdi = "PRC";
+        public static string strYoneticiKullaniciSoyadi = "Software";
 
         private static Dictionary<string, string> arrParametreler = new Dictionary<string, string>();
 
@@ -134,6 +137,26 @@ namespace PRCTicari
             reader.Close();
             cmd.Dispose();
             cnn.Close();
+        }
+
+        public static bool fncKurumKontrol(string strKullaniciKoduX, string strKurumKoduX)
+        {
+            bool blnReturn = false;
+            SqlConnection cnn = new SqlConnection(strConnectionString);
+            cnn.Open();
+            SqlCommand cmd = cnn.CreateCommand();
+            cmd.CommandText = "SELECT * FROM Kullanici_Kurum_Tanitimi WHERE Kullanici_Kodu = @Kullanici_Kodu AND Kurum_Kodu = @Kurum_Kodu";
+            cmd.Parameters.AddWithValue("@Kullanici_Kodu", strKullaniciKoduX);
+            cmd.Parameters.AddWithValue("@Kurum_Kodu", strKurumKoduX);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                blnReturn = true;
+            }
+            reader.Close();
+            cmd.Dispose();
+            cnn.Close();
+            return blnReturn;
         }
 
         public static string fncGetParameter(string strKodu, string strDefault = "")

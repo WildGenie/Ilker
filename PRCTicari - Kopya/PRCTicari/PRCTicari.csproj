@@ -119,6 +119,18 @@
     <Compile Include="frmKullaniciGirisi.Designer.cs">
       <DependentUpon>frmKullaniciGirisi.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmKullaniciKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKullaniciKarti.Designer.cs">
+      <DependentUpon>frmKullaniciKarti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKurumKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKurumKarti.designer.cs">
+      <DependentUpon>frmKurumKarti.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPersonelGorevKarti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -357,6 +369,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmKullaniciGirisi.resx">
       <DependentUpon>frmKullaniciGirisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKullaniciKarti.resx">
+      <DependentUpon>frmKullaniciKarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKurumKarti.resx">
+      <DependentUpon>frmKurumKarti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPersonelGorevKarti.resx">
       <DependentUpon>frmPersonelGorevKarti.cs</DependentUpon>

@@ -488,6 +488,16 @@ namespace PRCTicari
             {
                 prcdStokBilgiGetir();
             }
+            else if (dgvKalemler.Columns[e.ColumnIndex].Name == colTutari.Name)
+            {
+                double dblTutari = dgvKalemler.Rows[e.RowIndex].Cells[colTutari.Name].Value.TODOUBLE();
+                double dblMiktari = dgvKalemler.Rows[e.RowIndex].Cells[colCMiktari.Name].Value.TODOUBLE() + dgvKalemler.Rows[e.RowIndex].Cells[colGMiktari.Name].Value.TODOUBLE();
+                if (dblMiktari != 0)
+                    dgvKalemler.Rows[e.RowIndex].Cells[colFiyati.Name].Value = dblTutari / dblMiktari;
+                else
+                    dgvKalemler.Rows[e.RowIndex].Cells[colTutari.Name].Value = 0;
+                prcdSatirHesapla(true);
+            }
 
             txtCariKodu_TextChanged(txtCariKodu, new EventArgs());
         }

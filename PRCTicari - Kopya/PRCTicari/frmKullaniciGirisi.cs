@@ -22,7 +22,7 @@ namespace PRCTicari
         private void txtKullaniciKodu_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Return)
-                txtSifre.Focus();
+                txtKurumKodu.Focus();
         }
 
         private void txtSifre_KeyDown(object sender, KeyEventArgs e)
@@ -33,11 +33,11 @@ namespace PRCTicari
 
         private void tsbTamam_Click(object sender, EventArgs e)
         {
-            if (txtKullaniciKodu.Text.Trim() == "PRC" && txtSifre.Text.TOMD5() == "f25aba7d3fa1086d9e34cec3b6a236b1")
+            if (txtKullaniciKodu.Text.Trim() == clsGenel.strYoneticiKullaniciKodu && txtSifre.Text.TOMD5() == "f25aba7d3fa1086d9e34cec3b6a236b1")
             {
-                clsGenel.strKullaniciKodu = "PRC";
-                clsGenel.strKullaniciAdi = "PRC";
-                clsGenel.strKullaniciSoyadi = "Software";
+                clsGenel.strKullaniciKodu = clsGenel.strYoneticiKullaniciKodu;
+                clsGenel.strKullaniciAdi = clsGenel.strYoneticiKullaniciAdi;
+                clsGenel.strKullaniciSoyadi = clsGenel.strYoneticiKullaniciSoyadi;
                 drReturn = DialogResult.OK;
                 this.Close();
             }
@@ -46,18 +46,25 @@ namespace PRCTicari
                 SqlConnection cnn = new SqlConnection(clsGenel.strConnectionString);
                 cnn.Open();
                 SqlCommand cmd = cnn.CreateCommand();
-                cmd.CommandText = "SELECT Kullanici_Kodu, Adi, Soyadi FROM Kullanici_Tanitimi WHERE Kurum_Kodu = @Kurum_Kodu AND Kullanici_Kodu = @Kullanici_Kodu AND Sifre = @Sifre";
-                cmd.Parameters.AddWithValue("@Kurum_Kodu", clsGenel.strKurumKodu);
+                cmd.CommandText = "SELECT Kullanici_Kodu, Adi, Soyadi FROM Kullanici_Tanitimi WHERE Kullanici_Kodu = @Kullanici_Kodu AND Sifre = @Sifre";
                 cmd.Parameters.AddWithValue("@Kullanici_Kodu", txtKullaniciKodu.Text.Trim());
                 cmd.Parameters.AddWithValue("@Sifre", txtSifre.Text.TOMD5());
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    clsGenel.strKullaniciKodu = reader["Kullanici_Kodu"].TOSTRING();
-                    clsGenel.strKullaniciAdi = reader["Adi"].TOSTRING();
-                    clsGenel.strKullaniciSoyadi = reader["Soyadi"].TOSTRING();
-                    drReturn = DialogResult.OK;
-                    this.Close();
+                    if (txtKullaniciKodu.Text.Trim() == clsGenel.strYoneticiKullaniciKodu || clsGenel.fncKurumKontrol(txtKullaniciKodu.Text.Trim(), txtKurumKodu.Text.Trim()))
+                    {
+                        clsGenel.strKurumKodu = txtKurumKodu.Text.Trim();
+                        clsGenel.strKullaniciKodu = reader["Kullanici_Kodu"].TOSTRING();
+                        clsGenel.strKullaniciAdi = reader["Adi"].TOSTRING();
+                        clsGenel.strKullaniciSoyadi = reader["Soyadi"].TOSTRING();
+                        drReturn = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Girdiğiniz kurum kodu yanlış veya bu kuruma giriş yetkiniz bulunmamaktadır.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    }
                 }
                 else
                 {
@@ -77,6 +84,19 @@ namespace PRCTicari
         private void frmKullaniciGirisi_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.DialogResult = drReturn;
+        }
+
+        private void btnKurumKodu_Click(object sender, EventArgs e)
+        {
+            object o = clsXKod.fncSECKurum(txtKullaniciKodu.Text.Trim());
+            if (o != null)
+                txtKurumKodu.Text = o.TOSTRING();
+        }
+
+        private void txtKurumKodu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+                txtSifre.Focus();
         }
     }
 }

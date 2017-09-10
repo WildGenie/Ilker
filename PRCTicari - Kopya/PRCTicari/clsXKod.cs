@@ -223,6 +223,18 @@ namespace PRCTicari
                                  1, 0);
         }
 
+        public static object fncSECKurum(string strKullaniciKodu)
+        {
+            return prcdXKodCagir("Kurum Seçme Listesi",
+                                 strKullaniciKodu == clsGenel.strYoneticiKullaniciKodu ? "SELECT Kurum_Kodu, Kurum_Adi FROM Kurum_Tanitimi" : "SELECT KKT.Kurum_Kodu, KT.Kurum_Adi FROM Kullanici_Kurum_Tanitimi AS KKT INNER JOIN Kurum_Tanitimi AS KT ON KT.Kurum_Kodu = KKT.Kurum_Kodu",
+                                 new string[] {},
+                                 new object[] {},
+                                 new string[] { "Kurum_Kodu", "Kurum_Adi" },
+                                 new string[] { "Kurum Kodu", "Kurum Adı" },
+                                 new int[] { 100, 250 },
+                                 1, 0);
+        }
+
         public static object fncSECFisStok(clsFisTipleri.FisTipleri ftFisTipi, int intIsyeriKodu)
         {
             object oReturn = null;

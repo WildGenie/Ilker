@@ -174,7 +174,6 @@ F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmPersonelKar
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmPersonelGorevKarti.resources
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.rpStokEnvanter.resources
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.rpStokHareket.resources
-F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.csprojResolveAssemblyReference.cache
 D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\bin\x86\Debug\PRCTicari.exe.config
 D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.exe
 D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.pdb
@@ -233,3 +232,4 @@ D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTic
 D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.csproj.GenerateResource.Cache
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmKullaniciGirisi.resources
 D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmKullaniciGirisi.resources
+F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmKurumKarti.resources
