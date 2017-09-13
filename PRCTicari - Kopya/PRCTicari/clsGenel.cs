@@ -19,7 +19,7 @@ namespace PRCTicari
         public static string strConnectionString = ConfigurationManager.AppSettings["ConnectionString"];
         public static int intGenelIsyeriKodu = ConfigurationManager.AppSettings["IsyeriKodu"].TOINT();
         public static int intGenelDepoKodu = ConfigurationManager.AppSettings["DepoKodu"].TOINT();
-        public static string strKurumKodu = "ADANA01";
+        public static string strKurumKodu = "";
         public static string strKullaniciKodu = "";
         public static string strKullaniciAdi = "";
         public static string strKullaniciSoyadi = "";

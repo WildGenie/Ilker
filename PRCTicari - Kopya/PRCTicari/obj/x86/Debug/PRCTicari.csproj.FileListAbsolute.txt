@@ -233,3 +233,20 @@ D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTic
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmKullaniciGirisi.resources
 D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmKullaniciGirisi.resources
 F:\SEFA\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmKurumKarti.resources
+D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\bin\x86\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\bin\x86\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\bin\x86\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\bin\x86\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
+D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\bin\x86\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\bin\x86\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\bin\x86\Debug\Microsoft.VisualStudio.Shell.Interop.xml
+D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\bin\x86\Debug\Microsoft.VisualStudio.OLE.Interop.xml
+D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\bin\x86\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.xml
+D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\bin\x86\Debug\Microsoft.VisualStudio.ProjectAggregator.xml
+D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\bin\x86\Debug\Microsoft.VisualStudio.TextManager.Interop.xml
+D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\bin\x86\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.xml
+D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmKullaniciKarti.resources
+D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.frmKurumKarti.resources
+D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.csproj.CoreCompileInputs.cache
+D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.rpGunSonuRaporu.resources
+D:\Projects\visual studio\Ilker\PRCTicari - Kopya\PRCTicari\obj\x86\Debug\PRCTicari.rpAySonuRaporu.resources

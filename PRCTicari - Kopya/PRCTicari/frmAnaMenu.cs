@@ -27,18 +27,7 @@ namespace PRCTicari
             }
             else
             {
-                pnlMenu.Visible = false;
-                frmKullaniciGirisi fkgGiris = new frmKullaniciGirisi();
-                if (fkgGiris.ShowDialog() == DialogResult.Cancel)
-                {
-                    fkgGiris.Dispose();
-                    Application.ExitThread();
-                }
-                else
-                { 
-                    fkgGiris.Dispose();
-                    btnMenu.PerformClick();
-                }
+                tsbKullaniciDegistir.PerformClick();
             }
         }
 
@@ -79,26 +68,51 @@ namespace PRCTicari
 
                 if (strTag == tsbKapat.Tag.TOSTRING())
                     Close();
-                else if (strTag == tsbHizliSatis.Tag.TOSTRING())
+                else if (strTag == tsbKullaniciDegistir.Tag.TOSTRING())
                 {
-                    //frmHizliSatisKantin frmForm = new frmHizliSatisKantin();
-                    frmHizliSatis frmForm = new frmHizliSatis(strTag);
-                    frmForm.MdiParent = this;
-                    frmForm.Show();
-
                     pnlMenu.Visible = false;
-                    this.Refresh();
-                    tMenu.Enabled = true;
+                    frmKullaniciGirisi fkgGiris = new frmKullaniciGirisi();
+                    if (fkgGiris.ShowDialog() == DialogResult.Cancel)
+                    {
+                        fkgGiris.Dispose();
+                        Application.ExitThread();
+                    }
+                    else
+                    {
+                        fkgGiris.Dispose();
+                        btnMenu.PerformClick();
+                    }
                 }
-                else if (strTag == tsbMasaSatis.Tag.TOSTRING())
+                else
                 {
-                    frmMasaSatis frmForm = new frmMasaSatis();
-                    frmForm.MdiParent = this;
-                    frmForm.Show();
+                    if (!clsGenel.strKurumKodu.ISNULLOREMPTY())
+                    {
+                        if (strTag == tsbHizliSatis.Tag.TOSTRING())
+                        {
+                            //frmHizliSatisKantin frmForm = new frmHizliSatisKantin();
+                            frmHizliSatis frmForm = new frmHizliSatis(strTag);
+                            frmForm.MdiParent = this;
+                            frmForm.Show();
 
-                    pnlMenu.Visible = false;
-                    this.Refresh();
-                    tMenu.Enabled = true;
+                            pnlMenu.Visible = false;
+                            this.Refresh();
+                            tMenu.Enabled = true;
+                        }
+                        else if (strTag == tsbMasaSatis.Tag.TOSTRING())
+                        {
+                            frmMasaSatis frmForm = new frmMasaSatis();
+                            frmForm.MdiParent = this;
+                            frmForm.Show();
+
+                            pnlMenu.Visible = false;
+                            this.Refresh();
+                            tMenu.Enabled = true;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bu forma girebilmek için lütfen kurum kodunu belirterek kullanıcı girişi yapınız.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    }
                 }
             }
         }
@@ -136,6 +150,10 @@ namespace PRCTicari
                 frmForm = new rpStokHareket(strTag);
             else if (strTag == tsmiStokEnvanterRaporu.Tag.TOSTRING())
                 frmForm = new rpStokEnvanter(strTag);
+            else if (strTag == tsmiStokGunSonuRaporu.Tag.TOSTRING())
+                frmForm = new rpGunSonuRaporu(strTag);
+            else if (strTag == tsmiStokAySonuRaporu.Tag.TOSTRING())
+                frmForm = new rpAySonuRaporu(strTag);
             #endregion
 
             #region CariModulu
@@ -232,8 +250,16 @@ namespace PRCTicari
 
             if (frmForm != null)
             {
-                frmForm.MdiParent = this;
-                frmForm.Show();
+                if (frmForm is frmKurumKarti || !clsGenel.strKurumKodu.ISNULLOREMPTY())
+                {
+                    frmForm.MdiParent = this;
+                    frmForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Bu forma girebilmek için lütfen kurum kodu girerek kullanıcı girişi yapınız.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+
             }
 
             if (this.MdiChildren.Count() > 0)

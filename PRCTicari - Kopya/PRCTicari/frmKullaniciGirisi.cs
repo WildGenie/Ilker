@@ -35,6 +35,7 @@ namespace PRCTicari
         {
             if (txtKullaniciKodu.Text.Trim() == clsGenel.strYoneticiKullaniciKodu && txtSifre.Text.TOMD5() == "f25aba7d3fa1086d9e34cec3b6a236b1")
             {
+                clsGenel.strKurumKodu = txtKurumKodu.Text.Trim();
                 clsGenel.strKullaniciKodu = clsGenel.strYoneticiKullaniciKodu;
                 clsGenel.strKullaniciAdi = clsGenel.strYoneticiKullaniciAdi;
                 clsGenel.strKullaniciSoyadi = clsGenel.strYoneticiKullaniciSoyadi;
