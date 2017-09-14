@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/14/2017 20:58:54" ReportInfo.Modified="09/14/2017 21:04:55" ReportInfo.CreatorVersion="2016.2.20.0">
+  <Dictionary>
+    <TableDataSource Name="dtRapor" ReferenceName="dtRapor" DataType="System.Int32" Enabled="true">
+      <Column Name="Kurum_Kodu" DataType="System.String"/>
+      <Column Name="Stok_No" DataType="System.Int32"/>
+      <Column Name="Silindi" DataType="System.Byte"/>
+      <Column Name="Stok_Kodu" DataType="System.String"/>
+      <Column Name="Stok_Adi" DataType="System.String"/>
+      <Column Name="Kisa_Adi" DataType="System.String"/>
+      <Column Name="Durum" DataType="System.Byte"/>
+      <Column Name="Resim" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="Grup_Kodu" DataType="System.String"/>
+      <Column Name="Ozel_Kodu" DataType="System.String"/>
+      <Column Name="Kdv_Toptan" DataType="System.Double"/>
+      <Column Name="Kdv_Perakende" DataType="System.Double"/>
+      <Column Name="Stok_Tipi" DataType="System.Byte"/>
+      <Column Name="Departman_Kodu" DataType="System.String"/>
+      <Column Name="Min_Miktar" DataType="System.Double"/>
+      <Column Name="Max_Miktar" DataType="System.Double"/>
+      <Column Name="Raf_Omru" DataType="System.Int32"/>
+      <Column Name="Reyon_Kodu" DataType="System.String"/>
+      <Column Name="Urun_Notu" DataType="System.String"/>
+      <Column Name="Urun_Icerigi" DataType="System.String"/>
+      <Column Name="Ruhsat_Sahibi" DataType="System.String"/>
+      <Column Name="Ruhsat_Tarihi" DataType="System.DateTime"/>
+      <Column Name="Gida_Uretim_Izni" DataType="System.String"/>
+      <Column Name="Alerjen_Uyarisi" DataType="System.String"/>
+      <Column Name="Birim_Kodu_1" DataType="System.String"/>
+      <Column Name="BT1_Orani" DataType="System.Double"/>
+      <Column Name="BT1_Barkod" DataType="System.String"/>
+      <Column Name="BT1_Hizli_Satis" DataType="System.Byte"/>
+      <Column Name="BT1_Alis_Fiyati" DataType="System.Double"/>
+      <Column Name="BT1_Alis_Kdvli_Fiyati" DataType="System.Double"/>
+      <Column Name="BT1_Satis_Fiyati_1" DataType="System.Double"/>
+      <Column Name="BT1_Satis_Fiyati_2" DataType="System.Double"/>
+      <Column Name="BT1_Satis_Fiyati_3" DataType="System.Double"/>
+      <Column Name="Birim_Kodu_2" DataType="System.String"/>
+      <Column Name="BT2_Orani" DataType="System.Double"/>
+      <Column Name="BT2_Barkod" DataType="System.String"/>
+      <Column Name="BT2_Hizli_Satis" DataType="System.Byte"/>
+      <Column Name="BT2_Alis_Fiyati" DataType="System.Double"/>
+      <Column Name="BT2_Alis_Kdvli_Fiyati" DataType="System.Double"/>
+      <Column Name="BT2_Satis_Fiyati_1" DataType="System.Double"/>
+      <Column Name="BT2_Satis_Fiyati_2" DataType="System.Double"/>
+      <Column Name="BT2_Satis_Fiyati_3" DataType="System.Double"/>
+      <Column Name="Karbonhidrat" DataType="System.Double"/>
+      <Column Name="Protein" DataType="System.Double"/>
+      <Column Name="Yag" DataType="System.Double"/>
+      <Column Name="Doymus_Yag" DataType="System.Double"/>
+      <Column Name="Lif" DataType="System.Double"/>
+      <Column Name="Kolesterol" DataType="System.Double"/>
+      <Column Name="Sodyum" DataType="System.Double"/>
+      <Column Name="Potasyum" DataType="System.Double"/>
+      <Column Name="Kalsiyum" DataType="System.Double"/>
+      <Column Name="Vitamin_A" DataType="System.Double"/>
+      <Column Name="Vitamin_C" DataType="System.Double"/>
+      <Column Name="Demir" DataType="System.Double"/>
+      <Column Name="Enerji" DataType="System.Double"/>
+      <Column Name="Seker" DataType="System.Double"/>
+      <Column Name="Ozel_Kodu_1" DataType="System.String"/>
+      <Column Name="Ozel_Kodu_2" DataType="System.String"/>
+      <Column Name="Ozel_Kodu_3" DataType="System.String"/>
+      <Column Name="Ozel_Kodu_4" DataType="System.String"/>
+      <Column Name="Ozel_Kodu_5" DataType="System.String"/>
+      <Column Name="Ozel_Kodu_6" DataType="System.String"/>
+      <Column Name="Ozel_Kodu_7" DataType="System.String"/>
+      <Column Name="Ozel_Kodu_8" DataType="System.String"/>
+      <Column Name="Ozel_Kodu_9" DataType="System.String"/>
+      <Column Name="Ozel_Kodu_10" DataType="System.String"/>
+      <Column Name="Ozel_Kodu_11" DataType="System.String"/>
+      <Column Name="Ozel_Kodu_12" DataType="System.String"/>
+      <Column Name="Ozel_Kodu_13" DataType="System.String"/>
+      <Column Name="Ozel_Kodu_14" DataType="System.String"/>
+      <Column Name="Ozel_Kodu_15" DataType="System.String"/>
+      <Column Name="Insert_User" DataType="System.String"/>
+      <Column Name="Insert_Date" DataType="System.DateTime"/>
+      <Column Name="Update_User" DataType="System.String"/>
+      <Column Name="Update_Date" DataType="System.DateTime"/>
+      <Column Name="Delete_User" DataType="System.String"/>
+      <Column Name="Delete_Date" DataType="System.DateTime"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="56.7">
+      <TextObject Name="Text13" Width="718.2" Height="47.25" Text="STOK LİSTESİ" HorzAlign="Center" Font="Arial, 22pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="60.7" Width="718.2" Height="18.9">
+      <TextObject Name="Text2" Width="94.5" Height="18.9" Fill.Color="Silver" Text="Stok Kodu" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text4" Left="94.5" Width="207.9" Height="18.9" Fill.Color="Silver" Text="Stok Adı" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text6" Left="529.2" Width="94.5" Height="18.9" Fill.Color="Silver" Text="Alış Fiyatı" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text8" Left="623.7" Width="94.5" Height="18.9" Fill.Color="Silver" Text="Satış Fiyatı" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text10" Left="434.7" Width="94.5" Height="18.9" Fill.Color="Silver" Text="Birim Kodu" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text12" Left="302.4" Width="132.3" Height="18.9" Fill.Color="Silver" Text="Barkod" Font="Arial, 10pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="83.6" Width="718.2" Height="18.9" DataSource="dtRapor">
+      <TextObject Name="Text1" Width="94.5" Height="18.9" Border.Lines="All" Text="[dtRapor.Stok_Kodu]"/>
+      <TextObject Name="Text3" Left="94.5" Width="207.9" Height="18.9" Border.Lines="All" Text="[dtRapor.Stok_Adi]"/>
+      <TextObject Name="Text5" Left="529.2" Width="94.5" Height="18.9" Border.Lines="All" Text="[dtRapor.BT1_Alis_Fiyati]" Format="Number" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text7" Left="623.7" Width="94.5" Height="18.9" Border.Lines="All" Text="[dtRapor.BT1_Satis_Fiyati_1]" Format="Number" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text9" Left="434.7" Width="94.5" Height="18.9" Border.Lines="All" Text="[dtRapor.Birim_Kodu_1]"/>
+      <TextObject Name="Text11" Left="302.4" Width="132.3" Height="18.9" Border.Lines="All" Text="[dtRapor.BT1_Barkod]"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="106.5" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

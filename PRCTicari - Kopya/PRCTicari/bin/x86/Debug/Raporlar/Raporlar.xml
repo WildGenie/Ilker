@@ -1,9 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Raporlar>
-  <Rapor_01301></Rapor_01301>
+  <Rapor_01301>StokListesi.frx</Rapor_01301>
   <Rapor_01303>StokEnvanterTarihli.frx</Rapor_01303>
   <Rapor_01302>StokHareketTarihliSaatli.frx</Rapor_01302>
   <Rapor_06000>HesapFisi.frx</Rapor_06000>
+<<<<<<< HEAD
+  <Rapor_02301>CariListesi.frx</Rapor_02301>
+=======
   <Rapor_01304>GunSonuGruplu.frx</Rapor_01304>
   <Rapor_01305>AySonu.frx</Rapor_01305>
+>>>>>>> 0c4c55b7ac45601753809f80d104b60298f568e1
 </Raporlar>

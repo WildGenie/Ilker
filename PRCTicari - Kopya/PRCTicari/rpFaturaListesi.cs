@@ -50,14 +50,18 @@ namespace PRCTicari
                               "INNER JOIN Islem_Detay_Stok AS ID ON IB.Kurum_Kodu = ID.Kurum_Kodu AND IB.Fis_Tipi = ID.Fis_Tipi AND IB.Isyeri_Kodu = ID.Isyeri_Kodu AND IB.Fis_No = ID.Fis_No AND IB.Silindi = ID.Silindi " +
                               "INNER JOIN Depo_Tanitimi AS DT ON DT.Kurum_Kodu = IB.Kurum_Kodu AND DT.Depo_Kodu = IB.Depo_Kodu_1 " +
                               "LEFT OUTER JOIN Cari_Tanitimi AS CT ON CT.Kurum_Kodu = IB.Kurum_Kodu AND CT.Silindi = 0 AND CT.Cari_No = IB.Cari_No " +
-                              "WHERE IB.Silindi = 0 AND IB.Kurum_Kodu = @Kurum_Kodu AND IB.Fis_Tipi IN (" + 
+                              "WHERE IB.Silindi = 0 AND IB.Kurum_Kodu = @Kurum_Kodu AND IB.Fis_Tarihi >= @Fis_Tarihi_Bas AND IB.Fis_Tarihi <= @Fis_Tarihi_Bit AND IB.Fis_Tipi IN (" + 
                               ((int)clsFisTipleri.FisTipleri.FaturaAlis).TOSTRING() + ", " +
                               ((int)clsFisTipleri.FisTipleri.FaturaSatis).TOSTRING() + ", " +
                               ((int)clsFisTipleri.FisTipleri.FaturaAlisIade).TOSTRING() + ", " +
-                              ((int)clsFisTipleri.FisTipleri.FaturaSatisIade).TOSTRING() + ", " +
-                              ((int)clsFisTipleri.FisTipleri.HizliSatis).TOSTRING() + ") " +
+                              ((int)clsFisTipleri.FisTipleri.FaturaSatisIade).TOSTRING() + ") " +
+                              (!txtCariKodu.Text.ISNULLOREMPTY() ? "AND CT.Cari_Kodu = @Cari_Kodu " : "") +
                               "GROUP BY IB.Fis_Tipi, IB.Isyeri_Kodu, IB.Fis_No, IB.Fis_Tarihi, CT.Cari_Kodu, CT.Unvani, IB.Belge_Tipi, IB.Belge_No, IB.Belge_Tarihi, IB.Aciklama";
             cmd.Parameters.AddWithValue("@Kurum_Kodu", clsGenel.strKurumKodu);
+            cmd.Parameters.AddWithValue("@Fis_Tarihi_Bas", dtpBaslangicTarihi.Value.Date);
+            cmd.Parameters.AddWithValue("@Fis_Tarihi_Bit", dtpBitisTarihi.Value.ENDOFTHEDAY());
+            if (!txtCariKodu.Text.ISNULLOREMPTY())
+                cmd.Parameters.AddWithValue("@Cari_Kodu", txtCariKodu.Text.Trim());
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             sda.Fill(dtFaturaListesi);
             sda.Dispose();

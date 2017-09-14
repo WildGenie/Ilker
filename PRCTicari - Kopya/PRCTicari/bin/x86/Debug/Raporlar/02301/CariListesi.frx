@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/14/2017 20:44:48" ReportInfo.Modified="09/14/2017 20:56:04" ReportInfo.CreatorVersion="2016.2.20.0">
+  <Dictionary>
+    <TableDataSource Name="dtCariListesi" ReferenceName="dtCariListesi" DataType="System.Int32" Enabled="true">
+      <Column Name="Kurum_Kodu" DataType="System.String"/>
+      <Column Name="Cari_No" DataType="System.Int32"/>
+      <Column Name="Silindi" DataType="System.Byte"/>
+      <Column Name="Cari_Kodu" DataType="System.String"/>
+      <Column Name="Unvani" DataType="System.String"/>
+      <Column Name="Adi" DataType="System.String"/>
+      <Column Name="Soyadi" DataType="System.String"/>
+      <Column Name="Kart_Kodu" DataType="System.String"/>
+      <Column Name="Sinifi" DataType="System.String"/>
+      <Column Name="Subesi" DataType="System.String"/>
+      <Column Name="Ogrenci_No" DataType="System.Int32"/>
+      <Column Name="Cinsiyeti" DataType="System.Byte"/>
+      <Column Name="Durum" DataType="System.Byte"/>
+      <Column Name="Boy" DataType="System.Double"/>
+      <Column Name="Kilo" DataType="System.Double"/>
+      <Column Name="Dogum_Tarihi" DataType="System.DateTime"/>
+      <Column Name="Harcama_Limiti" DataType="System.Double"/>
+      <Column Name="Veli_Adi" DataType="System.String"/>
+      <Column Name="Veli_Soyadi" DataType="System.String"/>
+      <Column Name="Veli_Cinsiyeti" DataType="System.Byte"/>
+      <Column Name="Veli_Telefon_1" DataType="System.String"/>
+      <Column Name="Veli_Telefon_2" DataType="System.String"/>
+      <Column Name="Veli_E_Mail" DataType="System.String"/>
+      <Column Name="Veli_E_Mail_Gonder" DataType="System.Byte"/>
+      <Column Name="Resim" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="Grup_Kodu" DataType="System.String"/>
+      <Column Name="Ozel_Kodu" DataType="System.String"/>
+      <Column Name="Indirim" DataType="System.Double"/>
+      <Column Name="Para_Birimi" DataType="System.String"/>
+      <Column Name="Vergi_Dairesi" DataType="System.String"/>
+      <Column Name="Vergi_TC_No" DataType="System.String"/>
+      <Column Name="Musteri" DataType="System.Byte"/>
+      <Column Name="Satici" DataType="System.Byte"/>
+      <Column Name="Personel" DataType="System.Byte"/>
+      <Column Name="Ogrenci" DataType="System.Byte"/>
+      <Column Name="Ogretmen" DataType="System.Byte"/>
+      <Column Name="Mahalle_Koy" DataType="System.String"/>
+      <Column Name="Cadde_Sokak" DataType="System.String"/>
+      <Column Name="Dis_Kapi_No" DataType="System.String"/>
+      <Column Name="Site_Adi" DataType="System.String"/>
+      <Column Name="Apartman_Blok" DataType="System.String"/>
+      <Column Name="Kat" DataType="System.String"/>
+      <Column Name="Daire" DataType="System.String"/>
+      <Column Name="Ilce" DataType="System.String"/>
+      <Column Name="Il" DataType="System.String"/>
+      <Column Name="Ulke" DataType="System.String"/>
+      <Column Name="Telefon_1" DataType="System.String"/>
+      <Column Name="Telefon_2" DataType="System.String"/>
+      <Column Name="Telefon_3" DataType="System.String"/>
+      <Column Name="Fax_1" DataType="System.String"/>
+      <Column Name="Fax_2" DataType="System.String"/>
+      <Column Name="E_Mail_1" DataType="System.String"/>
+      <Column Name="E_Mail_2" DataType="System.String"/>
+      <Column Name="Ise_Giris_Tarihi" DataType="System.DateTime"/>
+      <Column Name="Isten_Cikis_Tarihi" DataType="System.DateTime"/>
+      <Column Name="Gorev_Kodu" DataType="System.String"/>
+      <Column Name="Maas" DataType="System.Double"/>
+      <Column Name="Aile_No" DataType="System.String"/>
+      <Column Name="Ana_Adi" DataType="System.String"/>
+      <Column Name="Baba_Adi" DataType="System.String"/>
+      <Column Name="Banka_Adi" DataType="System.String"/>
+      <Column Name="Banka_Subesi" DataType="System.String"/>
+      <Column Name="Calisma_Yeri" DataType="System.String"/>
+      <Column Name="Cikis_Nedeni" DataType="System.String"/>
+      <Column Name="Cilt_No" DataType="System.String"/>
+      <Column Name="Dogum_Yeri" DataType="System.String"/>
+      <Column Name="Hesap_No" DataType="System.String"/>
+      <Column Name="Kimlik_Il" DataType="System.String"/>
+      <Column Name="Kimlik_Ilce" DataType="System.String"/>
+      <Column Name="Kimlik_Mahalle_Koy" DataType="System.String"/>
+      <Column Name="Kimlik_Seri_No_1" DataType="System.String"/>
+      <Column Name="Kimlik_Seri_No_2" DataType="System.String"/>
+      <Column Name="Sira_No" DataType="System.String"/>
+      <Column Name="Askerlik" DataType="System.Byte"/>
+      <Column Name="Egitim_Durumu" DataType="System.Byte"/>
+      <Column Name="Ehliyet" DataType="System.Byte"/>
+      <Column Name="Isyeri_Kodu" DataType="System.Int32"/>
+      <Column Name="Kan_Grubu" DataType="System.Byte"/>
+      <Column Name="Medeni_Hali" DataType="System.Byte"/>
+      <Column Name="AGI_Tutari" DataType="System.Double"/>
+      <Column Name="Cocuk_Sayisi" DataType="System.Int32"/>
+      <Column Name="Yatirilan_Maas" DataType="System.Double"/>
+      <Column Name="Insert_User" DataType="System.String"/>
+      <Column Name="Insert_Date" DataType="System.DateTime"/>
+      <Column Name="Update_User" DataType="System.String"/>
+      <Column Name="Update_Date" DataType="System.DateTime"/>
+      <Column Name="Delete_User" DataType="System.String"/>
+      <Column Name="Delete_Date" DataType="System.DateTime"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="66.15">
+      <TextObject Name="Text9" Width="718.2" Height="37.8" Text="CARİ LİSTESİ" HorzAlign="Center" Font="Arial, 22pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="70.15" Width="718.2" Height="18.9">
+      <TextObject Name="Text2" Width="94.5" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Cari Kodu" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text4" Left="94.5" Width="302.4" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Ünvanı" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text6" Left="396.9" Width="103.95" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="Telefon" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text8" Left="500.85" Width="217.35" Height="18.9" Border.Lines="All" Fill.Color="Silver" Text="E-Mail" Font="Arial, 10pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="93.05" Width="718.2" Height="18.9" DataSource="dtCariListesi">
+      <TextObject Name="Text1" Width="94.5" Height="18.9" Border.Lines="All" Text="[dtCariListesi.Cari_Kodu]"/>
+      <TextObject Name="Text3" Left="94.5" Width="302.4" Height="18.9" Border.Lines="All" Text="[dtCariListesi.Unvani]"/>
+      <TextObject Name="Text5" Left="396.9" Width="103.95" Height="18.9" Border.Lines="All" Text="[dtCariListesi.Telefon_1]"/>
+      <TextObject Name="Text7" Left="500.85" Width="217.35" Height="18.9" Border.Lines="All" Text="[dtCariListesi.E_Mail_1]"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="115.95" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>
